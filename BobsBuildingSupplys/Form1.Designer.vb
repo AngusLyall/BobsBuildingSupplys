@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class CustomerDetails
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,10 +22,195 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.lbl_CusTitle = New System.Windows.Forms.Label()
+        Me.lbl_CustFirstName = New System.Windows.Forms.Label()
+        Me.lbl_custLastName = New System.Windows.Forms.Label()
+        Me.txt_CusFirstName = New System.Windows.Forms.TextBox()
+        Me.txt_CusLastName = New System.Windows.Forms.TextBox()
+        Me.lbl_BusinessName = New System.Windows.Forms.Label()
+        Me.txt_CusBusinessName = New System.Windows.Forms.TextBox()
+        Me.lbl_custphone = New System.Windows.Forms.Label()
+        Me.txt_CusPhoneNumber = New System.Windows.Forms.TextBox()
+        Me.lbl_cusBillingAdress = New System.Windows.Forms.Label()
+        Me.lbl_cusDeliveryAdress = New System.Windows.Forms.Label()
+        Me.txt_CusDeliveryAddress = New System.Windows.Forms.TextBox()
+        Me.txt_CusBillingAdress = New System.Windows.Forms.TextBox()
+        Me.chk_DeliverySameBilling = New System.Windows.Forms.CheckBox()
+        Me.chk_TradeCus = New System.Windows.Forms.CheckBox()
+        Me.SuspendLayout()
+        '
+        'lbl_CusTitle
+        '
+        Me.lbl_CusTitle.AutoSize = True
+        Me.lbl_CusTitle.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_CusTitle.Location = New System.Drawing.Point(32, 18)
+        Me.lbl_CusTitle.Name = "lbl_CusTitle"
+        Me.lbl_CusTitle.Size = New System.Drawing.Size(388, 65)
+        Me.lbl_CusTitle.TabIndex = 0
+        Me.lbl_CusTitle.Text = "Customer Details"
+        '
+        'lbl_CustFirstName
+        '
+        Me.lbl_CustFirstName.AutoSize = True
+        Me.lbl_CustFirstName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_CustFirstName.Location = New System.Drawing.Point(12, 115)
+        Me.lbl_CustFirstName.Name = "lbl_CustFirstName"
+        Me.lbl_CustFirstName.Size = New System.Drawing.Size(109, 30)
+        Me.lbl_CustFirstName.TabIndex = 1
+        Me.lbl_CustFirstName.Text = "First name"
+        '
+        'lbl_custLastName
+        '
+        Me.lbl_custLastName.AutoSize = True
+        Me.lbl_custLastName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_custLastName.Location = New System.Drawing.Point(12, 156)
+        Me.lbl_custLastName.Name = "lbl_custLastName"
+        Me.lbl_custLastName.Size = New System.Drawing.Size(108, 30)
+        Me.lbl_custLastName.TabIndex = 2
+        Me.lbl_custLastName.Text = "Last name"
+        '
+        'txt_CusFirstName
+        '
+        Me.txt_CusFirstName.Location = New System.Drawing.Point(178, 122)
+        Me.txt_CusFirstName.Name = "txt_CusFirstName"
+        Me.txt_CusFirstName.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusFirstName.TabIndex = 3
+        '
+        'txt_CusLastName
+        '
+        Me.txt_CusLastName.Location = New System.Drawing.Point(178, 161)
+        Me.txt_CusLastName.Name = "txt_CusLastName"
+        Me.txt_CusLastName.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusLastName.TabIndex = 4
+        '
+        'lbl_BusinessName
+        '
+        Me.lbl_BusinessName.AutoSize = True
+        Me.lbl_BusinessName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_BusinessName.Location = New System.Drawing.Point(11, 194)
+        Me.lbl_BusinessName.Name = "lbl_BusinessName"
+        Me.lbl_BusinessName.Size = New System.Drawing.Size(154, 30)
+        Me.lbl_BusinessName.TabIndex = 5
+        Me.lbl_BusinessName.Text = "Business Name"
+        '
+        'txt_CusBusinessName
+        '
+        Me.txt_CusBusinessName.Location = New System.Drawing.Point(178, 198)
+        Me.txt_CusBusinessName.Name = "txt_CusBusinessName"
+        Me.txt_CusBusinessName.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusBusinessName.TabIndex = 6
+        '
+        'lbl_custphone
+        '
+        Me.lbl_custphone.AutoSize = True
+        Me.lbl_custphone.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_custphone.Location = New System.Drawing.Point(12, 232)
+        Me.lbl_custphone.Name = "lbl_custphone"
+        Me.lbl_custphone.Size = New System.Drawing.Size(154, 30)
+        Me.lbl_custphone.TabIndex = 7
+        Me.lbl_custphone.Text = "Phone Number"
+        '
+        'txt_CusPhoneNumber
+        '
+        Me.txt_CusPhoneNumber.Location = New System.Drawing.Point(178, 236)
+        Me.txt_CusPhoneNumber.Name = "txt_CusPhoneNumber"
+        Me.txt_CusPhoneNumber.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusPhoneNumber.TabIndex = 8
+        '
+        'lbl_cusBillingAdress
+        '
+        Me.lbl_cusBillingAdress.AutoSize = True
+        Me.lbl_cusBillingAdress.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_cusBillingAdress.Location = New System.Drawing.Point(12, 272)
+        Me.lbl_cusBillingAdress.Name = "lbl_cusBillingAdress"
+        Me.lbl_cusBillingAdress.Size = New System.Drawing.Size(149, 30)
+        Me.lbl_cusBillingAdress.TabIndex = 9
+        Me.lbl_cusBillingAdress.Text = "Billing Address"
+        '
+        'lbl_cusDeliveryAdress
+        '
+        Me.lbl_cusDeliveryAdress.AutoSize = True
+        Me.lbl_cusDeliveryAdress.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_cusDeliveryAdress.Location = New System.Drawing.Point(12, 309)
+        Me.lbl_cusDeliveryAdress.Name = "lbl_cusDeliveryAdress"
+        Me.lbl_cusDeliveryAdress.Size = New System.Drawing.Size(167, 30)
+        Me.lbl_cusDeliveryAdress.TabIndex = 10
+        Me.lbl_cusDeliveryAdress.Text = "Delivery Address"
+        '
+        'txt_CusDeliveryAddress
+        '
+        Me.txt_CusDeliveryAddress.Location = New System.Drawing.Point(178, 312)
+        Me.txt_CusDeliveryAddress.Name = "txt_CusDeliveryAddress"
+        Me.txt_CusDeliveryAddress.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusDeliveryAddress.TabIndex = 13
+        '
+        'txt_CusBillingAdress
+        '
+        Me.txt_CusBillingAdress.Location = New System.Drawing.Point(178, 275)
+        Me.txt_CusBillingAdress.Name = "txt_CusBillingAdress"
+        Me.txt_CusBillingAdress.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusBillingAdress.TabIndex = 12
+        '
+        'chk_DeliverySameBilling
+        '
+        Me.chk_DeliverySameBilling.AutoSize = True
+        Me.chk_DeliverySameBilling.Location = New System.Drawing.Point(12, 356)
+        Me.chk_DeliverySameBilling.Name = "chk_DeliverySameBilling"
+        Me.chk_DeliverySameBilling.Size = New System.Drawing.Size(188, 19)
+        Me.chk_DeliverySameBilling.TabIndex = 14
+        Me.chk_DeliverySameBilling.Text = "Delivery Adress Same as Billing"
+        Me.chk_DeliverySameBilling.UseVisualStyleBackColor = True
+        '
+        'chk_TradeCus
+        '
+        Me.chk_TradeCus.AutoSize = True
+        Me.chk_TradeCus.Location = New System.Drawing.Point(12, 374)
+        Me.chk_TradeCus.Name = "chk_TradeCus"
+        Me.chk_TradeCus.Size = New System.Drawing.Size(109, 19)
+        Me.chk_TradeCus.TabIndex = 15
+        Me.chk_TradeCus.Text = "Trade Customer"
+        Me.chk_TradeCus.UseVisualStyleBackColor = True
+        '
+        'CustomerDetails
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        Me.ClientSize = New System.Drawing.Size(473, 405)
+        Me.Controls.Add(Me.chk_TradeCus)
+        Me.Controls.Add(Me.chk_DeliverySameBilling)
+        Me.Controls.Add(Me.txt_CusDeliveryAddress)
+        Me.Controls.Add(Me.txt_CusBillingAdress)
+        Me.Controls.Add(Me.lbl_cusDeliveryAdress)
+        Me.Controls.Add(Me.lbl_cusBillingAdress)
+        Me.Controls.Add(Me.txt_CusPhoneNumber)
+        Me.Controls.Add(Me.lbl_custphone)
+        Me.Controls.Add(Me.txt_CusBusinessName)
+        Me.Controls.Add(Me.lbl_BusinessName)
+        Me.Controls.Add(Me.txt_CusLastName)
+        Me.Controls.Add(Me.txt_CusFirstName)
+        Me.Controls.Add(Me.lbl_custLastName)
+        Me.Controls.Add(Me.lbl_CustFirstName)
+        Me.Controls.Add(Me.lbl_CusTitle)
+        Me.Name = "CustomerDetails"
+        Me.Text = "Business Name"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
+    Friend WithEvents lbl_CusTitle As Label
+    Friend WithEvents lbl_CustFirstName As Label
+    Friend WithEvents lbl_custLastName As Label
+    Friend WithEvents txt_CusFirstName As TextBox
+    Friend WithEvents txt_CusLastName As TextBox
+    Friend WithEvents lbl_BusinessName As Label
+    Friend WithEvents txt_CusBusinessName As TextBox
+    Friend WithEvents lbl_custphone As Label
+    Friend WithEvents txt_CusPhoneNumber As TextBox
+    Friend WithEvents lbl_cusBillingAdress As Label
+    Friend WithEvents lbl_cusDeliveryAdress As Label
+    Friend WithEvents txt_CusDeliveryAddress As TextBox
+    Friend WithEvents txt_CusBillingAdress As TextBox
+    Friend WithEvents chk_DeliverySameBilling As CheckBox
+    Friend WithEvents chk_TradeCus As CheckBox
 End Class
