@@ -1,4 +1,8 @@
-﻿Public Class CustomerDetails
+﻿Imports System.IO ' used for the web requets
+Imports System.Net ' used for web requests
+Imports System.Xml ' used for the xml files that I create and read
+
+Public Class CustomerDetails
     Public CusFirstName As String
     Public CusLastName As String
     Public CusBusinessName As String
@@ -7,11 +11,17 @@
     Public CusDeliveryAdress As String
     Public cusTrade As Boolean = False
     Public cusAdressSame As Boolean = False
+    Dim Billingtextchanged As Boolean = False
+    Dim deliverytextchanged As Boolean = False
+    Dim apiuserinput
     Private Sub lbl_CusTitle_Click(sender As Object, e As EventArgs) Handles lbl_CusTitle.Click
 
     End Sub
 
     Private Sub CustomerDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim xmlfile As System.IO.StreamWriter
+        xmlfile = My.Computer.FileSystem.OpenTextFileWriter("xmlfile.xml", True)
+        xmlfile.Close()
     End Sub
 
     Private Sub txt_custfirstname_TextChanged(sender As Object, e As EventArgs) Handles txt_CusFirstName.TextChanged
@@ -29,6 +39,9 @@
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles chk_DeliverySameBilling.CheckedChanged
         If cusAdressSame = False Then
             cusAdressSame = True
+            CusDeliveryAdress = CusBillAdress
+            txt_CusDeliveryAddress.Text = CusDeliveryAdress
+
         Else
             cusAdressSame = False
         End If
@@ -48,6 +61,7 @@
 
     Private Sub txt_CusBillingAdress_TextChanged(sender As Object, e As EventArgs) Handles txt_CusBillingAdress.TextChanged
         CusBillAdress = txt_CusBillingAdress.Text
+        Billingtextchanged = True
         If cusAdressSame = True Then
             CusDeliveryAdress = CusBillAdress
             txt_CusDeliveryAddress.Text = CusDeliveryAdress
@@ -56,6 +70,7 @@
 
     Private Sub txt_CusDeliveryAddress_TextChanged(sender As Object, e As EventArgs) Handles txt_CusDeliveryAddress.TextChanged
         CusDeliveryAdress = txt_CusDeliveryAddress.Text
+        deliverytextchanged = True
     End Sub
 
     Private Sub chk_TradeCus_CheckedChanged(sender As Object, e As EventArgs) Handles chk_TradeCus.CheckedChanged
@@ -63,6 +78,45 @@
             cusTrade = True
         Else
             cusTrade = False
+        End If
+    End Sub
+    Private Sub apirequest()
+
+        Dim googleapirequest As WebRequest = WebRequest.Create("https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + apiuserinput.text + "&components=country:nz&key=AIzaSyBSWiOSW4DHovOqKAecA_GoYK-_X2ZXJ8M") ' makes a request the /xml sets the response to xml ?input is what the user puts in &components sets country as nz so we dont get international streets &key is my google development api key
+        Dim apiresponse As WebResponse = googleapirequest.GetResponse() ' this sets the result as a vairble that I can then use later stops me typing out alot.
+
+        Using ResponseStream As Stream = apiresponse.GetResponseStream()
+            Dim reader As New StreamReader(ResponseStream) ' this converts the result from the api into a reader that I can then turn into a string makes it easier to work with
+            Dim responseFromApi As String = reader.ReadToEnd() ' makes the reader from above into a sting
+            My.Computer.FileSystem.DeleteFile("xmlfile.xml") ' Gets rid of old results
+            My.Computer.FileSystem.WriteAllText("xmlfile.xml", "" & responseFromApi, True) ' this pasts the string that is still in xml format into a xml document this is so I can make viusal studio read it as a xml since I dont really know how xmls work this was the easyest way to do it
+            Dim apixmldoc As XmlDocument ' Local Vairbles that will be used later this is for the location of the document and tells visual studio the format of xml
+            Dim apiresultlist As XmlNodeList ' Same as above but is to list all "predictions"
+            Dim apiresult As XmlNode ' this is for the list it is used to sepreate the "predictions" from a list into single results.
+
+            Dim apioutput As String ' this is what the user gets its the closes to what they have typed to auto fill there adress
+
+            apixmldoc = New XmlDocument
+            apixmldoc.Load("xmlfile.xml") ' tells Visual studio where to look for the xml
+            apiresultlist = apixmldoc.GetElementsByTagName("prediction") 'makes it look though the xml file for the heading "Predictions"
+
+            For Each apiresult In apiresultlist ' this loop is used to add all the preductions from the api into viusal basics txtbox autocomplete.
+                apioutput = apiresult.Item("description").InnerText ' this reads in the predictions for the Description this is set by google and is make for humans to read
+                apiuserinput.AutoCompleteCustomSource.Add(apioutput) ' this adds the descirtion (googles predicted adresses) to the viusal studio auto complete for the textbox.
+            Next
+        End Using
+    End Sub
+
+    Private Sub tmr_RequestLimiter_Tick(sender As Object, e As EventArgs) Handles tmr_RequestLimiter.Tick
+        If Billingtextchanged = True Then
+            apiuserinput = txt_CusBillingAdress
+            apirequest()
+            Billingtextchanged = False
+        End If
+        If deliverytextchanged = True Then
+            apiuserinput = txt_CusDeliveryAddress
+            apirequest()
+            deliverytextchanged = False
         End If
     End Sub
 End Class

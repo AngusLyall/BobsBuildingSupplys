@@ -22,6 +22,7 @@ Partial Class CustomerDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lbl_CusTitle = New System.Windows.Forms.Label()
         Me.lbl_CustFirstName = New System.Windows.Forms.Label()
         Me.lbl_custLastName = New System.Windows.Forms.Label()
@@ -37,6 +38,8 @@ Partial Class CustomerDetails
         Me.txt_CusBillingAdress = New System.Windows.Forms.TextBox()
         Me.chk_DeliverySameBilling = New System.Windows.Forms.CheckBox()
         Me.chk_TradeCus = New System.Windows.Forms.CheckBox()
+        Me.tmr_RequestLimiter = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_CusTitle
@@ -139,6 +142,8 @@ Partial Class CustomerDetails
         '
         'txt_CusDeliveryAddress
         '
+        Me.txt_CusDeliveryAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.txt_CusDeliveryAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_CusDeliveryAddress.Location = New System.Drawing.Point(178, 312)
         Me.txt_CusDeliveryAddress.Name = "txt_CusDeliveryAddress"
         Me.txt_CusDeliveryAddress.Size = New System.Drawing.Size(283, 23)
@@ -146,6 +151,8 @@ Partial Class CustomerDetails
         '
         'txt_CusBillingAdress
         '
+        Me.txt_CusBillingAdress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.txt_CusBillingAdress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_CusBillingAdress.Location = New System.Drawing.Point(178, 275)
         Me.txt_CusBillingAdress.Name = "txt_CusBillingAdress"
         Me.txt_CusBillingAdress.Size = New System.Drawing.Size(283, 23)
@@ -171,11 +178,26 @@ Partial Class CustomerDetails
         Me.chk_TradeCus.Text = "Trade Customer"
         Me.chk_TradeCus.UseVisualStyleBackColor = True
         '
+        'tmr_RequestLimiter
+        '
+        Me.tmr_RequestLimiter.Enabled = True
+        Me.tmr_RequestLimiter.Interval = 1000
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(398, 388)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Next"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(473, 405)
+        Me.ClientSize = New System.Drawing.Size(474, 412)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.chk_TradeCus)
         Me.Controls.Add(Me.chk_DeliverySameBilling)
         Me.Controls.Add(Me.txt_CusDeliveryAddress)
@@ -213,4 +235,6 @@ Partial Class CustomerDetails
     Friend WithEvents txt_CusBillingAdress As TextBox
     Friend WithEvents chk_DeliverySameBilling As CheckBox
     Friend WithEvents chk_TradeCus As CheckBox
+    Friend WithEvents tmr_RequestLimiter As Timer
+    Friend WithEvents Button1 As Button
 End Class

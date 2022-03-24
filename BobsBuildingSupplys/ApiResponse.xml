@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AutocompletionResponse>
+ <status>OK</status>
+ <prediction>
+  <description>Paraparaumu, New Zealand</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>ChIJ92PjBFChQG0RcPWiQ2HvAAU</reference>
+  <term>
+   <value>Paraparaumu</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>13</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>3</length>
+  </matched_substring>
+  <place_id>ChIJ92PjBFChQG0RcPWiQ2HvAAU</place_id>
+  <structured_formatting>
+   <description>Paraparaumu</description>
+   <subdescription>New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>3</length>
+   </description_matched_substring>
+  </structured_formatting>
+ </prediction>
+ <prediction>
+  <description>Parnell, Auckland, New Zealand</description>
+  <type>sublocality_level_1</type>
+  <type>sublocality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>ChIJhXwBrRZIDW0RMPaiQ2HvAAU</reference>
+  <term>
+   <value>Parnell</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>Auckland</value>
+   <offset>9</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>19</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>3</length>
+  </matched_substring>
+  <place_id>ChIJhXwBrRZIDW0RMPaiQ2HvAAU</place_id>
+  <structured_formatting>
+   <description>Parnell</description>
+   <subdescription>Auckland, New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>3</length>
+   </description_matched_substring>
+  </structured_formatting>
+ </prediction>
+ <prediction>
+  <description>Paradise Takeaway Sandringham Road, Sandringham, Auckland, New Zealand</description>
+  <type>meal_takeaway</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>point_of_interest</type>
+  <type>establishment</type>
+  <reference>ChIJcT4y8llGDW0RfP72WCE-SF0</reference>
+  <term>
+   <value>Paradise Takeaway</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>Sandringham Road</value>
+   <offset>18</offset>
+  </term>
+  <term>
+   <value>Sandringham</value>
+   <offset>36</offset>
+  </term>
+  <term>
+   <value>Auckland</value>
+   <offset>49</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>59</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>3</length>
+  </matched_substring>
+  <place_id>ChIJcT4y8llGDW0RfP72WCE-SF0</place_id>
+  <structured_formatting>
+   <description>Paradise Takeaway</description>
+   <subdescription>Sandringham Road, Sandringham, Auckland, New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>3</length>
+   </description_matched_substring>
+  </structured_formatting>
+ </prediction>
+ <prediction>
+  <description>Parakai Springs Parkhurst Road, Parakai, New Zealand</description>
+  <type>tourist_attraction</type>
+  <type>cafe</type>
+  <type>food</type>
+  <type>point_of_interest</type>
+  <type>establishment</type>
+  <reference>ChIJq6PHg_wPDW0RHBPKzM3c5uI</reference>
+  <term>
+   <value>Parakai Springs</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>Parkhurst Road</value>
+   <offset>16</offset>
+  </term>
+  <term>
+   <value>Parakai</value>
+   <offset>32</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>41</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>3</length>
+  </matched_substring>
+  <place_id>ChIJq6PHg_wPDW0RHBPKzM3c5uI</place_id>
+  <structured_formatting>
+   <description>Parakai Springs</description>
+   <subdescription>Parkhurst Road, Parakai, New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>3</length>
+   </description_matched_substring>
+  </structured_formatting>
+ </prediction>
+ <prediction>
+  <description>Parrs Park Oratia Dr, Glen Eden, Auckland, New Zealand</description>
+  <type>tourist_attraction</type>
+  <type>park</type>
+  <type>point_of_interest</type>
+  <type>establishment</type>
+  <reference>ChIJbbRUpJNBDW0RsNqcJGLvAA8</reference>
+  <term>
+   <value>Parrs Park</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>Oratia Dr</value>
+   <offset>11</offset>
+  </term>
+  <term>
+   <value>Glen Eden</value>
+   <offset>22</offset>
+  </term>
+  <term>
+   <value>Auckland</value>
+   <offset>33</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>43</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>3</length>
+  </matched_substring>
+  <place_id>ChIJbbRUpJNBDW0RsNqcJGLvAA8</place_id>
+  <structured_formatting>
+   <description>Parrs Park</description>
+   <subdescription>Oratia Dr, Glen Eden, Auckland, New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>3</length>
+   </description_matched_substring>
+  </structured_formatting>
+ </prediction>
+</AutocompletionResponse>
