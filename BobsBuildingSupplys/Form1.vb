@@ -13,6 +13,7 @@ Public Class CustomerDetails
     Public cusAdressSame As Boolean = False
     Dim Billingtextchanged As Boolean = False
     Dim deliverytextchanged As Boolean = False
+    Dim requiredinfomation As Boolean = False
     Dim apiuserinput
     Private Sub lbl_CusTitle_Click(sender As Object, e As EventArgs) Handles lbl_CusTitle.Click
 
@@ -118,5 +119,69 @@ Public Class CustomerDetails
             apirequest()
             deliverytextchanged = False
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        RequiredInfomationCheck() ' checks if there are any empty boxes
+        If requiredinfomation = False Then
+            ' Will put the next form in here
+        End If
+
+
+
+    End Sub
+
+
+    Private Sub RequiredInfomationCheck()
+
+        requiredinfomation = False ' makes the RequiredInfomation vailble False that means it required no More Infomation
+
+        If CusFirstName = "" Then ' Checks if the vairble that stores the userinput contains anything if it does not it shows a red * and makes a varible true to stop the user moving on.
+            lbl_FirstNameRequired.Show() ' Displays a label which is a red * if the infomation is missing
+            requiredinfomation = True 'Makes the Requited infomation = true meaning we require more infomation if a box is empty
+        Else
+            lbl_FirstNameRequired.Hide()
+
+        End If
+
+        If CusLastName = "" Then
+            lbl_LastNameRequired.Show()
+            requiredinfomation = True
+        Else
+            lbl_LastNameRequired.Hide()
+        End If
+
+        If CusPhoneNumber = "" Then
+            lbl_PhoneNumberRequired.Show()
+            requiredinfomation = True
+        Else
+            lbl_PhoneNumberRequired.Hide()
+        End If
+
+        If CusBillAdress = "" Then
+            lbl_BillingRequired.Show()
+            requiredinfomation = True
+        Else
+            lbl_BillingRequired.Hide()
+        End If
+
+        If CusDeliveryAdress = "" Then
+            lbl_DeliveryRequired.Show()
+            requiredinfomation = True
+        Else
+            lbl_DeliveryRequired.Hide()
+        End If
+
+        If cusTrade = True Then ' Because not all users will be a trade user this option is only required if they request the Trade Discount.
+            If CusBusinessName = "" Then
+                lbl_BusinessNameRequired.Show()
+                requiredinfomation = True
+            Else
+                lbl_BusinessNameRequired.Hide()
+            End If
+        End If
+
+
     End Sub
 End Class
