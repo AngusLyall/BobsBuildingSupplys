@@ -125,7 +125,10 @@ Public Class CustomerDetails
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
         If requiredinfomation = False Then
-            ' Will put the next form in here
+            Me.Hide()
+            frm_OrderDetails.Show()
+        Else
+            MessageBox.Show("Please Fill out the Requried Infomation Marked by a Asterisk")
         End If
 
 
