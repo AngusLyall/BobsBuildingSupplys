@@ -29,11 +29,15 @@
 
     Dim BATH1G As Integer = 0
     Dim BATH2G As Integer = 0
-    Dim BATHHeatPump As Integer = 0
+    Dim BATHUpgrade As Integer = 0
 
     Dim KitchenA As Boolean = False
     Dim KitchenB As Boolean = False
     Dim KitchenC As Boolean = False
+    Dim LRHeat As Boolean = False
+    Dim BROHeat As Boolean = False
+    Dim BATHOption As Boolean = False
+    Dim BRTHeat As Boolean = False
 
 
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -73,7 +77,7 @@
 
         BathRoom(0) = BATH1G
         BathRoom(1) = BATH2G
-        BathRoom(2) = BATHHeatPump
+        BathRoom(2) = BATHUpgrade
     End Sub
 
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
@@ -100,6 +104,42 @@
             Kupgrade = 3
         Else
             KitchenC = False
+        End If
+    End Sub
+
+    Private Sub chk_HeatPumpLiving_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpLiving.CheckedChanged
+        If LRHeat = False Then
+            LRHeat = True
+            LRHeatPump = 1
+        Else
+            LRHeat = False
+        End If
+    End Sub
+
+    Private Sub chk_HeatPumpBedOne_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedOne.CheckedChanged
+        If BROHeat = False Then
+            BROHeat = True
+            BROHeatPump = 1
+        Else
+            BROHeat = False
+        End If
+    End Sub
+
+    Private Sub chk_HeatPumpBedTwo_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedTwo.CheckedChanged
+        If BRTHeat = False Then
+            BRTHeat = True
+            BRTHeatPump = 1
+        Else
+            BRTHeat = False
+        End If
+    End Sub
+
+    Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBathRoom.CheckedChanged
+        If BATHOption = False Then
+            BATHOption = True
+            BATHUpgrade = 1
+        Else
+            BATHOption = False
         End If
     End Sub
 End Class
