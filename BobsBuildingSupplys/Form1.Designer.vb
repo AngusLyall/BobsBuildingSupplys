@@ -157,7 +157,7 @@ Partial Class CustomerDetails
         '
         'txt_CusBillingAdress
         '
-        Me.txt_CusBillingAdress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.txt_CusBillingAdress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txt_CusBillingAdress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_CusBillingAdress.Location = New System.Drawing.Point(191, 275)
         Me.txt_CusBillingAdress.Name = "txt_CusBillingAdress"
@@ -292,6 +292,7 @@ Partial Class CustomerDetails
         Me.Controls.Add(Me.lbl_custLastName)
         Me.Controls.Add(Me.lbl_CusTitle)
         Me.Name = "CustomerDetails"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Business Name"
         Me.ResumeLayout(False)
         Me.PerformLayout()

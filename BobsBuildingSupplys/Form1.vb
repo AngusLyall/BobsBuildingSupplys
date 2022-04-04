@@ -3,14 +3,6 @@ Imports System.Net ' used for web requests
 Imports System.Xml ' used for the xml files that I create and read
 
 Public Class CustomerDetails
-    Public CusFirstName As String
-    Public CusLastName As String
-    Public CusBusinessName As String
-    Public CusPhoneNumber As String
-    Public CusBillAdress As String
-    Public CusDeliveryAdress As String
-    Public cusTrade As Boolean = False
-    Public cusAdressSame As Boolean = False
     Dim Billingtextchanged As Boolean = False
     Dim deliverytextchanged As Boolean = False
     Dim requiredinfomation As Boolean = False
@@ -124,9 +116,13 @@ Public Class CustomerDetails
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
-        If requiredinfomation = False Then
-            Me.Hide()
+        If requiredinfomation = True Then
             frm_OrderDetails.Show()
+
+
+
+
+
         Else
             MessageBox.Show("Please Fill out the Requried Infomation Marked by a Asterisk")
         End If

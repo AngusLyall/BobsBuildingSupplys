@@ -22,141 +22,141 @@ Partial Class frm_OrderDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lbl_ = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.lbl_OrderHeader = New System.Windows.Forms.Label()
+        Me.lbl_kitchenSubHead = New System.Windows.Forms.Label()
+        Me.chk_KitchenA = New System.Windows.Forms.CheckBox()
+        Me.chk_KitchenB = New System.Windows.Forms.CheckBox()
+        Me.chk_KitchenC = New System.Windows.Forms.CheckBox()
+        Me.cbo_kitchenTV = New System.Windows.Forms.ComboBox()
+        Me.cbo_kitchenSAT = New System.Windows.Forms.ComboBox()
+        Me.cbo_kitchenNet = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.cbo_kitchen2G = New System.Windows.Forms.ComboBox()
+        Me.cbo_kitchen1G = New System.Windows.Forms.ComboBox()
+        Me.chk_HeatPumpBedOne = New System.Windows.Forms.CheckBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.cbo_bed1_2G = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed1_1G = New System.Windows.Forms.ComboBox()
+        Me.lbl_Bed1SubHead = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed1Net = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.cbo_bed1SAT = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed1TV = New System.Windows.Forms.ComboBox()
+        Me.chk_HeatPumpLiving = New System.Windows.Forms.CheckBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbo_Living2G = New System.Windows.Forms.ComboBox()
+        Me.cbo_Living1G = New System.Windows.Forms.ComboBox()
+        Me.lbl_LivingSubHead = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.cbo_LivingNet = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.cbo_LivingSAT = New System.Windows.Forms.ComboBox()
+        Me.cbo_LivingTV = New System.Windows.Forms.ComboBox()
+        Me.chk_HeatPumpBedTwo = New System.Windows.Forms.CheckBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.ComboBox16 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox17 = New System.Windows.Forms.ComboBox()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.cbo_bed2_2G = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed2_1G = New System.Windows.Forms.ComboBox()
+        Me.lbl_Bed2SubHead = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.ComboBox18 = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed2Net = New System.Windows.Forms.ComboBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.ComboBox19 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox20 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.cbo_bed2SAT = New System.Windows.Forms.ComboBox()
+        Me.cbo_bed2TV = New System.Windows.Forms.ComboBox()
+        Me.chk_HeatPumpBathRoom = New System.Windows.Forms.CheckBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.ComboBox21 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox22 = New System.Windows.Forms.ComboBox()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.cbo_bath2G = New System.Windows.Forms.ComboBox()
+        Me.cbo_bath1G = New System.Windows.Forms.ComboBox()
+        Me.lbl_BathSubHead = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'lbl_
+        'lbl_OrderHeader
         '
-        Me.lbl_.AutoSize = True
-        Me.lbl_.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_.Location = New System.Drawing.Point(122, 9)
-        Me.lbl_.Name = "lbl_"
-        Me.lbl_.Size = New System.Drawing.Size(307, 65)
-        Me.lbl_.TabIndex = 0
-        Me.lbl_.Text = "Order Details"
+        Me.lbl_OrderHeader.AutoSize = True
+        Me.lbl_OrderHeader.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_OrderHeader.Location = New System.Drawing.Point(122, 9)
+        Me.lbl_OrderHeader.Name = "lbl_OrderHeader"
+        Me.lbl_OrderHeader.Size = New System.Drawing.Size(307, 65)
+        Me.lbl_OrderHeader.TabIndex = 0
+        Me.lbl_OrderHeader.Text = "Order Details"
         '
-        'Label2
+        'lbl_kitchenSubHead
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(12, 88)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 30)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Kitchen"
+        Me.lbl_kitchenSubHead.AutoSize = True
+        Me.lbl_kitchenSubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_kitchenSubHead.Location = New System.Drawing.Point(12, 88)
+        Me.lbl_kitchenSubHead.Name = "lbl_kitchenSubHead"
+        Me.lbl_kitchenSubHead.Size = New System.Drawing.Size(82, 30)
+        Me.lbl_kitchenSubHead.TabIndex = 1
+        Me.lbl_kitchenSubHead.Text = "Kitchen"
         '
-        'CheckBox1
+        'chk_KitchenA
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(12, 121)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(74, 19)
-        Me.CheckBox1.TabIndex = 2
-        Me.CheckBox1.Text = "Option A"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chk_KitchenA.AutoSize = True
+        Me.chk_KitchenA.Location = New System.Drawing.Point(12, 121)
+        Me.chk_KitchenA.Name = "chk_KitchenA"
+        Me.chk_KitchenA.Size = New System.Drawing.Size(74, 19)
+        Me.chk_KitchenA.TabIndex = 2
+        Me.chk_KitchenA.Text = "Option A"
+        Me.chk_KitchenA.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chk_KitchenB
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(12, 146)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(73, 19)
-        Me.CheckBox2.TabIndex = 3
-        Me.CheckBox2.Text = "Option B"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chk_KitchenB.AutoSize = True
+        Me.chk_KitchenB.Location = New System.Drawing.Point(12, 146)
+        Me.chk_KitchenB.Name = "chk_KitchenB"
+        Me.chk_KitchenB.Size = New System.Drawing.Size(73, 19)
+        Me.chk_KitchenB.TabIndex = 3
+        Me.chk_KitchenB.Text = "Option B"
+        Me.chk_KitchenB.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'chk_KitchenC
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(12, 171)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(74, 19)
-        Me.CheckBox3.TabIndex = 4
-        Me.CheckBox3.Text = "Option C"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chk_KitchenC.AutoSize = True
+        Me.chk_KitchenC.Location = New System.Drawing.Point(12, 171)
+        Me.chk_KitchenC.Name = "chk_KitchenC"
+        Me.chk_KitchenC.Size = New System.Drawing.Size(74, 19)
+        Me.chk_KitchenC.TabIndex = 4
+        Me.chk_KitchenC.Text = "Option C"
+        Me.chk_KitchenC.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cbo_kitchenTV
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(100, 115)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox1.TabIndex = 5
+        Me.cbo_kitchenTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_kitchenTV.FormattingEnabled = True
+        Me.cbo_kitchenTV.Location = New System.Drawing.Point(100, 115)
+        Me.cbo_kitchenTV.Name = "cbo_kitchenTV"
+        Me.cbo_kitchenTV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchenTV.TabIndex = 5
         '
-        'ComboBox2
+        'cbo_kitchenSAT
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(100, 144)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox2.TabIndex = 6
+        Me.cbo_kitchenSAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_kitchenSAT.FormattingEnabled = True
+        Me.cbo_kitchenSAT.Location = New System.Drawing.Point(100, 144)
+        Me.cbo_kitchenSAT.Name = "cbo_kitchenSAT"
+        Me.cbo_kitchenSAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchenSAT.TabIndex = 6
         '
-        'ComboBox3
+        'cbo_kitchenNet
         '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(100, 173)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox3.TabIndex = 7
+        Me.cbo_kitchenNet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_kitchenNet.FormattingEnabled = True
+        Me.cbo_kitchenNet.Location = New System.Drawing.Point(100, 173)
+        Me.cbo_kitchenNet.Name = "cbo_kitchenNet"
+        Me.cbo_kitchenNet.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchenNet.TabIndex = 7
         '
         'Label3
         '
@@ -203,33 +203,35 @@ Partial Class frm_OrderDetails
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "1G Sockets"
         '
-        'ComboBox5
+        'cbo_kitchen2G
         '
-        Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(222, 144)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox5.TabIndex = 12
+        Me.cbo_kitchen2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_kitchen2G.FormattingEnabled = True
+        Me.cbo_kitchen2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_kitchen2G.Location = New System.Drawing.Point(222, 144)
+        Me.cbo_kitchen2G.Name = "cbo_kitchen2G"
+        Me.cbo_kitchen2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchen2G.TabIndex = 12
         '
-        'ComboBox6
+        'cbo_kitchen1G
         '
-        Me.ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(222, 115)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox6.TabIndex = 11
+        Me.cbo_kitchen1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_kitchen1G.FormattingEnabled = True
+        Me.cbo_kitchen1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_kitchen1G.Location = New System.Drawing.Point(222, 115)
+        Me.cbo_kitchen1G.Name = "cbo_kitchen1G"
+        Me.cbo_kitchen1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchen1G.TabIndex = 11
         '
-        'CheckBox5
+        'chk_HeatPumpBedOne
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(412, 294)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(128, 19)
-        Me.CheckBox5.TabIndex = 40
-        Me.CheckBox5.Text = "Heat Pump (4.5Kw)"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.chk_HeatPumpBedOne.AutoSize = True
+        Me.chk_HeatPumpBedOne.Location = New System.Drawing.Point(412, 294)
+        Me.chk_HeatPumpBedOne.Name = "chk_HeatPumpBedOne"
+        Me.chk_HeatPumpBedOne.Size = New System.Drawing.Size(128, 19)
+        Me.chk_HeatPumpBedOne.TabIndex = 40
+        Me.chk_HeatPumpBedOne.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpBedOne.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -249,33 +251,35 @@ Partial Class frm_OrderDetails
         Me.Label15.TabIndex = 38
         Me.Label15.Text = "1G Sockets"
         '
-        'ComboBox15
+        'cbo_bed1_2G
         '
-        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Location = New System.Drawing.Point(410, 267)
-        Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox15.TabIndex = 37
+        Me.cbo_bed1_2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed1_2G.FormattingEnabled = True
+        Me.cbo_bed1_2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed1_2G.Location = New System.Drawing.Point(410, 267)
+        Me.cbo_bed1_2G.Name = "cbo_bed1_2G"
+        Me.cbo_bed1_2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1_2G.TabIndex = 37
         '
-        'ComboBox14
+        'cbo_bed1_1G
         '
-        Me.ComboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Location = New System.Drawing.Point(410, 238)
-        Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox14.TabIndex = 36
+        Me.cbo_bed1_1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed1_1G.FormattingEnabled = True
+        Me.cbo_bed1_1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed1_1G.Location = New System.Drawing.Point(410, 238)
+        Me.cbo_bed1_1G.Name = "cbo_bed1_1G"
+        Me.cbo_bed1_1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1_1G.TabIndex = 36
         '
-        'Label16
+        'lbl_Bed1SubHead
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label16.Location = New System.Drawing.Point(291, 205)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(153, 30)
-        Me.Label16.TabIndex = 35
-        Me.Label16.Text = "Bed Room One"
+        Me.lbl_Bed1SubHead.AutoSize = True
+        Me.lbl_Bed1SubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_Bed1SubHead.Location = New System.Drawing.Point(291, 205)
+        Me.lbl_Bed1SubHead.Name = "lbl_Bed1SubHead"
+        Me.lbl_Bed1SubHead.Size = New System.Drawing.Size(153, 30)
+        Me.lbl_Bed1SubHead.TabIndex = 35
+        Me.lbl_Bed1SubHead.Text = "Bed Room One"
         '
         'Label17
         '
@@ -295,14 +299,14 @@ Partial Class frm_OrderDetails
         Me.Label18.TabIndex = 33
         Me.Label18.Text = "SAT"
         '
-        'ComboBox13
+        'cbo_bed1Net
         '
-        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Location = New System.Drawing.Point(291, 296)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox13.TabIndex = 31
+        Me.cbo_bed1Net.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed1Net.FormattingEnabled = True
+        Me.cbo_bed1Net.Location = New System.Drawing.Point(291, 296)
+        Me.cbo_bed1Net.Name = "cbo_bed1Net"
+        Me.cbo_bed1Net.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1Net.TabIndex = 31
         '
         'Label19
         '
@@ -313,33 +317,33 @@ Partial Class frm_OrderDetails
         Me.Label19.TabIndex = 32
         Me.Label19.Text = "TV"
         '
-        'ComboBox12
+        'cbo_bed1SAT
         '
-        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(291, 267)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox12.TabIndex = 30
+        Me.cbo_bed1SAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed1SAT.FormattingEnabled = True
+        Me.cbo_bed1SAT.Location = New System.Drawing.Point(291, 267)
+        Me.cbo_bed1SAT.Name = "cbo_bed1SAT"
+        Me.cbo_bed1SAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1SAT.TabIndex = 30
         '
-        'ComboBox9
+        'cbo_bed1TV
         '
-        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Location = New System.Drawing.Point(291, 238)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox9.TabIndex = 29
+        Me.cbo_bed1TV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed1TV.FormattingEnabled = True
+        Me.cbo_bed1TV.Location = New System.Drawing.Point(291, 238)
+        Me.cbo_bed1TV.Name = "cbo_bed1TV"
+        Me.cbo_bed1TV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1TV.TabIndex = 29
         '
-        'CheckBox4
+        'chk_HeatPumpLiving
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(131, 294)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(128, 19)
-        Me.CheckBox4.TabIndex = 52
-        Me.CheckBox4.Text = "Heat Pump (4.5Kw)"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.chk_HeatPumpLiving.AutoSize = True
+        Me.chk_HeatPumpLiving.Location = New System.Drawing.Point(131, 294)
+        Me.chk_HeatPumpLiving.Name = "chk_HeatPumpLiving"
+        Me.chk_HeatPumpLiving.Size = New System.Drawing.Size(128, 19)
+        Me.chk_HeatPumpLiving.TabIndex = 52
+        Me.chk_HeatPumpLiving.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpLiving.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -359,33 +363,35 @@ Partial Class frm_OrderDetails
         Me.Label14.TabIndex = 50
         Me.Label14.Text = "1G Sockets"
         '
-        'ComboBox4
+        'cbo_Living2G
         '
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(129, 267)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox4.TabIndex = 49
+        Me.cbo_Living2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_Living2G.FormattingEnabled = True
+        Me.cbo_Living2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_Living2G.Location = New System.Drawing.Point(129, 267)
+        Me.cbo_Living2G.Name = "cbo_Living2G"
+        Me.cbo_Living2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_Living2G.TabIndex = 49
         '
-        'ComboBox7
+        'cbo_Living1G
         '
-        Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(129, 238)
-        Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox7.TabIndex = 48
+        Me.cbo_Living1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_Living1G.FormattingEnabled = True
+        Me.cbo_Living1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_Living1G.Location = New System.Drawing.Point(129, 238)
+        Me.cbo_Living1G.Name = "cbo_Living1G"
+        Me.cbo_Living1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_Living1G.TabIndex = 48
         '
-        'Label6
+        'lbl_LivingSubHead
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(10, 205)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(127, 30)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Living Room"
+        Me.lbl_LivingSubHead.AutoSize = True
+        Me.lbl_LivingSubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_LivingSubHead.Location = New System.Drawing.Point(10, 205)
+        Me.lbl_LivingSubHead.Name = "lbl_LivingSubHead"
+        Me.lbl_LivingSubHead.Size = New System.Drawing.Size(127, 30)
+        Me.lbl_LivingSubHead.TabIndex = 47
+        Me.lbl_LivingSubHead.Text = "Living Room"
         '
         'Label9
         '
@@ -405,14 +411,14 @@ Partial Class frm_OrderDetails
         Me.Label10.TabIndex = 45
         Me.Label10.Text = "SAT"
         '
-        'ComboBox8
+        'cbo_LivingNet
         '
-        Me.ComboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Location = New System.Drawing.Point(10, 296)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox8.TabIndex = 43
+        Me.cbo_LivingNet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_LivingNet.FormattingEnabled = True
+        Me.cbo_LivingNet.Location = New System.Drawing.Point(10, 296)
+        Me.cbo_LivingNet.Name = "cbo_LivingNet"
+        Me.cbo_LivingNet.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_LivingNet.TabIndex = 43
         '
         'Label11
         '
@@ -423,33 +429,33 @@ Partial Class frm_OrderDetails
         Me.Label11.TabIndex = 44
         Me.Label11.Text = "TV"
         '
-        'ComboBox10
+        'cbo_LivingSAT
         '
-        Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Location = New System.Drawing.Point(10, 267)
-        Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox10.TabIndex = 42
+        Me.cbo_LivingSAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_LivingSAT.FormattingEnabled = True
+        Me.cbo_LivingSAT.Location = New System.Drawing.Point(10, 267)
+        Me.cbo_LivingSAT.Name = "cbo_LivingSAT"
+        Me.cbo_LivingSAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_LivingSAT.TabIndex = 42
         '
-        'ComboBox11
+        'cbo_LivingTV
         '
-        Me.ComboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox11.FormattingEnabled = True
-        Me.ComboBox11.Location = New System.Drawing.Point(10, 238)
-        Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox11.TabIndex = 41
+        Me.cbo_LivingTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_LivingTV.FormattingEnabled = True
+        Me.cbo_LivingTV.Location = New System.Drawing.Point(10, 238)
+        Me.cbo_LivingTV.Name = "cbo_LivingTV"
+        Me.cbo_LivingTV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_LivingTV.TabIndex = 41
         '
-        'CheckBox6
+        'chk_HeatPumpBedTwo
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(131, 426)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(128, 19)
-        Me.CheckBox6.TabIndex = 76
-        Me.CheckBox6.Text = "Heat Pump (4.5Kw)"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.chk_HeatPumpBedTwo.AutoSize = True
+        Me.chk_HeatPumpBedTwo.Location = New System.Drawing.Point(131, 426)
+        Me.chk_HeatPumpBedTwo.Name = "chk_HeatPumpBedTwo"
+        Me.chk_HeatPumpBedTwo.Size = New System.Drawing.Size(128, 19)
+        Me.chk_HeatPumpBedTwo.TabIndex = 76
+        Me.chk_HeatPumpBedTwo.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpBedTwo.UseVisualStyleBackColor = True
         '
         'Label20
         '
@@ -469,33 +475,35 @@ Partial Class frm_OrderDetails
         Me.Label21.TabIndex = 74
         Me.Label21.Text = "1G Sockets"
         '
-        'ComboBox16
+        'cbo_bed2_2G
         '
-        Me.ComboBox16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox16.FormattingEnabled = True
-        Me.ComboBox16.Location = New System.Drawing.Point(129, 399)
-        Me.ComboBox16.Name = "ComboBox16"
-        Me.ComboBox16.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox16.TabIndex = 73
+        Me.cbo_bed2_2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed2_2G.FormattingEnabled = True
+        Me.cbo_bed2_2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed2_2G.Location = New System.Drawing.Point(129, 399)
+        Me.cbo_bed2_2G.Name = "cbo_bed2_2G"
+        Me.cbo_bed2_2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2_2G.TabIndex = 73
         '
-        'ComboBox17
+        'cbo_bed2_1G
         '
-        Me.ComboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox17.FormattingEnabled = True
-        Me.ComboBox17.Location = New System.Drawing.Point(129, 370)
-        Me.ComboBox17.Name = "ComboBox17"
-        Me.ComboBox17.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox17.TabIndex = 72
+        Me.cbo_bed2_1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed2_1G.FormattingEnabled = True
+        Me.cbo_bed2_1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed2_1G.Location = New System.Drawing.Point(129, 370)
+        Me.cbo_bed2_1G.Name = "cbo_bed2_1G"
+        Me.cbo_bed2_1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2_1G.TabIndex = 72
         '
-        'Label22
+        'lbl_Bed2SubHead
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label22.Location = New System.Drawing.Point(10, 337)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(151, 30)
-        Me.Label22.TabIndex = 71
-        Me.Label22.Text = "Bed Room Two"
+        Me.lbl_Bed2SubHead.AutoSize = True
+        Me.lbl_Bed2SubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_Bed2SubHead.Location = New System.Drawing.Point(10, 337)
+        Me.lbl_Bed2SubHead.Name = "lbl_Bed2SubHead"
+        Me.lbl_Bed2SubHead.Size = New System.Drawing.Size(151, 30)
+        Me.lbl_Bed2SubHead.TabIndex = 71
+        Me.lbl_Bed2SubHead.Text = "Bed Room Two"
         '
         'Label23
         '
@@ -515,14 +523,14 @@ Partial Class frm_OrderDetails
         Me.Label24.TabIndex = 69
         Me.Label24.Text = "SAT"
         '
-        'ComboBox18
+        'cbo_bed2Net
         '
-        Me.ComboBox18.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox18.FormattingEnabled = True
-        Me.ComboBox18.Location = New System.Drawing.Point(10, 428)
-        Me.ComboBox18.Name = "ComboBox18"
-        Me.ComboBox18.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox18.TabIndex = 67
+        Me.cbo_bed2Net.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed2Net.FormattingEnabled = True
+        Me.cbo_bed2Net.Location = New System.Drawing.Point(10, 428)
+        Me.cbo_bed2Net.Name = "cbo_bed2Net"
+        Me.cbo_bed2Net.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2Net.TabIndex = 67
         '
         'Label25
         '
@@ -533,33 +541,33 @@ Partial Class frm_OrderDetails
         Me.Label25.TabIndex = 68
         Me.Label25.Text = "TV"
         '
-        'ComboBox19
+        'cbo_bed2SAT
         '
-        Me.ComboBox19.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox19.FormattingEnabled = True
-        Me.ComboBox19.Location = New System.Drawing.Point(10, 399)
-        Me.ComboBox19.Name = "ComboBox19"
-        Me.ComboBox19.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox19.TabIndex = 66
+        Me.cbo_bed2SAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed2SAT.FormattingEnabled = True
+        Me.cbo_bed2SAT.Location = New System.Drawing.Point(10, 399)
+        Me.cbo_bed2SAT.Name = "cbo_bed2SAT"
+        Me.cbo_bed2SAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2SAT.TabIndex = 66
         '
-        'ComboBox20
+        'cbo_bed2TV
         '
-        Me.ComboBox20.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox20.FormattingEnabled = True
-        Me.ComboBox20.Location = New System.Drawing.Point(10, 370)
-        Me.ComboBox20.Name = "ComboBox20"
-        Me.ComboBox20.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox20.TabIndex = 65
+        Me.cbo_bed2TV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bed2TV.FormattingEnabled = True
+        Me.cbo_bed2TV.Location = New System.Drawing.Point(10, 370)
+        Me.cbo_bed2TV.Name = "cbo_bed2TV"
+        Me.cbo_bed2TV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2TV.TabIndex = 65
         '
-        'CheckBox7
+        'chk_HeatPumpBathRoom
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(293, 426)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(128, 19)
-        Me.CheckBox7.TabIndex = 64
-        Me.CheckBox7.Text = "Heat Pump (4.5Kw)"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.chk_HeatPumpBathRoom.AutoSize = True
+        Me.chk_HeatPumpBathRoom.Location = New System.Drawing.Point(293, 426)
+        Me.chk_HeatPumpBathRoom.Name = "chk_HeatPumpBathRoom"
+        Me.chk_HeatPumpBathRoom.Size = New System.Drawing.Size(128, 19)
+        Me.chk_HeatPumpBathRoom.TabIndex = 64
+        Me.chk_HeatPumpBathRoom.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpBathRoom.UseVisualStyleBackColor = True
         '
         'Label26
         '
@@ -579,158 +587,161 @@ Partial Class frm_OrderDetails
         Me.Label27.TabIndex = 62
         Me.Label27.Text = "1G Sockets"
         '
-        'ComboBox21
+        'cbo_bath2G
         '
-        Me.ComboBox21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox21.FormattingEnabled = True
-        Me.ComboBox21.Location = New System.Drawing.Point(291, 399)
-        Me.ComboBox21.Name = "ComboBox21"
-        Me.ComboBox21.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox21.TabIndex = 61
+        Me.cbo_bath2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bath2G.FormattingEnabled = True
+        Me.cbo_bath2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bath2G.Location = New System.Drawing.Point(291, 399)
+        Me.cbo_bath2G.Name = "cbo_bath2G"
+        Me.cbo_bath2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bath2G.TabIndex = 61
         '
-        'ComboBox22
+        'cbo_bath1G
         '
-        Me.ComboBox22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox22.FormattingEnabled = True
-        Me.ComboBox22.Location = New System.Drawing.Point(291, 370)
-        Me.ComboBox22.Name = "ComboBox22"
-        Me.ComboBox22.Size = New System.Drawing.Size(54, 23)
-        Me.ComboBox22.TabIndex = 60
+        Me.cbo_bath1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_bath1G.FormattingEnabled = True
+        Me.cbo_bath1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bath1G.Location = New System.Drawing.Point(291, 370)
+        Me.cbo_bath1G.Name = "cbo_bath1G"
+        Me.cbo_bath1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bath1G.TabIndex = 60
         '
-        'Label28
+        'lbl_BathSubHead
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label28.Location = New System.Drawing.Point(291, 337)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(104, 30)
-        Me.Label28.TabIndex = 59
-        Me.Label28.Text = "Bathroom"
+        Me.lbl_BathSubHead.AutoSize = True
+        Me.lbl_BathSubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_BathSubHead.Location = New System.Drawing.Point(291, 337)
+        Me.lbl_BathSubHead.Name = "lbl_BathSubHead"
+        Me.lbl_BathSubHead.Size = New System.Drawing.Size(104, 30)
+        Me.lbl_BathSubHead.TabIndex = 59
+        Me.lbl_BathSubHead.Text = "Bathroom"
         '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(550, 476)
-        Me.Controls.Add(Me.CheckBox6)
+        Me.Controls.Add(Me.chk_HeatPumpBedTwo)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.ComboBox16)
-        Me.Controls.Add(Me.ComboBox17)
-        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.cbo_bed2_2G)
+        Me.Controls.Add(Me.cbo_bed2_1G)
+        Me.Controls.Add(Me.lbl_Bed2SubHead)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.Label24)
-        Me.Controls.Add(Me.ComboBox18)
+        Me.Controls.Add(Me.cbo_bed2Net)
         Me.Controls.Add(Me.Label25)
-        Me.Controls.Add(Me.ComboBox19)
-        Me.Controls.Add(Me.ComboBox20)
-        Me.Controls.Add(Me.CheckBox7)
+        Me.Controls.Add(Me.cbo_bed2SAT)
+        Me.Controls.Add(Me.cbo_bed2TV)
+        Me.Controls.Add(Me.chk_HeatPumpBathRoom)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label27)
-        Me.Controls.Add(Me.ComboBox21)
-        Me.Controls.Add(Me.ComboBox22)
-        Me.Controls.Add(Me.Label28)
-        Me.Controls.Add(Me.CheckBox4)
+        Me.Controls.Add(Me.cbo_bath2G)
+        Me.Controls.Add(Me.cbo_bath1G)
+        Me.Controls.Add(Me.lbl_BathSubHead)
+        Me.Controls.Add(Me.chk_HeatPumpLiving)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.ComboBox4)
-        Me.Controls.Add(Me.ComboBox7)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.cbo_Living2G)
+        Me.Controls.Add(Me.cbo_Living1G)
+        Me.Controls.Add(Me.lbl_LivingSubHead)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.ComboBox8)
+        Me.Controls.Add(Me.cbo_LivingNet)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.ComboBox10)
-        Me.Controls.Add(Me.ComboBox11)
-        Me.Controls.Add(Me.CheckBox5)
+        Me.Controls.Add(Me.cbo_LivingSAT)
+        Me.Controls.Add(Me.cbo_LivingTV)
+        Me.Controls.Add(Me.chk_HeatPumpBedOne)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.ComboBox15)
-        Me.Controls.Add(Me.ComboBox14)
-        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.cbo_bed1_2G)
+        Me.Controls.Add(Me.cbo_bed1_1G)
+        Me.Controls.Add(Me.lbl_Bed1SubHead)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.ComboBox13)
+        Me.Controls.Add(Me.cbo_bed1Net)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.ComboBox12)
-        Me.Controls.Add(Me.ComboBox9)
+        Me.Controls.Add(Me.cbo_bed1SAT)
+        Me.Controls.Add(Me.cbo_bed1TV)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.ComboBox5)
-        Me.Controls.Add(Me.ComboBox6)
+        Me.Controls.Add(Me.cbo_kitchen2G)
+        Me.Controls.Add(Me.cbo_kitchen1G)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.lbl_)
+        Me.Controls.Add(Me.cbo_kitchenNet)
+        Me.Controls.Add(Me.cbo_kitchenSAT)
+        Me.Controls.Add(Me.cbo_kitchenTV)
+        Me.Controls.Add(Me.chk_KitchenC)
+        Me.Controls.Add(Me.chk_KitchenB)
+        Me.Controls.Add(Me.chk_KitchenA)
+        Me.Controls.Add(Me.lbl_kitchenSubHead)
+        Me.Controls.Add(Me.lbl_OrderHeader)
         Me.Name = "frm_OrderDetails"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Order Details"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lbl_ As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents lbl_OrderHeader As Label
+    Friend WithEvents lbl_kitchenSubHead As Label
+    Friend WithEvents chk_KitchenA As CheckBox
+    Friend WithEvents chk_KitchenB As CheckBox
+    Friend WithEvents chk_KitchenC As CheckBox
+    Friend WithEvents cbo_kitchenTV As ComboBox
+    Friend WithEvents cbo_kitchenSAT As ComboBox
+    Friend WithEvents cbo_kitchenNet As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents ComboBox5 As ComboBox
-    Friend WithEvents ComboBox6 As ComboBox
-    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents cbo_kitchen2G As ComboBox
+    Friend WithEvents cbo_kitchen1G As ComboBox
+    Friend WithEvents chk_HeatPumpBedOne As CheckBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents ComboBox15 As ComboBox
-    Friend WithEvents ComboBox14 As ComboBox
-    Friend WithEvents Label16 As Label
+    Friend WithEvents cbo_bed1_2G As ComboBox
+    Friend WithEvents cbo_bed1_1G As ComboBox
+    Friend WithEvents lbl_Bed1SubHead As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents ComboBox13 As ComboBox
+    Friend WithEvents cbo_bed1Net As ComboBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents ComboBox12 As ComboBox
-    Friend WithEvents ComboBox9 As ComboBox
-    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents cbo_bed1SAT As ComboBox
+    Friend WithEvents cbo_bed1TV As ComboBox
+    Friend WithEvents chk_HeatPumpLiving As CheckBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents ComboBox4 As ComboBox
-    Friend WithEvents ComboBox7 As ComboBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents cbo_Living2G As ComboBox
+    Friend WithEvents cbo_Living1G As ComboBox
+    Friend WithEvents lbl_LivingSubHead As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents ComboBox8 As ComboBox
+    Friend WithEvents cbo_LivingNet As ComboBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents ComboBox10 As ComboBox
-    Friend WithEvents ComboBox11 As ComboBox
-    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents cbo_LivingSAT As ComboBox
+    Friend WithEvents cbo_LivingTV As ComboBox
+    Friend WithEvents chk_HeatPumpBedTwo As CheckBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents ComboBox16 As ComboBox
-    Friend WithEvents ComboBox17 As ComboBox
-    Friend WithEvents Label22 As Label
+    Friend WithEvents cbo_bed2_2G As ComboBox
+    Friend WithEvents cbo_bed2_1G As ComboBox
+    Friend WithEvents lbl_Bed2SubHead As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents ComboBox18 As ComboBox
+    Friend WithEvents cbo_bed2Net As ComboBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents ComboBox19 As ComboBox
-    Friend WithEvents ComboBox20 As ComboBox
-    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents cbo_bed2SAT As ComboBox
+    Friend WithEvents cbo_bed2TV As ComboBox
+    Friend WithEvents chk_HeatPumpBathRoom As CheckBox
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents ComboBox21 As ComboBox
-    Friend WithEvents ComboBox22 As ComboBox
-    Friend WithEvents Label28 As Label
+    Friend WithEvents cbo_bath2G As ComboBox
+    Friend WithEvents cbo_bath1G As ComboBox
+    Friend WithEvents lbl_BathSubHead As Label
 End Class
