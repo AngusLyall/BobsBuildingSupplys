@@ -73,7 +73,7 @@ Partial Class frm_OrderDetails
         Me.Label25 = New System.Windows.Forms.Label()
         Me.cbo_bed2SAT = New System.Windows.Forms.ComboBox()
         Me.cbo_bed2TV = New System.Windows.Forms.ComboBox()
-        Me.chk_HeatPumpBathRoom = New System.Windows.Forms.CheckBox()
+        Me.chk_UpgradeBathRoom = New System.Windows.Forms.CheckBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.cbo_bath2G = New System.Windows.Forms.ComboBox()
@@ -85,11 +85,11 @@ Partial Class frm_OrderDetails
         '
         Me.lbl_OrderHeader.AutoSize = True
         Me.lbl_OrderHeader.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_OrderHeader.Location = New System.Drawing.Point(122, 9)
+        Me.lbl_OrderHeader.Location = New System.Drawing.Point(116, 9)
         Me.lbl_OrderHeader.Name = "lbl_OrderHeader"
-        Me.lbl_OrderHeader.Size = New System.Drawing.Size(307, 65)
+        Me.lbl_OrderHeader.Size = New System.Drawing.Size(316, 65)
         Me.lbl_OrderHeader.TabIndex = 0
-        Me.lbl_OrderHeader.Text = "Order Details"
+        Me.lbl_OrderHeader.Text = "Quote Details"
         '
         'lbl_kitchenSubHead
         '
@@ -135,6 +135,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_kitchenTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_kitchenTV.FormattingEnabled = True
+        Me.cbo_kitchenTV.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_kitchenTV.Location = New System.Drawing.Point(100, 115)
         Me.cbo_kitchenTV.Name = "cbo_kitchenTV"
         Me.cbo_kitchenTV.Size = New System.Drawing.Size(54, 23)
@@ -144,6 +145,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_kitchenSAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_kitchenSAT.FormattingEnabled = True
+        Me.cbo_kitchenSAT.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_kitchenSAT.Location = New System.Drawing.Point(100, 144)
         Me.cbo_kitchenSAT.Name = "cbo_kitchenSAT"
         Me.cbo_kitchenSAT.Size = New System.Drawing.Size(54, 23)
@@ -153,6 +155,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_kitchenNet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_kitchenNet.FormattingEnabled = True
+        Me.cbo_kitchenNet.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_kitchenNet.Location = New System.Drawing.Point(100, 173)
         Me.cbo_kitchenNet.Name = "cbo_kitchenNet"
         Me.cbo_kitchenNet.Size = New System.Drawing.Size(54, 23)
@@ -163,18 +166,18 @@ Partial Class frm_OrderDetails
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(160, 118)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(20, 15)
+        Me.Label3.Size = New System.Drawing.Size(51, 15)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "TV"
+        Me.Label3.Text = "TV point"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(160, 146)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(26, 15)
+        Me.Label4.Size = New System.Drawing.Size(57, 15)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "SAT"
+        Me.Label4.Text = "SAT point"
         '
         'Label5
         '
@@ -207,7 +210,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_kitchen2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_kitchen2G.FormattingEnabled = True
-        Me.cbo_kitchen2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_kitchen2G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_kitchen2G.Location = New System.Drawing.Point(222, 144)
         Me.cbo_kitchen2G.Name = "cbo_kitchen2G"
         Me.cbo_kitchen2G.Size = New System.Drawing.Size(54, 23)
@@ -217,7 +220,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_kitchen1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_kitchen1G.FormattingEnabled = True
-        Me.cbo_kitchen1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_kitchen1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_kitchen1G.Location = New System.Drawing.Point(222, 115)
         Me.cbo_kitchen1G.Name = "cbo_kitchen1G"
         Me.cbo_kitchen1G.Size = New System.Drawing.Size(54, 23)
@@ -226,7 +229,7 @@ Partial Class frm_OrderDetails
         'chk_HeatPumpBedOne
         '
         Me.chk_HeatPumpBedOne.AutoSize = True
-        Me.chk_HeatPumpBedOne.Location = New System.Drawing.Point(412, 294)
+        Me.chk_HeatPumpBedOne.Location = New System.Drawing.Point(406, 426)
         Me.chk_HeatPumpBedOne.Name = "chk_HeatPumpBedOne"
         Me.chk_HeatPumpBedOne.Size = New System.Drawing.Size(128, 19)
         Me.chk_HeatPumpBedOne.TabIndex = 40
@@ -236,7 +239,7 @@ Partial Class frm_OrderDetails
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(470, 263)
+        Me.Label12.Location = New System.Drawing.Point(464, 403)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(64, 15)
         Me.Label12.TabIndex = 39
@@ -245,7 +248,7 @@ Partial Class frm_OrderDetails
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(470, 235)
+        Me.Label15.Location = New System.Drawing.Point(464, 375)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 15)
         Me.Label15.TabIndex = 38
@@ -255,8 +258,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed1_2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1_2G.FormattingEnabled = True
-        Me.cbo_bed1_2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_bed1_2G.Location = New System.Drawing.Point(410, 267)
+        Me.cbo_bed1_2G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_bed1_2G.Location = New System.Drawing.Point(404, 399)
         Me.cbo_bed1_2G.Name = "cbo_bed1_2G"
         Me.cbo_bed1_2G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed1_2G.TabIndex = 37
@@ -265,8 +268,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed1_1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1_1G.FormattingEnabled = True
-        Me.cbo_bed1_1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_bed1_1G.Location = New System.Drawing.Point(410, 238)
+        Me.cbo_bed1_1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_bed1_1G.Location = New System.Drawing.Point(404, 370)
         Me.cbo_bed1_1G.Name = "cbo_bed1_1G"
         Me.cbo_bed1_1G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed1_1G.TabIndex = 36
@@ -275,7 +278,7 @@ Partial Class frm_OrderDetails
         '
         Me.lbl_Bed1SubHead.AutoSize = True
         Me.lbl_Bed1SubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_Bed1SubHead.Location = New System.Drawing.Point(291, 205)
+        Me.lbl_Bed1SubHead.Location = New System.Drawing.Point(285, 337)
         Me.lbl_Bed1SubHead.Name = "lbl_Bed1SubHead"
         Me.lbl_Bed1SubHead.Size = New System.Drawing.Size(153, 30)
         Me.lbl_Bed1SubHead.TabIndex = 35
@@ -284,7 +287,7 @@ Partial Class frm_OrderDetails
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(351, 293)
+        Me.Label17.Location = New System.Drawing.Point(345, 431)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(52, 15)
         Me.Label17.TabIndex = 34
@@ -293,17 +296,18 @@ Partial Class frm_OrderDetails
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(351, 263)
+        Me.Label18.Location = New System.Drawing.Point(345, 402)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(26, 15)
+        Me.Label18.Size = New System.Drawing.Size(57, 15)
         Me.Label18.TabIndex = 33
-        Me.Label18.Text = "SAT"
+        Me.Label18.Text = "SAT Point"
         '
         'cbo_bed1Net
         '
         Me.cbo_bed1Net.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1Net.FormattingEnabled = True
-        Me.cbo_bed1Net.Location = New System.Drawing.Point(291, 296)
+        Me.cbo_bed1Net.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_bed1Net.Location = New System.Drawing.Point(285, 428)
         Me.cbo_bed1Net.Name = "cbo_bed1Net"
         Me.cbo_bed1Net.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed1Net.TabIndex = 31
@@ -311,17 +315,18 @@ Partial Class frm_OrderDetails
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(351, 235)
+        Me.Label19.Location = New System.Drawing.Point(345, 372)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(20, 15)
+        Me.Label19.Size = New System.Drawing.Size(51, 15)
         Me.Label19.TabIndex = 32
-        Me.Label19.Text = "TV"
+        Me.Label19.Text = "TV Point"
         '
         'cbo_bed1SAT
         '
         Me.cbo_bed1SAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1SAT.FormattingEnabled = True
-        Me.cbo_bed1SAT.Location = New System.Drawing.Point(291, 267)
+        Me.cbo_bed1SAT.Items.AddRange(New Object() {"0", "1"})
+        Me.cbo_bed1SAT.Location = New System.Drawing.Point(285, 398)
         Me.cbo_bed1SAT.Name = "cbo_bed1SAT"
         Me.cbo_bed1SAT.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed1SAT.TabIndex = 30
@@ -330,7 +335,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed1TV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1TV.FormattingEnabled = True
-        Me.cbo_bed1TV.Location = New System.Drawing.Point(291, 238)
+        Me.cbo_bed1TV.Items.AddRange(New Object() {"0", "1"})
+        Me.cbo_bed1TV.Location = New System.Drawing.Point(285, 370)
         Me.cbo_bed1TV.Name = "cbo_bed1TV"
         Me.cbo_bed1TV.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed1TV.TabIndex = 29
@@ -338,7 +344,7 @@ Partial Class frm_OrderDetails
         'chk_HeatPumpLiving
         '
         Me.chk_HeatPumpLiving.AutoSize = True
-        Me.chk_HeatPumpLiving.Location = New System.Drawing.Point(131, 294)
+        Me.chk_HeatPumpLiving.Location = New System.Drawing.Point(202, 296)
         Me.chk_HeatPumpLiving.Name = "chk_HeatPumpLiving"
         Me.chk_HeatPumpLiving.Size = New System.Drawing.Size(128, 19)
         Me.chk_HeatPumpLiving.TabIndex = 52
@@ -348,7 +354,7 @@ Partial Class frm_OrderDetails
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(189, 263)
+        Me.Label13.Location = New System.Drawing.Point(261, 271)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(64, 15)
         Me.Label13.TabIndex = 51
@@ -357,7 +363,7 @@ Partial Class frm_OrderDetails
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(189, 235)
+        Me.Label14.Location = New System.Drawing.Point(262, 241)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(64, 15)
         Me.Label14.TabIndex = 50
@@ -367,8 +373,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_Living2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_Living2G.FormattingEnabled = True
-        Me.cbo_Living2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_Living2G.Location = New System.Drawing.Point(129, 267)
+        Me.cbo_Living2G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_Living2G.Location = New System.Drawing.Point(204, 267)
         Me.cbo_Living2G.Name = "cbo_Living2G"
         Me.cbo_Living2G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_Living2G.TabIndex = 49
@@ -377,8 +383,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_Living1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_Living1G.FormattingEnabled = True
-        Me.cbo_Living1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_Living1G.Location = New System.Drawing.Point(129, 238)
+        Me.cbo_Living1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_Living1G.Location = New System.Drawing.Point(205, 238)
         Me.cbo_Living1G.Name = "cbo_Living1G"
         Me.cbo_Living1G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_Living1G.TabIndex = 48
@@ -396,7 +402,7 @@ Partial Class frm_OrderDetails
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(70, 293)
+        Me.Label9.Location = New System.Drawing.Point(68, 299)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(52, 15)
         Me.Label9.TabIndex = 46
@@ -405,16 +411,17 @@ Partial Class frm_OrderDetails
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(70, 263)
+        Me.Label10.Location = New System.Drawing.Point(70, 269)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(26, 15)
+        Me.Label10.Size = New System.Drawing.Size(132, 15)
         Me.Label10.TabIndex = 45
-        Me.Label10.Text = "SAT"
+        Me.Label10.Text = "Satellite Dish + TV point"
         '
         'cbo_LivingNet
         '
         Me.cbo_LivingNet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_LivingNet.FormattingEnabled = True
+        Me.cbo_LivingNet.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_LivingNet.Location = New System.Drawing.Point(10, 296)
         Me.cbo_LivingNet.Name = "cbo_LivingNet"
         Me.cbo_LivingNet.Size = New System.Drawing.Size(54, 23)
@@ -423,16 +430,17 @@ Partial Class frm_OrderDetails
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(70, 235)
+        Me.Label11.Location = New System.Drawing.Point(70, 240)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(20, 15)
+        Me.Label11.Size = New System.Drawing.Size(123, 15)
         Me.Label11.TabIndex = 44
-        Me.Label11.Text = "TV"
+        Me.Label11.Text = "Roof Aerial + TV point"
         '
         'cbo_LivingSAT
         '
         Me.cbo_LivingSAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_LivingSAT.FormattingEnabled = True
+        Me.cbo_LivingSAT.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_LivingSAT.Location = New System.Drawing.Point(10, 267)
         Me.cbo_LivingSAT.Name = "cbo_LivingSAT"
         Me.cbo_LivingSAT.Size = New System.Drawing.Size(54, 23)
@@ -442,6 +450,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_LivingTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_LivingTV.FormattingEnabled = True
+        Me.cbo_LivingTV.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_LivingTV.Location = New System.Drawing.Point(10, 238)
         Me.cbo_LivingTV.Name = "cbo_LivingTV"
         Me.cbo_LivingTV.Size = New System.Drawing.Size(54, 23)
@@ -479,7 +488,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed2_2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed2_2G.FormattingEnabled = True
-        Me.cbo_bed2_2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed2_2G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_bed2_2G.Location = New System.Drawing.Point(129, 399)
         Me.cbo_bed2_2G.Name = "cbo_bed2_2G"
         Me.cbo_bed2_2G.Size = New System.Drawing.Size(54, 23)
@@ -489,7 +498,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed2_1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed2_1G.FormattingEnabled = True
-        Me.cbo_bed2_1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbo_bed2_1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_bed2_1G.Location = New System.Drawing.Point(129, 370)
         Me.cbo_bed2_1G.Name = "cbo_bed2_1G"
         Me.cbo_bed2_1G.Size = New System.Drawing.Size(54, 23)
@@ -508,7 +517,7 @@ Partial Class frm_OrderDetails
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(70, 425)
+        Me.Label23.Location = New System.Drawing.Point(70, 431)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(52, 15)
         Me.Label23.TabIndex = 70
@@ -517,16 +526,17 @@ Partial Class frm_OrderDetails
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(70, 395)
+        Me.Label24.Location = New System.Drawing.Point(70, 402)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(26, 15)
+        Me.Label24.Size = New System.Drawing.Size(57, 15)
         Me.Label24.TabIndex = 69
-        Me.Label24.Text = "SAT"
+        Me.Label24.Text = "SAT point"
         '
         'cbo_bed2Net
         '
         Me.cbo_bed2Net.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed2Net.FormattingEnabled = True
+        Me.cbo_bed2Net.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_bed2Net.Location = New System.Drawing.Point(10, 428)
         Me.cbo_bed2Net.Name = "cbo_bed2Net"
         Me.cbo_bed2Net.Size = New System.Drawing.Size(54, 23)
@@ -535,16 +545,17 @@ Partial Class frm_OrderDetails
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(70, 367)
+        Me.Label25.Location = New System.Drawing.Point(70, 373)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(20, 15)
+        Me.Label25.Size = New System.Drawing.Size(51, 15)
         Me.Label25.TabIndex = 68
-        Me.Label25.Text = "TV"
+        Me.Label25.Text = "TV point"
         '
         'cbo_bed2SAT
         '
         Me.cbo_bed2SAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed2SAT.FormattingEnabled = True
+        Me.cbo_bed2SAT.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_bed2SAT.Location = New System.Drawing.Point(10, 399)
         Me.cbo_bed2SAT.Name = "cbo_bed2SAT"
         Me.cbo_bed2SAT.Size = New System.Drawing.Size(54, 23)
@@ -554,25 +565,26 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed2TV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed2TV.FormattingEnabled = True
+        Me.cbo_bed2TV.Items.AddRange(New Object() {"0", "1"})
         Me.cbo_bed2TV.Location = New System.Drawing.Point(10, 370)
         Me.cbo_bed2TV.Name = "cbo_bed2TV"
         Me.cbo_bed2TV.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bed2TV.TabIndex = 65
         '
-        'chk_HeatPumpBathRoom
+        'chk_UpgradeBathRoom
         '
-        Me.chk_HeatPumpBathRoom.AutoSize = True
-        Me.chk_HeatPumpBathRoom.Location = New System.Drawing.Point(293, 426)
-        Me.chk_HeatPumpBathRoom.Name = "chk_HeatPumpBathRoom"
-        Me.chk_HeatPumpBathRoom.Size = New System.Drawing.Size(128, 19)
-        Me.chk_HeatPumpBathRoom.TabIndex = 64
-        Me.chk_HeatPumpBathRoom.Text = "Heat Pump (4.5Kw)"
-        Me.chk_HeatPumpBathRoom.UseVisualStyleBackColor = True
+        Me.chk_UpgradeBathRoom.AutoSize = True
+        Me.chk_UpgradeBathRoom.Location = New System.Drawing.Point(359, 295)
+        Me.chk_UpgradeBathRoom.Name = "chk_UpgradeBathRoom"
+        Me.chk_UpgradeBathRoom.Size = New System.Drawing.Size(71, 19)
+        Me.chk_UpgradeBathRoom.TabIndex = 64
+        Me.chk_UpgradeBathRoom.Text = "Upgrade"
+        Me.chk_UpgradeBathRoom.UseVisualStyleBackColor = True
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(351, 395)
+        Me.Label26.Location = New System.Drawing.Point(417, 264)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(64, 15)
         Me.Label26.TabIndex = 63
@@ -581,7 +593,7 @@ Partial Class frm_OrderDetails
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(351, 367)
+        Me.Label27.Location = New System.Drawing.Point(417, 236)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(64, 15)
         Me.Label27.TabIndex = 62
@@ -591,8 +603,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bath2G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bath2G.FormattingEnabled = True
-        Me.cbo_bath2G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_bath2G.Location = New System.Drawing.Point(291, 399)
+        Me.cbo_bath2G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_bath2G.Location = New System.Drawing.Point(357, 268)
         Me.cbo_bath2G.Name = "cbo_bath2G"
         Me.cbo_bath2G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bath2G.TabIndex = 61
@@ -601,8 +613,8 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bath1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bath1G.FormattingEnabled = True
-        Me.cbo_bath1G.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbo_bath1G.Location = New System.Drawing.Point(291, 370)
+        Me.cbo_bath1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+        Me.cbo_bath1G.Location = New System.Drawing.Point(357, 239)
         Me.cbo_bath1G.Name = "cbo_bath1G"
         Me.cbo_bath1G.Size = New System.Drawing.Size(54, 23)
         Me.cbo_bath1G.TabIndex = 60
@@ -611,7 +623,7 @@ Partial Class frm_OrderDetails
         '
         Me.lbl_BathSubHead.AutoSize = True
         Me.lbl_BathSubHead.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_BathSubHead.Location = New System.Drawing.Point(291, 337)
+        Me.lbl_BathSubHead.Location = New System.Drawing.Point(357, 206)
         Me.lbl_BathSubHead.Name = "lbl_BathSubHead"
         Me.lbl_BathSubHead.Size = New System.Drawing.Size(104, 30)
         Me.lbl_BathSubHead.TabIndex = 59
@@ -621,7 +633,7 @@ Partial Class frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(550, 476)
+        Me.ClientSize = New System.Drawing.Size(548, 476)
         Me.Controls.Add(Me.chk_HeatPumpBedTwo)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
@@ -634,7 +646,7 @@ Partial Class frm_OrderDetails
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.cbo_bed2SAT)
         Me.Controls.Add(Me.cbo_bed2TV)
-        Me.Controls.Add(Me.chk_HeatPumpBathRoom)
+        Me.Controls.Add(Me.chk_UpgradeBathRoom)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.cbo_bath2G)
@@ -738,7 +750,7 @@ Partial Class frm_OrderDetails
     Friend WithEvents Label25 As Label
     Friend WithEvents cbo_bed2SAT As ComboBox
     Friend WithEvents cbo_bed2TV As ComboBox
-    Friend WithEvents chk_HeatPumpBathRoom As CheckBox
+    Friend WithEvents chk_UpgradeBathRoom As CheckBox
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents cbo_bath2G As ComboBox

@@ -158,7 +158,7 @@
         End If
     End Sub
 
-    Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBathRoom.CheckedChanged
+    Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_UpgradeBathRoom.CheckedChanged
         If BATHOption = False Then
             BATHOption = True
             BATHUpgrade = 1
@@ -168,4 +168,91 @@
         End If
     End Sub
 
+    Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
+        KNET = cbo_kitchenNet.Text
+    End Sub
+
+    Private Sub cbo_LivingNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingNet.SelectedIndexChanged
+        LRNET = cbo_LivingNet.Text
+    End Sub
+
+    Private Sub cbo_bed1Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1Net.SelectedIndexChanged
+        BRONET = cbo_bed1Net.Text
+    End Sub
+
+    Private Sub cbo_bed2Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2Net.SelectedIndexChanged
+        BRTNET = cbo_bed2Net.Text
+    End Sub
+
+    Private Sub cbo_kitchenTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenTV.SelectedIndexChanged
+        KTV = cbo_kitchenTV.Text
+    End Sub
+
+    Private Sub cbo_kitchenSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenSAT.SelectedIndexChanged
+        KSAT = cbo_kitchenSAT.Text
+    End Sub
+
+    Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
+        K1G = cbo_kitchen1G.Text
+    End Sub
+
+    Private Sub cbo_kitchen2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen2G.SelectedIndexChanged
+        K2G = cbo_kitchen2G.Text
+    End Sub
+
+    Private Sub cbo_LivingTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingTV.SelectedIndexChanged
+        LRTV = cbo_LivingTV.Text
+    End Sub
+
+    Private Sub cbo_LivingSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingSAT.SelectedIndexChanged
+        LRSAT = cbo_LivingSAT.Text
+    End Sub
+
+    Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
+        LR1G = cbo_Living1G.Text
+    End Sub
+
+    Private Sub cbo_Living2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living2G.SelectedIndexChanged
+        LR2G = cbo_Living2G.Text
+    End Sub
+
+    Private Sub cbo_bath1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath1G.SelectedIndexChanged
+        BATH1G = cbo_bath1G.Text
+    End Sub
+
+    Private Sub cbo_bath2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath2G.SelectedIndexChanged
+        BATH2G = cbo_bath2G.Text
+    End Sub
+
+    Private Sub cbo_bed2TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2TV.SelectedIndexChanged
+        BRTTV = cbo_bed2TV.Text
+    End Sub
+
+    Private Sub cbo_bed2SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2SAT.SelectedIndexChanged
+        BRTSAT = cbo_bed2SAT.Text
+    End Sub
+
+    Private Sub cbo_bed2_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_1G.SelectedIndexChanged
+        BRT1G = cbo_bed1_1G.Text
+    End Sub
+
+    Private Sub cbo_bed2_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_2G.SelectedIndexChanged
+        BRT2G = cbo_bed1_2G.Text
+    End Sub
+
+    Private Sub cbo_bed1TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1TV.SelectedIndexChanged
+        BROTV = cbo_bed1TV.Text
+    End Sub
+
+    Private Sub cbo_bed1SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1SAT.SelectedIndexChanged
+        BROSAT = cbo_bed1SAT.Text
+    End Sub
+
+    Private Sub cbo_bed1_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_1G.SelectedIndexChanged
+        BRO1G = cbo_bed1_1G.Text
+    End Sub
+
+    Private Sub cbo_bed1_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_2G.SelectedIndexChanged
+        BRO2G = cbo_bed2_2G.Text
+    End Sub
 End Class
