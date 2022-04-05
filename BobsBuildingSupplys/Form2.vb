@@ -81,6 +81,11 @@
 
     End Sub
 
+    Private Sub input_rules()
+        Dim netpointcheck As Integer
+
+    End Sub
+
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
         If KitchenA = False Then
             If KitchenB Or KitchenC = True Then
