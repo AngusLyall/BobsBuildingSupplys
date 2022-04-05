@@ -106,9 +106,9 @@ Partial Class frm_OrderDetails
         Me.chk_KitchenA.AutoSize = True
         Me.chk_KitchenA.Location = New System.Drawing.Point(12, 121)
         Me.chk_KitchenA.Name = "chk_KitchenA"
-        Me.chk_KitchenA.Size = New System.Drawing.Size(74, 19)
+        Me.chk_KitchenA.Size = New System.Drawing.Size(82, 19)
         Me.chk_KitchenA.TabIndex = 2
-        Me.chk_KitchenA.Text = "Option A"
+        Me.chk_KitchenA.Text = "Upgrade A"
         Me.chk_KitchenA.UseVisualStyleBackColor = True
         '
         'chk_KitchenB
@@ -116,9 +116,9 @@ Partial Class frm_OrderDetails
         Me.chk_KitchenB.AutoSize = True
         Me.chk_KitchenB.Location = New System.Drawing.Point(12, 146)
         Me.chk_KitchenB.Name = "chk_KitchenB"
-        Me.chk_KitchenB.Size = New System.Drawing.Size(73, 19)
+        Me.chk_KitchenB.Size = New System.Drawing.Size(81, 19)
         Me.chk_KitchenB.TabIndex = 3
-        Me.chk_KitchenB.Text = "Option B"
+        Me.chk_KitchenB.Text = "Upgrade B"
         Me.chk_KitchenB.UseVisualStyleBackColor = True
         '
         'chk_KitchenC
@@ -126,9 +126,9 @@ Partial Class frm_OrderDetails
         Me.chk_KitchenC.AutoSize = True
         Me.chk_KitchenC.Location = New System.Drawing.Point(12, 171)
         Me.chk_KitchenC.Name = "chk_KitchenC"
-        Me.chk_KitchenC.Size = New System.Drawing.Size(74, 19)
+        Me.chk_KitchenC.Size = New System.Drawing.Size(82, 19)
         Me.chk_KitchenC.TabIndex = 4
-        Me.chk_KitchenC.Text = "Option C"
+        Me.chk_KitchenC.Text = "Upgrade C"
         Me.chk_KitchenC.UseVisualStyleBackColor = True
         '
         'cbo_kitchenTV

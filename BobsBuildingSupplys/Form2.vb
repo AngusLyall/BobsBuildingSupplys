@@ -78,10 +78,17 @@
         BathRoom(0) = BATH1G
         BathRoom(1) = BATH2G
         BathRoom(2) = BATHUpgrade
+
     End Sub
 
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
         If KitchenA = False Then
+            If KitchenB Or KitchenC = True Then
+                chk_KitchenB.Checked = False
+                chk_KitchenC.Checked = False
+                KitchenB = False
+                KitchenC = False
+            End If
             KitchenA = True
             Kupgrade = 1
         Else
@@ -91,19 +98,33 @@
 
     Private Sub chk_KitchenB_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenB.CheckedChanged
         If KitchenB = False Then
+            If KitchenA Or KitchenC = True Then
+                chk_KitchenA.Checked = False
+                chk_KitchenC.Checked = False
+                KitchenA = False
+                KitchenC = False
+            End If
             KitchenB = True
             Kupgrade = 2
         Else
             KitchenB = False
+            Kupgrade = 0
         End If
     End Sub
 
     Private Sub chk_KitchenC_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenC.CheckedChanged
         If KitchenC = False Then
+            If KitchenA Or KitchenB = True Then
+                chk_KitchenA.Checked = False
+                chk_KitchenB.Checked = False
+                KitchenA = False
+                KitchenB = False
+            End If
             KitchenC = True
             Kupgrade = 3
         Else
             KitchenC = False
+            Kupgrade = 0
         End If
     End Sub
 
@@ -113,6 +134,7 @@
             LRHeatPump = 1
         Else
             LRHeat = False
+            LRHeatPump = 0
         End If
     End Sub
 
@@ -122,6 +144,7 @@
             BROHeatPump = 1
         Else
             BROHeat = False
+            BROHeatPump = 0
         End If
     End Sub
 
@@ -131,6 +154,7 @@
             BRTHeatPump = 1
         Else
             BRTHeat = False
+            BRTHeatPump = 0
         End If
     End Sub
 
@@ -140,6 +164,8 @@
             BATHUpgrade = 1
         Else
             BATHOption = False
+            BATHUpgrade = 0
         End If
     End Sub
+
 End Class
