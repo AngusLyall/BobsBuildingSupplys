@@ -40,6 +40,12 @@
     Dim BRTHeat As Boolean = False
 
 
+    Dim kitchen_option As Boolean = False
+    Dim living_option As Boolean = False
+    Dim bedroomOne_option As Boolean = False
+    Dim bedroomTwo_option As Boolean = False
+
+
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomerDetails.Hide()
 
@@ -82,7 +88,121 @@
     End Sub
 
     Private Sub input_rules()
+
+
+
         Dim netpointcheck As Integer
+        Dim swtichpoints As Integer
+        Dim kitchendefult As Boolean = True
+
+        Dim remainingpoints As Integer = 8
+
+        Dim BROList As Integer
+        Dim BRTList As Integer
+        Dim LRList As Integer
+        Dim KitList As Integer
+
+
+
+        swtichpoints = BRONET + BRTNET + LRNET
+        netpointcheck = KNET + BRONET + BRTNET + LRNET
+
+        remainingpoints = 8 - netpointcheck
+
+
+
+        If swtichpoints = 0 Then
+            cbo_kitchenNet.Items.Add("0")
+            kitchendefult = True
+        End If
+
+        If swtichpoints > 1 And KNET = 0 Then
+            cbo_kitchenNet.Text = 1
+            kitchendefult = False
+        Else
+            If netpointcheck = 1 Then
+                Label1.Text = "You Need More Points"
+            End If
+
+        End If
+
+
+
+
+
+
+
+        ' Bed Room One
+        If remainingpoints < 5 Then
+            cbo_bed1Net.Items.Clear()
+            BROList = remainingpoints
+            Do Until BROList = -1
+                cbo_bed1Net.Items.Add(BROList)
+                BROList = BROList - 1
+            Loop
+        Else
+            cbo_bed1Net.Items.Clear()
+            BROList = 4
+            Do Until BROList = -1
+                cbo_bed1Net.Items.Add(BROList)
+                BROList = BROList - 1
+            Loop
+        End If
+
+        ' Bed Room Two
+        If remainingpoints < 5 Then
+            cbo_bed2Net.Items.Clear()
+            BRTList = remainingpoints
+            Do Until BRTList = -1
+                cbo_bed2Net.Items.Add(BRTList)
+                BRTList = BRTList - 1
+            Loop
+        Else
+            cbo_bed2Net.Items.Clear()
+            BRTList = 4
+            Do Until BRTList = -1
+                cbo_bed2Net.Items.Add(BRTList)
+                BRTList = BRTList - 1
+            Loop
+        End If
+
+
+        '  Living Room
+        If remainingpoints < 5 Then
+            cbo_LivingNet.Items.Clear()
+            LRList = remainingpoints
+            Do Until LRList = -1
+                cbo_LivingNet.Items.Add(LRList)
+                LRList = LRList - 1
+            Loop
+        Else
+            cbo_LivingNet.Items.Clear()
+            LRList = 4
+            Do Until LRList = -1
+                cbo_LivingNet.Items.Add(LRList)
+                LRList = LRList - 1
+            Loop
+        End If
+
+        ' kitchen
+        If remainingpoints < 5 Then
+            cbo_kitchenNet.Items.Clear()
+            Label1.Text = KNET
+            cbo_kitchenNet.Text = KNET
+            KitList = remainingpoints
+            Do Until KitList = -1
+                cbo_kitchenNet.Items.Add(KitList)
+                KitList = KitList - 1
+            Loop
+        Else
+            cbo_kitchenNet.Items.Clear()
+            cbo_kitchenNet.Text = KNET
+            KitList = 4
+            Do Until KitList = -1
+                cbo_kitchenNet.Items.Add(KitList)
+                KitList = KitList - 1
+            Loop
+        End If
 
     End Sub
 
@@ -175,18 +295,28 @@
 
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
         KNET = cbo_kitchenNet.Text
+        lbl_knet.Text = KNET
+        input_rules()
     End Sub
 
     Private Sub cbo_LivingNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingNet.SelectedIndexChanged
         LRNET = cbo_LivingNet.Text
+        lbl_LRNET.Text = LRNET
+        input_rules()
     End Sub
 
     Private Sub cbo_bed1Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1Net.SelectedIndexChanged
         BRONET = cbo_bed1Net.Text
+        lbl_BRONET.Text = BRONET
+        input_rules()
+
     End Sub
 
     Private Sub cbo_bed2Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2Net.SelectedIndexChanged
         BRTNET = cbo_bed2Net.Text
+        lbl_BRTNET.Text = BRTNET
+        input_rules()
+
     End Sub
 
     Private Sub cbo_kitchenTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenTV.SelectedIndexChanged

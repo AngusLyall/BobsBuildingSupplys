@@ -1,6 +1,7 @@
 ﻿Imports System.IO ' used for the web requets
 Imports System.Net ' used for web requests
 Imports System.Xml ' used for the xml files that I create and read
+Imports System.json
 
 Public Class CustomerDetails
     Dim Billingtextchanged As Boolean = False
