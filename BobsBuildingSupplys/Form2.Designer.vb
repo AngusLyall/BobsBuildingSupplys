@@ -79,7 +79,6 @@ Partial Class frm_OrderDetails
         Me.cbo_bath2G = New System.Windows.Forms.ComboBox()
         Me.cbo_bath1G = New System.Windows.Forms.ComboBox()
         Me.lbl_BathSubHead = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_knet = New System.Windows.Forms.Label()
         Me.lbl_LRNET = New System.Windows.Forms.Label()
         Me.lbl_BRTNET = New System.Windows.Forms.Label()
@@ -312,6 +311,7 @@ Partial Class frm_OrderDetails
         '
         Me.cbo_bed1Net.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_bed1Net.FormattingEnabled = True
+        Me.cbo_bed1Net.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cbo_bed1Net.Location = New System.Drawing.Point(285, 428)
         Me.cbo_bed1Net.MaxDropDownItems = 4
         Me.cbo_bed1Net.MaxLength = 4
@@ -389,7 +389,7 @@ Partial Class frm_OrderDetails
         '
         'cbo_Living1G
         '
-        Me.cbo_Living1G.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.cbo_Living1G.BackColor = System.Drawing.SystemColors.Window
         Me.cbo_Living1G.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_Living1G.FormattingEnabled = True
         Me.cbo_Living1G.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
@@ -640,15 +640,6 @@ Partial Class frm_OrderDetails
         Me.lbl_BathSubHead.TabIndex = 59
         Me.lbl_BathSubHead.Text = "Bathroom"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(371, 96)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 15)
-        Me.Label1.TabIndex = 77
-        Me.Label1.Text = "Label1"
-        '
         'lbl_knet
         '
         Me.lbl_knet.AutoSize = True
@@ -698,7 +689,6 @@ Partial Class frm_OrderDetails
         Me.Controls.Add(Me.lbl_BRTNET)
         Me.Controls.Add(Me.lbl_LRNET)
         Me.Controls.Add(Me.lbl_knet)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.chk_HeatPumpBedTwo)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
@@ -821,7 +811,6 @@ Partial Class frm_OrderDetails
     Friend WithEvents cbo_bath2G As ComboBox
     Friend WithEvents cbo_bath1G As ComboBox
     Friend WithEvents lbl_BathSubHead As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents lbl_knet As Label
     Friend WithEvents lbl_LRNET As Label
     Friend WithEvents lbl_BRTNET As Label

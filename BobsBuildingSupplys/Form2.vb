@@ -40,10 +40,7 @@
     Dim BRTHeat As Boolean = False
 
 
-    Dim kitchen_option As Boolean = False
-    Dim living_option As Boolean = False
-    Dim bedroomOne_option As Boolean = False
-    Dim bedroomTwo_option As Boolean = False
+
 
 
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -52,7 +49,9 @@
 
     End Sub
 
+
     Private Sub value_store()
+        ' This Stores the values into an array so I can access this infomation easily on other forms and save this infomation to text files.
         Kitchen(0) = KTV
         Kitchen(1) = KSAT
         Kitchen(2) = KNET
@@ -88,7 +87,7 @@
     End Sub
 
     Private Sub input_rules()
-
+        ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total.
 
 
         Dim netpointcheck As Integer
@@ -104,55 +103,49 @@
 
 
 
-        swtichpoints = BRONET + BRTNET + LRNET
-        netpointcheck = KNET + BRONET + BRTNET + LRNET
+        swtichpoints = BRONET + BRTNET + LRNET ' This is used to check if one point is in the kitchen where the router is there needs to be one point from the router to the switch
+        netpointcheck = KNET + BRONET + BRTNET + LRNET ' This Adds the SUM of all the current network points
 
-        remainingpoints = 8 - netpointcheck
+        remainingpoints = 8 - netpointcheck ' this removes all the current points from 8 this then displays the remaining points we have acess to.
 
 
 
         If swtichpoints = 0 Then
-            cbo_kitchenNet.Items.Add("0")
-            kitchendefult = True
+            cbo_kitchenNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
+            kitchendefult = True ' this is used as a check to confirm its state
         End If
 
-        If swtichpoints > 1 And KNET = 0 Then
-            cbo_kitchenNet.Text = 1
-            kitchendefult = False
+        If swtichpoints > 1 And KNET = 0 Then ' this checks if anyother point has a value grater then one this means a point has been selected in another form this then adds 1 to the Kitchen
+            cbo_kitchenNet.Text = 1 ' this adds the one to the kitchen
+            kitchendefult = False ' this is to confirm its state
         Else
             If netpointcheck = 1 Then
-                Label1.Text = "You Need More Points"
+
             End If
 
         End If
 
-
-
-
-
-
-
         ' Bed Room One
-        If remainingpoints < 5 Then
-            cbo_bed1Net.Items.Clear()
-            BROList = remainingpoints
-            Do Until BROList = -1
-                cbo_bed1Net.Items.Add(BROList)
-                BROList = BROList - 1
+        If remainingpoints < 5 Then ' If there are less then 5 Points remaining this then forces the box to have less 4 or less points
+            cbo_bed1Net.Items.Clear() ' this clears the items stored in the box
+            BROList = remainingpoints + BRONET ' this adds the current amount in Bedroom 1 to the remaining points this is so its not counted so we can changed the remaining points and dont have to set this value to 0 or we can only select less values then what is avaible.
+            Do Until BROList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+                cbo_bed1Net.Items.Add(BROList) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
+                BROList = BROList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
             Loop
-        Else
-            cbo_bed1Net.Items.Clear()
-            BROList = 4
-            Do Until BROList = -1
-                cbo_bed1Net.Items.Add(BROList)
-                BROList = BROList - 1
+        Else ' If there are more then 5 remaining points this forces the Box to have its maxium of 4 per room
+            cbo_bed1Net.Items.Clear() ' clears the box to remove old values and stop duplicates
+            BROList = 4 ' this sets the list to 4 the limit per room
+            Do Until BROList = -1 ' loops the value so the list will display 0 1 2 3 4.
+                cbo_bed1Net.Items.Add(BROList) ' this adds the values to the list (combo box)
+                BROList = BROList - 1 ' this removes one each time so it counts down or it would just loop adding 4 endlessly so it now will do  4 then remove one then 3 then remove one ect.
             Loop
         End If
 
         ' Bed Room Two
         If remainingpoints < 5 Then
             cbo_bed2Net.Items.Clear()
-            BRTList = remainingpoints
+            BRTList = remainingpoints + BRTNET
             Do Until BRTList = -1
                 cbo_bed2Net.Items.Add(BRTList)
                 BRTList = BRTList - 1
@@ -170,7 +163,7 @@
         '  Living Room
         If remainingpoints < 5 Then
             cbo_LivingNet.Items.Clear()
-            LRList = remainingpoints
+            LRList = remainingpoints + LRNET
             Do Until LRList = -1
                 cbo_LivingNet.Items.Add(LRList)
                 LRList = LRList - 1
@@ -187,9 +180,8 @@
         ' kitchen
         If remainingpoints < 5 Then
             cbo_kitchenNet.Items.Clear()
-            Label1.Text = KNET
             cbo_kitchenNet.Text = KNET
-            KitList = remainingpoints
+            KitList = remainingpoints + KNET
             Do Until KitList = -1
                 cbo_kitchenNet.Items.Add(KitList)
                 KitList = KitList - 1
@@ -207,17 +199,18 @@
     End Sub
 
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
-        If KitchenA = False Then
-            If KitchenB Or KitchenC = True Then
-                chk_KitchenB.Checked = False
-                chk_KitchenC.Checked = False
-                KitchenB = False
+        If KitchenA = False Then ' This checks if the box is currently ticked if it is false it is not ticked to it runs the next statment
+            If KitchenB Or KitchenC = True Then ' This looks if Kitchen option B or option C have been selected if it has one of then will be = to true
+                chk_KitchenB.Checked = False ' if option B or C has been selected this unticks there box
+                chk_KitchenC.Checked = False ' Same as above
+                KitchenB = False ' This sets the KitchB varible to false this varible is used to check if they have been selected
                 KitchenC = False
             End If
-            KitchenA = True
-            Kupgrade = 1
+            KitchenA = True ' This makes Option A set to True so we know it is selected
+            Kupgrade = 1 ' This sets the value we check later on to detmian what option was selected in other forms and this one.
         Else
-            KitchenA = False
+            KitchenA = False ' This Sets the selected option to false because the user unselected this option
+            Kupgrade = 0 ' 0 is used to show no option has been selected and the user does not want a kitchen Upgrade.
         End If
     End Sub
 
@@ -254,12 +247,12 @@
     End Sub
 
     Private Sub chk_HeatPumpLiving_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpLiving.CheckedChanged
-        If LRHeat = False Then
-            LRHeat = True
-            LRHeatPump = 1
+        If LRHeat = False Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
+            LRHeat = True ' This then changes the varible to true indicating the the tick box has not been selected.
+            LRHeatPump = 1 ' Sets the Value to One meaning the user would like a heatpump in there living room
         Else
-            LRHeat = False
-            LRHeatPump = 0
+            LRHeat = False ' If the Box was already ticked this then sets it to False unticking the box
+            LRHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there living room
         End If
     End Sub
 
@@ -294,9 +287,9 @@
     End Sub
 
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
-        KNET = cbo_kitchenNet.Text
-        lbl_knet.Text = KNET
-        input_rules()
+        KNET = cbo_kitchenNet.Text ' This sets the value KNET to the value of the combo box
+        lbl_knet.Text = KNET ' Because I'm using a combo box as a list the text cant change and because I clear the combox this label is used instaid to display the value of the combox so it cant be cleared 
+        input_rules() ' This calls the sub Imput_Rules this sub is used to check and stop the user from having too many network points and limits it. This Doesn't give the user access to have more then the maxium so they cannot make a mistake and selected more then allowed.
     End Sub
 
     Private Sub cbo_LivingNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingNet.SelectedIndexChanged
@@ -320,7 +313,7 @@
     End Sub
 
     Private Sub cbo_kitchenTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenTV.SelectedIndexChanged
-        KTV = cbo_kitchenTV.Text
+        KTV = cbo_kitchenTV.Text ' Sets the varible KTV to the value of the combo box this will be used to store in the array or can be used to check rules.
     End Sub
 
     Private Sub cbo_kitchenSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenSAT.SelectedIndexChanged

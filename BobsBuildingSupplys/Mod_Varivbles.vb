@@ -22,6 +22,7 @@
     Public Const Network_Switch As Integer = 100
     Public Const GST As Integer = 1.15
     Public Const Trade As Integer = 0.9
+
     Public Kitchen(5) As Integer
     Public BathRoom(2) As Integer
     Public LivingRoom(5) As Integer
