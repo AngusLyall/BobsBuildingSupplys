@@ -48,7 +48,9 @@
 
 
     End Sub
+    Private Sub priceing_math()
 
+    End Sub
 
     Private Sub value_store()
         ' This Stores the values into an array so I can access this infomation easily on other forms and save this infomation to text files.
