@@ -68,7 +68,6 @@
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomerDetails.Hide()
 
-
     End Sub
     Private Sub priceing_math()
         'kitchen Options'
@@ -229,6 +228,7 @@
 
         Dim BROListsocket_2G As Integer
         Dim BRTListsocket_2G As Integer
+        Dim BRTListsocket_1G As Integer
         Dim LRListsocket_2G As Integer
         Dim KitListsocket_2g As Integer
 
@@ -331,18 +331,18 @@
             Loop
         End If
 
-        ' Socket CHECK """""
+        ' Bed Room 2 (2G) Socket Check
         If remainingsocket < 5 Then
             cbo_bed2_2G.Items.Clear()
             BRTListsocket_2G = remainingsocket + BRT2G
             If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4
             Do Until BRTListsocket_2G = -1
-                    cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
-                    BRTListsocket_2G = BRTListsocket_2G - 1
-                Loop
-                cbo_bed2_2G.Text = BRT2G
-            Else
-                cbo_bed2_2G.Items.Clear()
+                cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
+                BRTListsocket_2G = BRTListsocket_2G - 1
+            Loop
+            cbo_bed2_2G.Text = BRT2G
+        Else
+            cbo_bed2_2G.Items.Clear()
             BRTListsocket_2G = 4
             Do Until BRTListsocket_2G = -1
                 cbo_bed2_2G.Items.Add(BRTListsocket_2G)
@@ -352,6 +352,25 @@
         End If
 
 
+        ' Bed Room 2 (1G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_bed2_1G.Items.Clear()
+            BRTListsocket_1G = remainingsocket + BRT1G
+            If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4
+            Do Until BRTListsocket_1G = -1
+                cbo_bed2_1G.Items.Add(BRTListsocket_1G) ' Change cbo_bed2Net to the Box 
+                BRTListsocket_1G = BRTListsocket_1G - 1
+            Loop
+            cbo_bed2_1G.Text = BRT1G
+        Else
+            cbo_bed2_1G.Items.Clear()
+            BRTListsocket_1G = 4
+            Do Until BRTListsocket_1G = -1
+                cbo_bed2_1G.Items.Add(BRTListsocket_1G)
+                BRTListsocket_1G = BRTListsocket_1G - 1
+            Loop
+            cbo_bed2_1G.Text = BRT1G
+        End If
 
 
         '  Living Room
@@ -590,7 +609,13 @@
 
     Private Sub cbo_bed2_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_1G.SelectedIndexChanged
         BRT1G = cbo_bed2_1G.Text
-        input_rules()
+
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
+
     End Sub
     Private Sub bed2_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
         userimputcheck = True

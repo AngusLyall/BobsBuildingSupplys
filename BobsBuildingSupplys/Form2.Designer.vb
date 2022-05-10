@@ -22,7 +22,6 @@ Partial Class frm_OrderDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.lbl_OrderHeader = New System.Windows.Forms.Label()
         Me.lbl_kitchenSubHead = New System.Windows.Forms.Label()
         Me.chk_KitchenA = New System.Windows.Forms.CheckBox()
@@ -87,7 +86,6 @@ Partial Class frm_OrderDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.tmr_limiter = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lbl_OrderHeader
@@ -717,11 +715,6 @@ Partial Class frm_OrderDetails
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Network"
         '
-        'tmr_limiter
-        '
-        Me.tmr_limiter.Enabled = True
-        Me.tmr_limiter.Interval = 1000
-        '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -863,5 +856,4 @@ Partial Class frm_OrderDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents tmr_limiter As Timer
 End Class
