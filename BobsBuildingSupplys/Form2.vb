@@ -227,10 +227,13 @@
         Dim KitList As Integer
 
         Dim BROListsocket_2G As Integer
+        Dim BROListsocket_1G As Integer
         Dim BRTListsocket_2G As Integer
         Dim BRTListsocket_1G As Integer
         Dim LRListsocket_2G As Integer
-        Dim KitListsocket_2g As Integer
+        Dim LRListsocket_1G As Integer
+        Dim KitListsocket_2G As Integer
+        Dim KitListsocket_1G As Integer
 
 
 
@@ -392,6 +395,48 @@
         End If
 
 
+        ' Living Room (2G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_Living2G.Items.Clear()
+            LRListsocket_2G = remainingsocket + LR2G
+            If LRListsocket_2G > 4 Then LRListsocket_2G = 4
+            Do Until LRListsocket_2G = -1
+                cbo_Living2G.Items.Add(LRListsocket_2G) ' Change cbo_bed2Net to the Box 
+                LRListsocket_2G = LRListsocket_2G - 1
+            Loop
+            cbo_Living2G.Text = LR2G
+        Else
+            cbo_Living2G.Items.Clear()
+            LRListsocket_2G = 4
+            Do Until LRListsocket_2G = -1
+                cbo_Living2G.Items.Add(LRListsocket_2G)
+                LRListsocket_2G = LRListsocket_2G - 1
+            Loop
+            cbo_Living2G.Text = LR2G
+        End If
+
+
+        ' Bed Room 2 (1G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_Living1G.Items.Clear()
+            LRListsocket_1G = remainingsocket + LR1G
+            If LRListsocket_1G > 4 Then LRListsocket_1G = 4
+            Do Until LRListsocket_1G = -1
+                cbo_Living1G.Items.Add(LRListsocket_1G) ' Change cbo_bed2Net to the Box 
+                LRListsocket_1G = LRListsocket_1G - 1
+            Loop
+            cbo_Living1G.Text = LR1G
+        Else
+            cbo_Living1G.Items.Clear()
+            LRListsocket_1G = 4
+            Do Until LRListsocket_1G = -1
+                cbo_Living1G.Items.Add(LRListsocket_1G)
+                LRListsocket_1G = LRListsocket_1G - 1
+            Loop
+            cbo_Living1G.Text = LR1G
+        End If
+
+
         ' kitchen
         If remainingpoints < 5 Then
             cbo_kitchenNet.Items.Clear()
@@ -544,6 +589,11 @@
 
     Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
         K1G = cbo_kitchen1G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
     Private Sub kitchen_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
         userimputcheck = True
@@ -551,6 +601,11 @@
 
     Private Sub cbo_kitchen2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen2G.SelectedIndexChanged
         K2G = cbo_kitchen2G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
     Private Sub kitchen_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
@@ -568,22 +623,37 @@
 
     Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
         LR1G = cbo_Living1G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+        End If
     End Sub
-    Private Sub living_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub living_1G_userinput() Handles cbo_Living1G.MouseClick, cbo_Living1G.Enter, cbo_Living1G.KeyPress, cbo_Living1G.KeyUp, cbo_Living1G.KeyDown
         userimputcheck = True
+        Label1.Text = "TEST"
     End Sub
 
 
     Private Sub cbo_Living2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living2G.SelectedIndexChanged
         LR2G = cbo_Living2G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
-    Private Sub living_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub living_2G_userinput() Handles cbo_Living2G.MouseClick, cbo_Living2G.Enter, cbo_Living2G.KeyPress, cbo_Living2G.KeyUp, cbo_Living2G.KeyDown
         userimputcheck = True
     End Sub
 
     Private Sub cbo_bath1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath1G.SelectedIndexChanged
         BATH1G = cbo_bath1G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
     Private Sub bath_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
@@ -592,6 +662,11 @@
 
     Private Sub cbo_bath2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath2G.SelectedIndexChanged
         BATH2G = cbo_bath2G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
     Private Sub bath_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
@@ -645,6 +720,11 @@
 
     Private Sub cbo_bed1_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_1G.SelectedIndexChanged
         BRO1G = cbo_bed1_1G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
     Private Sub bed1_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
@@ -653,6 +733,11 @@
 
     Private Sub cbo_bed1_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_2G.SelectedIndexChanged
         BRO2G = cbo_bed1_2G.Text
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+
+        End If
     End Sub
 
     Private Sub bed1_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
