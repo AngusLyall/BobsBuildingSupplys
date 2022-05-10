@@ -20,12 +20,18 @@
     Public Const TwoGSocket As Integer = 50
     Public Const Network_Point As Integer = 50
     Public Const Network_Switch As Integer = 100
-    Public Const GST As Integer = 1.15
-    Public Const Trade As Integer = 0.9
+    Public Const GST As Decimal = 1.15
+    Public Const Trade As Decimal = 0.9
+
+
 
     Public Kitchen(5) As Integer
     Public BathRoom(2) As Integer
     Public LivingRoom(5) As Integer
     Public BedRoomTwo(5) As Integer
     Public BedRoomOne(5) As Integer
+    Public totalvalue(5) As Integer ' 0 = total,  1 = kitchen,  2 = living room,  3= bedroom1, 4 = bedroom2, 5= bathroom
+
+
+
 End Module

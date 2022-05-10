@@ -22,6 +22,7 @@ Partial Class frm_OrderDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lbl_OrderHeader = New System.Windows.Forms.Label()
         Me.lbl_kitchenSubHead = New System.Windows.Forms.Label()
         Me.chk_KitchenA = New System.Windows.Forms.CheckBox()
@@ -32,7 +33,6 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchenNet = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbo_kitchen2G = New System.Windows.Forms.ComboBox()
@@ -83,6 +83,14 @@ Partial Class frm_OrderDetails
         Me.lbl_LRNET = New System.Windows.Forms.Label()
         Me.lbl_BRTNET = New System.Windows.Forms.Label()
         Me.lbl_BRONET = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lbl_lr2g = New System.Windows.Forms.Label()
+        Me.lbl_lr1g = New System.Windows.Forms.Label()
+        Me.lbl_brt2g = New System.Windows.Forms.Label()
+        Me.tmr_limiter = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lbl_OrderHeader
@@ -183,15 +191,6 @@ Partial Class frm_OrderDetails
         Me.Label4.Size = New System.Drawing.Size(57, 15)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "SAT point"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(160, 176)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 15)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Network"
         '
         'Label7
         '
@@ -464,6 +463,7 @@ Partial Class frm_OrderDetails
         Me.cbo_LivingTV.Location = New System.Drawing.Point(10, 238)
         Me.cbo_LivingTV.Name = "cbo_LivingTV"
         Me.cbo_LivingTV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_LivingTV.Sorted = True
         Me.cbo_LivingTV.TabIndex = 41
         '
         'chk_HeatPumpBedTwo
@@ -502,6 +502,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed2_2G.Location = New System.Drawing.Point(129, 399)
         Me.cbo_bed2_2G.Name = "cbo_bed2_2G"
         Me.cbo_bed2_2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2_2G.Sorted = True
         Me.cbo_bed2_2G.TabIndex = 73
         '
         'cbo_bed2_1G
@@ -512,6 +513,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed2_1G.Location = New System.Drawing.Point(129, 370)
         Me.cbo_bed2_1G.Name = "cbo_bed2_1G"
         Me.cbo_bed2_1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2_1G.Sorted = True
         Me.cbo_bed2_1G.TabIndex = 72
         '
         'lbl_Bed2SubHead
@@ -645,10 +647,12 @@ Partial Class frm_OrderDetails
         Me.lbl_knet.AutoSize = True
         Me.lbl_knet.BackColor = System.Drawing.SystemColors.ControlLight
         Me.lbl_knet.Enabled = False
-        Me.lbl_knet.Location = New System.Drawing.Point(104, 177)
+        Me.lbl_knet.ForeColor = System.Drawing.Color.Black
+        Me.lbl_knet.Location = New System.Drawing.Point(101, 177)
         Me.lbl_knet.Name = "lbl_knet"
-        Me.lbl_knet.Size = New System.Drawing.Size(0, 15)
+        Me.lbl_knet.Size = New System.Drawing.Size(13, 15)
         Me.lbl_knet.TabIndex = 78
+        Me.lbl_knet.Text = "1"
         '
         'lbl_LRNET
         '
@@ -680,11 +684,94 @@ Partial Class frm_OrderDetails
         Me.lbl_BRONET.Size = New System.Drawing.Size(0, 15)
         Me.lbl_BRONET.TabIndex = 81
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(365, 81)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 82
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(96, 97)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(13, 15)
+        Me.Label1.TabIndex = 83
+        Me.Label1.Text = "$"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(394, 122)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 15)
+        Me.Label2.TabIndex = 84
+        Me.Label2.Text = "Label2"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(160, 176)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 15)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Network"
+        '
+        'lbl_lr2g
+        '
+        Me.lbl_lr2g.AutoSize = True
+        Me.lbl_lr2g.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lbl_lr2g.Enabled = False
+        Me.lbl_lr2g.ForeColor = System.Drawing.Color.Black
+        Me.lbl_lr2g.Location = New System.Drawing.Point(206, 271)
+        Me.lbl_lr2g.Name = "lbl_lr2g"
+        Me.lbl_lr2g.Size = New System.Drawing.Size(13, 15)
+        Me.lbl_lr2g.TabIndex = 88
+        Me.lbl_lr2g.Text = "1"
+        '
+        'lbl_lr1g
+        '
+        Me.lbl_lr1g.AutoSize = True
+        Me.lbl_lr1g.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lbl_lr1g.Enabled = False
+        Me.lbl_lr1g.ForeColor = System.Drawing.Color.Black
+        Me.lbl_lr1g.Location = New System.Drawing.Point(206, 242)
+        Me.lbl_lr1g.Name = "lbl_lr1g"
+        Me.lbl_lr1g.Size = New System.Drawing.Size(13, 15)
+        Me.lbl_lr1g.TabIndex = 89
+        Me.lbl_lr1g.Text = "1"
+        '
+        'lbl_brt2g
+        '
+        Me.lbl_brt2g.AutoSize = True
+        Me.lbl_brt2g.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lbl_brt2g.Enabled = False
+        Me.lbl_brt2g.ForeColor = System.Drawing.Color.Black
+        Me.lbl_brt2g.Location = New System.Drawing.Point(160, 337)
+        Me.lbl_brt2g.Name = "lbl_brt2g"
+        Me.lbl_brt2g.Size = New System.Drawing.Size(13, 15)
+        Me.lbl_brt2g.TabIndex = 96
+        Me.lbl_brt2g.Text = "1"
+        '
+        'tmr_limiter
+        '
+        Me.tmr_limiter.Enabled = True
+        Me.tmr_limiter.Interval = 1000
+        '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 476)
+        Me.Controls.Add(Me.lbl_brt2g)
+        Me.Controls.Add(Me.lbl_lr1g)
+        Me.Controls.Add(Me.lbl_lr2g)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_BRONET)
         Me.Controls.Add(Me.lbl_BRTNET)
         Me.Controls.Add(Me.lbl_LRNET)
@@ -764,7 +851,6 @@ Partial Class frm_OrderDetails
     Friend WithEvents cbo_kitchenNet As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents cbo_kitchen2G As ComboBox
@@ -815,4 +901,12 @@ Partial Class frm_OrderDetails
     Friend WithEvents lbl_LRNET As Label
     Friend WithEvents lbl_BRTNET As Label
     Friend WithEvents lbl_BRONET As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lbl_lr2g As Label
+    Friend WithEvents lbl_lr1g As Label
+    Friend WithEvents lbl_brt2g As Label
+    Friend WithEvents tmr_limiter As Timer
 End Class
