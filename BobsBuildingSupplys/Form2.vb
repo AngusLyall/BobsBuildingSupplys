@@ -234,6 +234,8 @@
         Dim LRListsocket_1G As Integer
         Dim KitListsocket_2G As Integer
         Dim KitListsocket_1G As Integer
+        Dim BathListScoket_1G As Integer
+        Dim BathListSocket_2G As Integer
 
 
 
@@ -314,7 +316,51 @@
                 cbo_bed1Net.Items.Add(BROList) ' this adds the values to the list (combo box)
                 BROList = BROList - 1 ' this removes one each time so it counts down or it would just loop adding 4 endlessly so it now will do  4 then remove one then 3 then remove one ect.
             Loop
+
         End If
+
+        ' Bed Room One 2 (2G) Socket Check
+
+        If remainingsocket < 5 Then
+            cbo_bed1_2G.Items.Clear()
+            BROListsocket_2G = remainingsocket + BRO2G
+            If BROListsocket_2G > 4 Then BROListsocket_2G = 4
+            Do Until BROListsocket_2G = -1
+                cbo_bed1_2G.Items.Add(BROListsocket_2G) ' Change cbo_bed2Net to the Box 
+                BROListsocket_2G = BROListsocket_2G - 1
+            Loop
+            cbo_bed1_2G.Text = BRO2G
+        Else
+            cbo_bed1_2G.Items.Clear()
+            BROListsocket_2G = 4
+            Do Until BROListsocket_2G = -1
+                cbo_bed1_2G.Items.Add(BROListsocket_2G)
+                BROListsocket_2G = BROListsocket_2G - 1
+            Loop
+            cbo_bed1_2G.Text = BRO2G
+        End If
+
+
+        ' Bed Room One (1G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_bed1_1G.Items.Clear()
+            BROListsocket_1G = BROListsocket_1G + BRO1G
+            If BROListsocket_1G > 4 Then BROListsocket_1G = 4
+            Do Until BROListsocket_1G = -1
+                cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
+                BROListsocket_1G = BROListsocket_1G - 1
+            Loop
+            cbo_bed1_1G.Text = BRO1G
+        Else
+            cbo_bed1_1G.Items.Clear()
+            BROListsocket_1G = 4
+            Do Until BROListsocket_1G = -1
+                cbo_bed1_1G.Items.Add(BROListsocket_1G)
+                BROListsocket_1G = BROListsocket_1G - 1
+            Loop
+            cbo_bed1_1G.Text = BRO1G
+        End If
+
 
         ' Bed Room Two
         If remainingpoints < 5 Then
@@ -376,6 +422,8 @@
         End If
 
 
+
+
         '  Living Room
         If remainingpoints < 5 Then
             cbo_LivingNet.Items.Clear()
@@ -416,7 +464,7 @@
         End If
 
 
-        ' Bed Room 2 (1G) Socket Check
+        ' Living Room 2 (1G) Socket Check
         If remainingsocket < 5 Then
             cbo_Living1G.Items.Clear()
             LRListsocket_1G = remainingsocket + LR1G
@@ -457,7 +505,46 @@
             Loop
         End If
 
+        ' Kitchen 2 (2G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_kitchen2G.Items.Clear()
+            KitListsocket_2G = remainingsocket + K2G
+            If KitListsocket_2G > 4 Then KitListsocket_2G = 4
+            Do Until KitListsocket_2G = -1
+                cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Change cbo_bed2Net to the Box 
+                KitListsocket_2G = KitListsocket_2G - 1
+            Loop
+            cbo_kitchen2G.Text = K2G
+        Else
+            cbo_kitchen2G.Items.Clear()
+            KitListsocket_2G = 4
+            Do Until KitListsocket_2G = -1
+                cbo_kitchen2G.Items.Add(KitListsocket_2G)
+                KitListsocket_2G = KitListsocket_2G - 1
+            Loop
+            cbo_kitchen2G.Text = K2G
+        End If
 
+
+        ' Kitchen (1G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_kitchen1G.Items.Clear()
+            KitListsocket_1G = remainingsocket + K1G
+            If KitListsocket_1G > 4 Then KitListsocket_1G = 4
+            Do Until KitListsocket_1G = -1
+                cbo_kitchen1G.Items.Add(KitListsocket_1G) ' Change cbo_bed2Net to the Box 
+                KitListsocket_1G = KitListsocket_1G - 1
+            Loop
+            cbo_kitchen1G.Text = K1G
+        Else
+            cbo_kitchen1G.Items.Clear()
+            KitListsocket_1G = 4
+            Do Until KitListsocket_1G = -1
+                cbo_kitchen1G.Items.Add(KitListsocket_1G)
+                KitListsocket_1G = KitListsocket_1G - 1
+            Loop
+            cbo_kitchen1G.Text = K1G
+        End If
 
 
 
@@ -595,7 +682,7 @@
 
         End If
     End Sub
-    Private Sub kitchen_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub kitchen_1G_userinput() Handles cbo_kitchen1G.MouseClick, cbo_kitchen1G.Enter, cbo_kitchen1G.KeyPress, cbo_kitchen1G.KeyUp, cbo_kitchen1G.KeyDown
         userimputcheck = True
     End Sub
 
@@ -608,7 +695,7 @@
         End If
     End Sub
 
-    Private Sub kitchen_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub kitchen_2G_userinput() Handles cbo_kitchen2G.MouseClick, cbo_kitchen2G.Enter, cbo_kitchen2G.KeyPress, cbo_kitchen2G.KeyUp, cbo_kitchen2G.KeyDown
         userimputcheck = True
     End Sub
 
@@ -630,7 +717,6 @@
     End Sub
     Private Sub living_1G_userinput() Handles cbo_Living1G.MouseClick, cbo_Living1G.Enter, cbo_Living1G.KeyPress, cbo_Living1G.KeyUp, cbo_Living1G.KeyDown
         userimputcheck = True
-        Label1.Text = "TEST"
     End Sub
 
 
@@ -656,7 +742,7 @@
         End If
     End Sub
 
-    Private Sub bath_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub bath_1G_userinput() Handles cbo_bath1G.MouseClick, cbo_bath1G.Enter, cbo_bath1G.KeyPress, cbo_bath1G.KeyUp, cbo_bath1G.KeyDown
         userimputcheck = True
     End Sub
 
@@ -669,7 +755,7 @@
         End If
     End Sub
 
-    Private Sub bath_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub bath_2G_userinput() Handles cbo_bath2G.MouseClick, cbo_bath2G.Enter, cbo_bath2G.KeyPress, cbo_bath2G.KeyUp, cbo_bath2G.KeyDown
         userimputcheck = True
     End Sub
 
@@ -692,7 +778,7 @@
         End If
 
     End Sub
-    Private Sub bed2_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub bed2_1G_userinput() Handles cbo_bed2_1G.MouseClick, cbo_bed2_1G.Enter, cbo_bed2_1G.KeyPress, cbo_bed2_1G.KeyUp, cbo_bed2_1G.KeyDown
         userimputcheck = True
     End Sub
     Private Sub cbo_bed2_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_2G.SelectedIndexChanged
@@ -727,7 +813,7 @@
         End If
     End Sub
 
-    Private Sub bed1_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub bed1_1G_userinput() Handles cbo_bed1_1G.MouseClick, cbo_bed1_1G.Enter, cbo_bed1_1G.KeyPress, cbo_bed1_1G.KeyUp, cbo_bed1_1G.KeyDown
         userimputcheck = True
     End Sub
 
@@ -740,7 +826,7 @@
         End If
     End Sub
 
-    Private Sub bed1_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+    Private Sub bed1_2G_userinput() Handles cbo_bed1_2G.MouseClick, cbo_bed1_2G.Enter, cbo_bed1_2G.KeyPress, cbo_bed1_2G.KeyUp, cbo_bed1_2G.KeyDown
         userimputcheck = True
     End Sub
 

@@ -213,6 +213,7 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchen2G.Location = New System.Drawing.Point(222, 144)
         Me.cbo_kitchen2G.Name = "cbo_kitchen2G"
         Me.cbo_kitchen2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchen2G.Sorted = True
         Me.cbo_kitchen2G.TabIndex = 12
         '
         'cbo_kitchen1G
@@ -223,6 +224,7 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchen1G.Location = New System.Drawing.Point(222, 115)
         Me.cbo_kitchen1G.Name = "cbo_kitchen1G"
         Me.cbo_kitchen1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchen1G.Sorted = True
         Me.cbo_kitchen1G.TabIndex = 11
         '
         'chk_HeatPumpBedOne
@@ -261,6 +263,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed1_2G.Location = New System.Drawing.Point(404, 399)
         Me.cbo_bed1_2G.Name = "cbo_bed1_2G"
         Me.cbo_bed1_2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1_2G.Sorted = True
         Me.cbo_bed1_2G.TabIndex = 37
         '
         'cbo_bed1_1G
@@ -271,6 +274,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed1_1G.Location = New System.Drawing.Point(404, 370)
         Me.cbo_bed1_1G.Name = "cbo_bed1_1G"
         Me.cbo_bed1_1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1_1G.Sorted = True
         Me.cbo_bed1_1G.TabIndex = 36
         '
         'lbl_Bed1SubHead
@@ -379,6 +383,7 @@ Partial Class frm_OrderDetails
         Me.cbo_Living2G.Location = New System.Drawing.Point(204, 267)
         Me.cbo_Living2G.Name = "cbo_Living2G"
         Me.cbo_Living2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_Living2G.Sorted = True
         Me.cbo_Living2G.TabIndex = 49
         '
         'cbo_Living1G
@@ -390,6 +395,7 @@ Partial Class frm_OrderDetails
         Me.cbo_Living1G.Location = New System.Drawing.Point(205, 238)
         Me.cbo_Living1G.Name = "cbo_Living1G"
         Me.cbo_Living1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_Living1G.Sorted = True
         Me.cbo_Living1G.TabIndex = 48
         '
         'lbl_LivingSubHead
@@ -615,6 +621,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bath2G.Location = New System.Drawing.Point(357, 268)
         Me.cbo_bath2G.Name = "cbo_bath2G"
         Me.cbo_bath2G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bath2G.Sorted = True
         Me.cbo_bath2G.TabIndex = 61
         '
         'cbo_bath1G
@@ -625,6 +632,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bath1G.Location = New System.Drawing.Point(357, 239)
         Me.cbo_bath1G.Name = "cbo_bath1G"
         Me.cbo_bath1G.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bath1G.Sorted = True
         Me.cbo_bath1G.TabIndex = 60
         '
         'lbl_BathSubHead
