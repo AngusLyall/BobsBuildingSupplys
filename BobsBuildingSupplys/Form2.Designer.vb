@@ -87,9 +87,6 @@ Partial Class frm_OrderDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lbl_lr2g = New System.Windows.Forms.Label()
-        Me.lbl_lr1g = New System.Windows.Forms.Label()
-        Me.lbl_brt2g = New System.Windows.Forms.Label()
         Me.tmr_limiter = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
@@ -720,42 +717,6 @@ Partial Class frm_OrderDetails
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Network"
         '
-        'lbl_lr2g
-        '
-        Me.lbl_lr2g.AutoSize = True
-        Me.lbl_lr2g.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_lr2g.Enabled = False
-        Me.lbl_lr2g.ForeColor = System.Drawing.Color.Black
-        Me.lbl_lr2g.Location = New System.Drawing.Point(206, 271)
-        Me.lbl_lr2g.Name = "lbl_lr2g"
-        Me.lbl_lr2g.Size = New System.Drawing.Size(13, 15)
-        Me.lbl_lr2g.TabIndex = 88
-        Me.lbl_lr2g.Text = "1"
-        '
-        'lbl_lr1g
-        '
-        Me.lbl_lr1g.AutoSize = True
-        Me.lbl_lr1g.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_lr1g.Enabled = False
-        Me.lbl_lr1g.ForeColor = System.Drawing.Color.Black
-        Me.lbl_lr1g.Location = New System.Drawing.Point(206, 242)
-        Me.lbl_lr1g.Name = "lbl_lr1g"
-        Me.lbl_lr1g.Size = New System.Drawing.Size(13, 15)
-        Me.lbl_lr1g.TabIndex = 89
-        Me.lbl_lr1g.Text = "1"
-        '
-        'lbl_brt2g
-        '
-        Me.lbl_brt2g.AutoSize = True
-        Me.lbl_brt2g.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_brt2g.Enabled = False
-        Me.lbl_brt2g.ForeColor = System.Drawing.Color.Black
-        Me.lbl_brt2g.Location = New System.Drawing.Point(160, 337)
-        Me.lbl_brt2g.Name = "lbl_brt2g"
-        Me.lbl_brt2g.Size = New System.Drawing.Size(13, 15)
-        Me.lbl_brt2g.TabIndex = 96
-        Me.lbl_brt2g.Text = "1"
-        '
         'tmr_limiter
         '
         Me.tmr_limiter.Enabled = True
@@ -766,9 +727,6 @@ Partial Class frm_OrderDetails
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 476)
-        Me.Controls.Add(Me.lbl_brt2g)
-        Me.Controls.Add(Me.lbl_lr1g)
-        Me.Controls.Add(Me.lbl_lr2g)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -905,8 +863,5 @@ Partial Class frm_OrderDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents lbl_lr2g As Label
-    Friend WithEvents lbl_lr1g As Label
-    Friend WithEvents lbl_brt2g As Label
     Friend WithEvents tmr_limiter As Timer
 End Class

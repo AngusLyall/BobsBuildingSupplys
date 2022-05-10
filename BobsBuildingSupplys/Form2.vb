@@ -60,7 +60,7 @@
     Dim tvpointdefult As Boolean = True
     Dim satpointdefult As Boolean = True
 
-    Dim userimputbed2_2G As Boolean = False
+    Dim userimputcheck As Boolean = False
 
 
 
@@ -526,9 +526,16 @@
     Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
         K1G = cbo_kitchen1G.Text
     End Sub
+    Private Sub kitchen_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
+    End Sub
 
     Private Sub cbo_kitchen2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen2G.SelectedIndexChanged
         K2G = cbo_kitchen2G.Text
+    End Sub
+
+    Private Sub kitchen_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
     End Sub
 
     Private Sub cbo_LivingTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingTV.SelectedIndexChanged
@@ -543,17 +550,33 @@
     Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
         LR1G = cbo_Living1G.Text
     End Sub
+    Private Sub living_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
+    End Sub
+
 
     Private Sub cbo_Living2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living2G.SelectedIndexChanged
         LR2G = cbo_Living2G.Text
+    End Sub
+
+    Private Sub living_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
     End Sub
 
     Private Sub cbo_bath1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath1G.SelectedIndexChanged
         BATH1G = cbo_bath1G.Text
     End Sub
 
+    Private Sub bath_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
+    End Sub
+
     Private Sub cbo_bath2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath2G.SelectedIndexChanged
         BATH2G = cbo_bath2G.Text
+    End Sub
+
+    Private Sub bath_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
     End Sub
 
     Private Sub cbo_bed2TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2TV.SelectedIndexChanged
@@ -569,19 +592,21 @@
         BRT1G = cbo_bed2_1G.Text
         input_rules()
     End Sub
-
+    Private Sub bed2_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
+    End Sub
     Private Sub cbo_bed2_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_2G.SelectedIndexChanged
         BRT2G = cbo_bed2_2G.Text
-        lbl_brt2g.Text = BRT2G
-        If userimputbed2_2G = True Then
-            userimputbed2_2G = False
+
+        If userimputcheck = True Then
+            userimputcheck = False
             input_rules()
 
         End If
     End Sub
 
     Private Sub bed2_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
-        userimputbed2_2G = True
+        userimputcheck = True
     End Sub
 
     Private Sub cbo_bed1TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1TV.SelectedIndexChanged
@@ -597,8 +622,16 @@
         BRO1G = cbo_bed1_1G.Text
     End Sub
 
+    Private Sub bed1_1G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
+    End Sub
+
     Private Sub cbo_bed1_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_2G.SelectedIndexChanged
         BRO2G = cbo_bed1_2G.Text
+    End Sub
+
+    Private Sub bed1_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
+        userimputcheck = True
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -610,7 +643,7 @@
 
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles lbl_brt2g.Click
+    Private Sub Label6_Click(sender As Object, e As EventArgs)
 
     End Sub
 
