@@ -86,6 +86,7 @@ Partial Class frm_OrderDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_OrderHeader
@@ -234,7 +235,7 @@ Partial Class frm_OrderDetails
         Me.chk_HeatPumpBedOne.Name = "chk_HeatPumpBedOne"
         Me.chk_HeatPumpBedOne.Size = New System.Drawing.Size(128, 19)
         Me.chk_HeatPumpBedOne.TabIndex = 40
-        Me.chk_HeatPumpBedOne.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpBedOne.Text = "Heat Pump (2.5Kw)"
         Me.chk_HeatPumpBedOne.UseVisualStyleBackColor = True
         '
         'Label12
@@ -474,7 +475,7 @@ Partial Class frm_OrderDetails
         Me.chk_HeatPumpBedTwo.Name = "chk_HeatPumpBedTwo"
         Me.chk_HeatPumpBedTwo.Size = New System.Drawing.Size(128, 19)
         Me.chk_HeatPumpBedTwo.TabIndex = 76
-        Me.chk_HeatPumpBedTwo.Text = "Heat Pump (4.5Kw)"
+        Me.chk_HeatPumpBedTwo.Text = "Heat Pump (2.5Kw)"
         Me.chk_HeatPumpBedTwo.UseVisualStyleBackColor = True
         '
         'Label20
@@ -723,11 +724,21 @@ Partial Class frm_OrderDetails
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Network"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(409, 166)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 15)
+        Me.Label6.TabIndex = 85
+        Me.Label6.Text = "Label6"
+        '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 476)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -864,4 +875,5 @@ Partial Class frm_OrderDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

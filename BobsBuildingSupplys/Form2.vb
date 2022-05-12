@@ -246,7 +246,7 @@
 
         remainingpoints = 8 - netpointcheck ' this removes all the current points from 8 this then displays the remaining points we have acess to.
         remainingsocket = 12 - socketscheck
-        Label2.Text = remainingsocket
+        'Label2.Text = remainingsocket
 
         tvpointcheck = KTV + BROTV + BRTTV
         satpointcheck = KSAT + BROSAT + BRTSAT
@@ -319,7 +319,7 @@
 
         End If
 
-        ' Bed Room One 2 (2G) Socket Check
+        ' Bed Room One (2G) Socket Check
 
         If remainingsocket < 5 Then
             cbo_bed1_2G.Items.Clear()
@@ -341,10 +341,11 @@
         End If
 
 
+
         ' Bed Room One (1G) Socket Check
         If remainingsocket < 5 Then
             cbo_bed1_1G.Items.Clear()
-            BROListsocket_1G = BROListsocket_1G + BRO1G
+            BROListsocket_1G = remainingsocket + BRO1G
             If BROListsocket_1G > 4 Then BROListsocket_1G = 4
             Do Until BROListsocket_1G = -1
                 cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
@@ -574,7 +575,7 @@
         ' Bath Room One (1G) Socket Check
         If remainingsocket < 5 Then
             cbo_bath1G.Items.Clear()
-            BathListScoket_1G = BathListScoket_1G + BATH1G
+            BathListScoket_1G = remainingsocket + BATH1G
             If BathListScoket_1G > 4 Then BathListScoket_1G = 4
             Do Until BathListScoket_1G = -1
                 cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
@@ -590,6 +591,7 @@
             Loop
             cbo_bath1G.Text = BATH1G
         End If
+
 
     End Sub
 

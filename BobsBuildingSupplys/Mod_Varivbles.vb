@@ -15,7 +15,8 @@
     Public Const TV_Aerial_Point As Integer = 50
     Public Const TV_SAT As Integer = 250
     Public Const TV_SAT_Point As Integer = 50
-    Public Const HeatPump As Integer = 1800
+    Public Const HeatPump1 As Integer = 1800
+    Public Const HeatPump2 As Integer = 2500
     Public Const OneGSocket As Integer = 40
     Public Const TwoGSocket As Integer = 50
     Public Const Network_Point As Integer = 50
