@@ -116,7 +116,7 @@ Public Class CustomerDetails
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
-        If requiredinfomation = True Then
+        If requiredinfomation = False Then
             frm_OrderDetails.Show()
 
 
