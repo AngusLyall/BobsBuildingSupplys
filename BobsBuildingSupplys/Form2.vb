@@ -547,7 +547,49 @@
         End If
 
 
+        ' Bath Room
 
+        ' Bath Room One 2 (2G) Socket Check
+
+        If remainingsocket < 5 Then
+            cbo_bath2G.Items.Clear()
+            BathListSocket_2G = remainingsocket + BATH2G
+            If BathListSocket_2G > 4 Then BathListSocket_2G = 4
+            Do Until BathListSocket_2G = -1
+                cbo_bath2G.Items.Add(BathListSocket_2G) ' Change cbo_bed2Net to the Box 
+                BathListSocket_2G = BathListSocket_2G - 1
+            Loop
+            cbo_bath2G.Text = BATH2G
+        Else
+            cbo_bath2G.Items.Clear()
+            BathListSocket_2G = 4
+            Do Until BathListSocket_2G = -1
+                cbo_bath2G.Items.Add(BathListSocket_2G)
+                BathListSocket_2G = BathListSocket_2G - 1
+            Loop
+            cbo_bath2G.Text = BATH2G
+        End If
+
+
+        ' Bath Room One (1G) Socket Check
+        If remainingsocket < 5 Then
+            cbo_bath1G.Items.Clear()
+            BathListScoket_1G = BathListScoket_1G + BATH1G
+            If BathListScoket_1G > 4 Then BathListScoket_1G = 4
+            Do Until BathListScoket_1G = -1
+                cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
+                BathListScoket_1G = BathListScoket_1G - 1
+            Loop
+            cbo_bath1G.Text = BATH1G
+        Else
+            cbo_bath1G.Items.Clear()
+            BathListScoket_1G = 4
+            Do Until BathListScoket_1G = -1
+                cbo_bath1G.Items.Add(BathListScoket_1G)
+                BathListScoket_1G = BathListScoket_1G - 1
+            Loop
+            cbo_bath1G.Text = BATH1G
+        End If
 
     End Sub
 
@@ -843,5 +885,7 @@
 
     End Sub
 
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
+    End Sub
 End Class
