@@ -55,6 +55,25 @@
     Dim living2gvalue As Integer
     Dim livingheatpumpvalue As Integer
 
+    Dim bedroomtwoTVvalue As Integer
+    Dim bedroomtwoSATvalue As Integer
+    Dim bedroomtwonetworkvalue As Integer
+    Dim bedroomtwo1gvalue As Integer
+    Dim bedroomtwo2gvalue As Integer
+    Dim bedroomtwoheatpumpvalue As Integer
+
+    Dim bedroomoneTVvalue As Integer
+    Dim bedroomoneSATvalue As Integer
+    Dim bedroomonenetworkvalue As Integer
+    Dim bedroomone1gvalue As Integer
+    Dim bedroomone2gvalue As Integer
+    Dim bedroomoneheatpumpvalue As Integer
+
+    Dim BathUpgradevalue As Integer
+    Dim Bath1gvalue As Integer
+    Dim Bath2gvalue As Integer
+
+
 
 
     Dim tvpointdefult As Boolean = True
@@ -155,9 +174,120 @@
         End If
         ' Living room HeatPump
         If LivingRoom(5) > 0 Then
-            livingheatpumpvalue = HeatPump
+            livingheatpumpvalue = HeatPump2
         Else
             livingheatpumpvalue = 0
+        End If
+
+
+        ''Bath Room Options ''
+
+        'Bath Room One G socket
+        If BathRoom(3) > 0 Then
+            Bath1gvalue = BathRoom(3) * OneGSocket
+        Else
+            Bath1gvalue = 0
+        End If
+
+        'Bath Room Two G socket
+        If BathRoom(4) > 0 Then
+            Bath2gvalue = BathRoom(4) * TwoGSocket
+        Else
+            Bath2gvalue = 0
+        End If
+
+        If BathRoom(2) > 0 Then
+            BathUpgradevalue = BathRoom(2) * BATHUpgrade
+        Else
+            BathUpgradevalue = 0
+        End If
+
+
+        ' Bed room Two Values '
+
+        ' TV Point
+        If BedRoomTwo(0) > 0 Then
+            bedroomtwoTVvalue = TV_Aerial
+        Else
+            bedroomtwoTVvalue = 0
+        End If
+
+        ' Sat point
+        If BedRoomTwo(1) > 0 Then
+            bedroomtwoSATvalue = TV_SAT
+        Else
+            bedroomtwoSATvalue = 0
+        End If
+
+        ' Network Point
+        If BedRoomTwo(2) > 0 Then
+            bedroomtwonetworkvalue = BedRoomTwo(2) * Network_Point
+        Else
+            bedroomtwonetworkvalue = 0
+        End If
+
+        ' One G socket
+        If BedRoomTwo(3) > 0 Then
+            bedroomtwo1gvalue = BedRoomTwo(3) * OneGSocket
+        Else
+            bedroomtwo1gvalue = 0
+        End If
+
+        ' Two G socket
+        If BedRoomTwo(4) > 0 Then
+            bedroomtwo2gvalue = BedRoomTwo(4) * TwoGSocket
+        Else
+            bedroomtwo2gvalue = 0
+        End If
+        ' HeatPump
+        If BedRoomTwo(5) > 0 Then
+            bedroomtwoheatpumpvalue = HeatPump1
+        Else
+            bedroomtwoheatpumpvalue = 0
+        End If
+
+
+        ' Bed room One Values '
+
+        ' TV Point
+        If BedRoomOne(0) > 0 Then
+            bedroomoneTVvalue = TV_Aerial
+        Else
+            bedroomoneTVvalue = 0
+        End If
+
+        ' Sat point
+        If BedRoomOne(1) > 0 Then
+            bedroomoneSATvalue = TV_SAT
+        Else
+            bedroomoneSATvalue = 0
+        End If
+
+        ' Network Point
+        If BedRoomOne(2) > 0 Then
+            bedroomonenetworkvalue = BedRoomOne(2) * Network_Point
+        Else
+            bedroomonenetworkvalue = 0
+        End If
+
+        ' One G socket
+        If BedRoomOne(3) > 0 Then
+            bedroomone1gvalue = BedRoomOne(3) * OneGSocket
+        Else
+            bedroomone1gvalue = 0
+        End If
+
+        ' Two G socket
+        If BedRoomOne(4) > 0 Then
+            bedroomone2gvalue = BedRoomOne(4) * TwoGSocket
+        Else
+            bedroomone2gvalue = 0
+        End If
+        ' HeatPump
+        If BedRoomOne(5) > 0 Then
+            bedroomoneheatpumpvalue = HeatPump1
+        Else
+            bedroomoneheatpumpvalue = 0
         End If
 
 
@@ -165,6 +295,9 @@
         totalvalue(0) = 0 ' Change to all rooms totals
         totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' Total Kitchen COST
         totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue ' Total Living Room COST
+        totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue ' Total Bedroom One cost
+        totalvalue(4) = bedroomtwoheatpumpvalue + bedroomtwonetworkvalue + bedroomtwo1gvalue + bedroomtwo2gvalue + bedroomtwoTVvalue + bedroomtwoSATvalue ' Total Bedroom Two Cost
+        totalvalue(4) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
 
         Label1.Text = totalvalue(1).ToString("C")
 
@@ -207,7 +340,7 @@
     End Sub
 
     Private Sub input_rules()
-        ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total.
+        ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total. And Rules related to the 1G and 2G limits
 
 
         Dim netpointcheck As Integer
@@ -252,18 +385,19 @@
         satpointcheck = KSAT + BROSAT + BRTSAT
 
         If swtichpoints = 0 Then
-            cbo_kitchenNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
-            kitchendefult = True ' this is used as a check to confirm its state
+            If kitchendefult = False Then
+                cbo_kitchenNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
+                kitchendefult = True ' this is used as a check to confirm its state
+            End If
         End If
 
-        If swtichpoints > 1 And KNET = 0 Then ' this checks if anyother point has a value grater then one this means a point has been selected in another form this then adds 1 to the Kitchen
-            cbo_kitchenNet.Text = 1 ' this adds the one to the kitchen
-            kitchendefult = False ' this is to confirm its state
-        Else
-            If netpointcheck = 1 Then
-
+        If swtichpoints > 0 Then ' this checks if anyother point has a value grater then one this means a point has been selected in another form this then adds 1 to the Kitchen
+            If KNET = 0 Then
+                KNET = 1
+                cbo_kitchenNet.Text = 1 ' this adds the one to the kitchen
+                cbo_kitchenNet.Items.Remove("0")
+                kitchendefult = False ' this is to confirm its state
             End If
-
         End If
 
         'Checks if a Tv Point is slected and then forces one into the living room.
@@ -285,17 +419,17 @@
 
         ' Checks if there is a SAT point in all rooms but Living room and forces one into the living room.
         If satpointcheck > 0 Then ' Checks if there is a Sat Point in the other rooms
-            If LRTV = 0 Then ' Checks if there is no option selected in the Living room for a SAT point
-                LRTV = 1 ' Sets the Value we complare and store to 1
-                cbo_LivingTV.Text = 1 ' Sets the text to 1 displaying they have one SAT point 
-                cbo_LivingTV.Items.Remove("0") ' Removes the 0 option from the living room if they have a SAT point in another room
-                tvpointdefult = False
+            If LRSAT = 0 Then ' Checks if there is no option selected in the Living room for a SAT point
+                LRSAT = 1 ' Sets the Value we complare and store to 1
+                cbo_LivingSAT.Text = 1 ' Sets the text to 1 displaying they have one SAT point 
+                cbo_LivingSAT.Items.Remove("0") ' Removes the 0 option from the living room if they have a SAT point in another room
+                satpointdefult = False
             End If
         End If
 
         If satpointcheck = 0 Then
             If satpointdefult = False Then
-                cbo_LivingTV.Items.Add("0") ' Adds 0 to the list when all other rooms have no SAT point and allows the user to select 0 points in livingroom
+                cbo_LivingSAT.Items.Add("0") ' Adds 0 to the list when all other rooms have no SAT point and allows the user to select 0 points in livingroom
                 satpointdefult = True ' This Checks if it is in the defult list state of 0,1 
             End If
         End If
@@ -309,6 +443,7 @@
                 cbo_bed1Net.Items.Add(BROList) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
                 BROList = BROList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
             Loop
+            cbo_bed1Net.Text = BRONET
         Else ' If there are more then 5 remaining points this forces the Box to have its maxium of 4 per room
             cbo_bed1Net.Items.Clear() ' clears the box to remove old values and stop duplicates
             BROList = 4 ' this sets the list to 4 the limit per room
@@ -316,6 +451,7 @@
                 cbo_bed1Net.Items.Add(BROList) ' this adds the values to the list (combo box)
                 BROList = BROList - 1 ' this removes one each time so it counts down or it would just loop adding 4 endlessly so it now will do  4 then remove one then 3 then remove one ect.
             Loop
+            cbo_bed1Net.Text = BRONET
 
         End If
 
@@ -372,6 +508,7 @@
                 cbo_bed2Net.Items.Add(BRTList)
                 BRTList = BRTList - 1
             Loop
+            cbo_bed2Net.Text = BRTNET
         Else
             cbo_bed2Net.Items.Clear()
             BRTList = 4
@@ -379,6 +516,7 @@
                 cbo_bed2Net.Items.Add(BRTList)
                 BRTList = BRTList - 1
             Loop
+            cbo_bed2Net.Text = BRTNET
         End If
 
         ' Bed Room 2 (2G) Socket Check
@@ -434,6 +572,7 @@
                 cbo_LivingNet.Items.Add(LRList)
                 LRList = LRList - 1
             Loop
+            cbo_LivingNet.Text = LRNET
         Else
             cbo_LivingNet.Items.Clear()
             LRList = 4
@@ -441,6 +580,7 @@
                 cbo_LivingNet.Items.Add(LRList)
                 LRList = LRList - 1
             Loop
+            cbo_LivingNet.Text = LRNET
         End If
 
 
@@ -492,18 +632,24 @@
             cbo_kitchenNet.Text = KNET
             KitList = remainingpoints + KNET
             If KitList > 4 Then KitList = 4
-            Do Until KitList = -1
+            Dim zerovalue As Integer
+            If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
+            Do Until KitList = zerovalue
                 cbo_kitchenNet.Items.Add(KitList)
                 KitList = KitList - 1
             Loop
+            cbo_kitchenNet.Text = KNET
         Else
             cbo_kitchenNet.Items.Clear()
             cbo_kitchenNet.Text = KNET
             KitList = 4
-            Do Until KitList = -1
+            Dim zerovalue As Integer
+            If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
+            Do Until KitList = zerovalue
                 cbo_kitchenNet.Items.Add(KitList)
                 KitList = KitList - 1
             Loop
+            cbo_kitchenNet.Text = KNET
         End If
 
         ' Kitchen 2 (2G) Socket Check
@@ -685,30 +831,47 @@
 
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
         KNET = cbo_kitchenNet.Text ' This sets the value KNET to the value of the combo box
-        lbl_knet.Text = KNET ' Because I'm using a combo box as a list the text cant change and because I clear the combox this label is used instaid to display the value of the combox so it cant be cleared 
-        input_rules() ' This calls the sub Imput_Rules this sub is used to check and stop the user from having too many network points and limits it. This Doesn't give the user access to have more then the maxium so they cannot make a mistake and selected more then allowed.
-    End Sub
 
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules() ' This calls the sub Imput_Rules this sub is used to check and stop the user from having too many network points and limits it. This Doesn't give the user access to have more then the maxium so they cannot make a mistake and selected more then allowed.
+        End If
+    End Sub
+    Private Sub kitchen_net_userinput() Handles cbo_kitchenNet.MouseClick, cbo_kitchenNet.Enter, cbo_kitchenNet.KeyPress, cbo_kitchenNet.KeyUp, cbo_kitchenNet.KeyDown
+        userimputcheck = True
+    End Sub
     Private Sub cbo_LivingNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingNet.SelectedIndexChanged
         LRNET = cbo_LivingNet.Text
-        lbl_LRNET.Text = LRNET
-        input_rules()
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+        End If
     End Sub
-
+    Private Sub cbo_LivingNet_userinput() Handles cbo_LivingNet.MouseClick, cbo_LivingNet.Enter, cbo_LivingNet.KeyPress, cbo_LivingNet.KeyUp, cbo_LivingNet.KeyDown
+        userimputcheck = True
+    End Sub
     Private Sub cbo_bed1Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1Net.SelectedIndexChanged
         BRONET = cbo_bed1Net.Text
-        lbl_BRONET.Text = BRONET
-        input_rules()
 
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+        End If
+    End Sub
+    Private Sub cbo_bed1Net_userinput() Handles cbo_bed1Net.MouseClick, cbo_bed1Net.Enter, cbo_bed1Net.KeyPress, cbo_bed1Net.KeyUp, cbo_bed1Net.KeyDown
+        userimputcheck = True
     End Sub
 
     Private Sub cbo_bed2Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2Net.SelectedIndexChanged
         BRTNET = cbo_bed2Net.Text
-        lbl_BRTNET.Text = BRTNET
-        input_rules()
-
+        If userimputcheck = True Then
+            userimputcheck = False
+            input_rules()
+        End If
     End Sub
-
+    Private Sub cbo_bed2Net_userinput() Handles cbo_bed2Net.MouseClick, cbo_bed2Net.Enter, cbo_bed2Net.KeyPress, cbo_bed2Net.KeyUp, cbo_bed2Net.KeyDown
+        userimputcheck = True
+    End Sub
     Private Sub cbo_kitchenTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenTV.SelectedIndexChanged
         KTV = cbo_kitchenTV.Text ' Sets the varible KTV to the value of the combo box this will be used to store in the array or can be used to check rules.
         input_rules()
@@ -716,6 +879,7 @@
 
     Private Sub cbo_kitchenSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenSAT.SelectedIndexChanged
         KSAT = cbo_kitchenSAT.Text
+        input_rules()
     End Sub
 
     Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
@@ -810,6 +974,7 @@
 
     Private Sub cbo_bed2SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2SAT.SelectedIndexChanged
         BRTSAT = cbo_bed2SAT.Text
+        input_rules()
     End Sub
 
     Private Sub cbo_bed2_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_1G.SelectedIndexChanged
@@ -846,6 +1011,7 @@
 
     Private Sub cbo_bed1SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1SAT.SelectedIndexChanged
         BROSAT = cbo_bed1SAT.Text
+        input_rules()
     End Sub
 
     Private Sub cbo_bed1_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_1G.SelectedIndexChanged

@@ -11,6 +11,7 @@
     Public Const KitchenOptionA As Integer = 2000
     Public Const KitchenOptionB As Integer = 3500
     Public Const KitchenOptionC As Integer = 6000
+    Public Const BathUpgrade As Integer = 2500
     Public Const TV_Aerial As Integer = 250
     Public Const TV_Aerial_Point As Integer = 50
     Public Const TV_SAT As Integer = 250

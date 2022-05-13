@@ -78,10 +78,6 @@ Partial Class frm_OrderDetails
         Me.cbo_bath2G = New System.Windows.Forms.ComboBox()
         Me.cbo_bath1G = New System.Windows.Forms.ComboBox()
         Me.lbl_BathSubHead = New System.Windows.Forms.Label()
-        Me.lbl_knet = New System.Windows.Forms.Label()
-        Me.lbl_LRNET = New System.Windows.Forms.Label()
-        Me.lbl_BRTNET = New System.Windows.Forms.Label()
-        Me.lbl_BRONET = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -147,6 +143,7 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchenTV.Location = New System.Drawing.Point(100, 115)
         Me.cbo_kitchenTV.Name = "cbo_kitchenTV"
         Me.cbo_kitchenTV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchenTV.Sorted = True
         Me.cbo_kitchenTV.TabIndex = 5
         '
         'cbo_kitchenSAT
@@ -157,6 +154,7 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchenSAT.Location = New System.Drawing.Point(100, 144)
         Me.cbo_kitchenSAT.Name = "cbo_kitchenSAT"
         Me.cbo_kitchenSAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_kitchenSAT.Sorted = True
         Me.cbo_kitchenSAT.TabIndex = 6
         '
         'cbo_kitchenNet
@@ -336,6 +334,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed1SAT.Location = New System.Drawing.Point(285, 398)
         Me.cbo_bed1SAT.Name = "cbo_bed1SAT"
         Me.cbo_bed1SAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1SAT.Sorted = True
         Me.cbo_bed1SAT.TabIndex = 30
         '
         'cbo_bed1TV
@@ -346,6 +345,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed1TV.Location = New System.Drawing.Point(285, 370)
         Me.cbo_bed1TV.Name = "cbo_bed1TV"
         Me.cbo_bed1TV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed1TV.Sorted = True
         Me.cbo_bed1TV.TabIndex = 29
         '
         'chk_HeatPumpLiving
@@ -455,6 +455,7 @@ Partial Class frm_OrderDetails
         Me.cbo_LivingSAT.Location = New System.Drawing.Point(10, 267)
         Me.cbo_LivingSAT.Name = "cbo_LivingSAT"
         Me.cbo_LivingSAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_LivingSAT.Sorted = True
         Me.cbo_LivingSAT.TabIndex = 42
         '
         'cbo_LivingTV
@@ -574,6 +575,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed2SAT.Location = New System.Drawing.Point(10, 399)
         Me.cbo_bed2SAT.Name = "cbo_bed2SAT"
         Me.cbo_bed2SAT.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2SAT.Sorted = True
         Me.cbo_bed2SAT.TabIndex = 66
         '
         'cbo_bed2TV
@@ -584,6 +586,7 @@ Partial Class frm_OrderDetails
         Me.cbo_bed2TV.Location = New System.Drawing.Point(10, 370)
         Me.cbo_bed2TV.Name = "cbo_bed2TV"
         Me.cbo_bed2TV.Size = New System.Drawing.Size(54, 23)
+        Me.cbo_bed2TV.Sorted = True
         Me.cbo_bed2TV.TabIndex = 65
         '
         'chk_UpgradeBathRoom
@@ -646,48 +649,6 @@ Partial Class frm_OrderDetails
         Me.lbl_BathSubHead.TabIndex = 59
         Me.lbl_BathSubHead.Text = "Bathroom"
         '
-        'lbl_knet
-        '
-        Me.lbl_knet.AutoSize = True
-        Me.lbl_knet.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_knet.Enabled = False
-        Me.lbl_knet.ForeColor = System.Drawing.Color.Black
-        Me.lbl_knet.Location = New System.Drawing.Point(101, 177)
-        Me.lbl_knet.Name = "lbl_knet"
-        Me.lbl_knet.Size = New System.Drawing.Size(13, 15)
-        Me.lbl_knet.TabIndex = 78
-        Me.lbl_knet.Text = "1"
-        '
-        'lbl_LRNET
-        '
-        Me.lbl_LRNET.AutoSize = True
-        Me.lbl_LRNET.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_LRNET.Enabled = False
-        Me.lbl_LRNET.Location = New System.Drawing.Point(12, 300)
-        Me.lbl_LRNET.Name = "lbl_LRNET"
-        Me.lbl_LRNET.Size = New System.Drawing.Size(0, 15)
-        Me.lbl_LRNET.TabIndex = 79
-        '
-        'lbl_BRTNET
-        '
-        Me.lbl_BRTNET.AutoSize = True
-        Me.lbl_BRTNET.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_BRTNET.Enabled = False
-        Me.lbl_BRTNET.Location = New System.Drawing.Point(12, 433)
-        Me.lbl_BRTNET.Name = "lbl_BRTNET"
-        Me.lbl_BRTNET.Size = New System.Drawing.Size(0, 15)
-        Me.lbl_BRTNET.TabIndex = 80
-        '
-        'lbl_BRONET
-        '
-        Me.lbl_BRONET.AutoSize = True
-        Me.lbl_BRONET.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.lbl_BRONET.Enabled = False
-        Me.lbl_BRONET.Location = New System.Drawing.Point(288, 433)
-        Me.lbl_BRONET.Name = "lbl_BRONET"
-        Me.lbl_BRONET.Size = New System.Drawing.Size(0, 15)
-        Me.lbl_BRONET.TabIndex = 81
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(365, 81)
@@ -742,10 +703,6 @@ Partial Class frm_OrderDetails
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.lbl_BRONET)
-        Me.Controls.Add(Me.lbl_BRTNET)
-        Me.Controls.Add(Me.lbl_LRNET)
-        Me.Controls.Add(Me.lbl_knet)
         Me.Controls.Add(Me.chk_HeatPumpBedTwo)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
@@ -867,10 +824,6 @@ Partial Class frm_OrderDetails
     Friend WithEvents cbo_bath2G As ComboBox
     Friend WithEvents cbo_bath1G As ComboBox
     Friend WithEvents lbl_BathSubHead As Label
-    Friend WithEvents lbl_knet As Label
-    Friend WithEvents lbl_LRNET As Label
-    Friend WithEvents lbl_BRTNET As Label
-    Friend WithEvents lbl_BRONET As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
