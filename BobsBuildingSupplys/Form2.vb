@@ -348,17 +348,17 @@
     End Sub
 
     Private Sub startingzero()
-        cbo_kitchenSAT.Text = 0
-        cbo_kitchenTV.Text = 0
+        cbo_kitchenSAT.Text = KSAT
+        cbo_kitchenTV.Text = KTV
 
-        cbo_LivingTV.Text = 0
-        cbo_LivingSAT.Text = 0
+        cbo_LivingTV.Text = LRTV
+        cbo_LivingSAT.Text = LRSAT
 
-        cbo_bed1SAT.Text = 0
-        cbo_bed1TV.Text = 0
+        cbo_bed1SAT.Text = BROSAT
+        cbo_bed1TV.Text = BROTV
 
-        cbo_bed2SAT.Text = 0
-        cbo_bed2TV.Text = 0
+        cbo_bed2SAT.Text = BRTSAT
+        cbo_bed2TV.Text = BRTTV
 
         start_zerio = True
 
