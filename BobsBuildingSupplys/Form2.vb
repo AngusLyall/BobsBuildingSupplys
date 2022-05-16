@@ -29,7 +29,7 @@
 
     Dim BATH1G As Integer = 0
     Dim BATH2G As Integer = 0
-    Dim BATHUpgrade As Integer = 0
+    Dim BATHUpgrades As Integer = 0
 
     Dim KitchenA As Boolean = False
     Dim KitchenB As Boolean = False
@@ -80,6 +80,8 @@
     Dim satpointdefult As Boolean = True
 
     Dim userimputcheck As Boolean = False
+
+    Dim start_zerio As Boolean = False
 
 
 
@@ -183,21 +185,22 @@
         ''Bath Room Options ''
 
         'Bath Room One G socket
-        If BathRoom(3) > 0 Then
-            Bath1gvalue = BathRoom(3) * OneGSocket
+        If BathRoom(0) > 0 Then
+            Bath1gvalue = BathRoom(0) * OneGSocket
         Else
             Bath1gvalue = 0
         End If
 
+
         'Bath Room Two G socket
-        If BathRoom(4) > 0 Then
-            Bath2gvalue = BathRoom(4) * TwoGSocket
+        If BathRoom(1) > 0 Then
+            Bath2gvalue = BathRoom(1) * TwoGSocket
         Else
             Bath2gvalue = 0
         End If
 
         If BathRoom(2) > 0 Then
-            BathUpgradevalue = BathRoom(2) * BATHUpgrade
+            BathUpgradevalue = BathRoom(2) * BathUpgrade
         Else
             BathUpgradevalue = 0
         End If
@@ -292,15 +295,20 @@
 
 
         ' total values 
-        totalvalue(0) = 0 ' Change to all rooms totals
+
         totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' Total Kitchen COST
         totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue ' Total Living Room COST
         totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue ' Total Bedroom One cost
         totalvalue(4) = bedroomtwoheatpumpvalue + bedroomtwonetworkvalue + bedroomtwo1gvalue + bedroomtwo2gvalue + bedroomtwoTVvalue + bedroomtwoSATvalue ' Total Bedroom Two Cost
-        totalvalue(4) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
+        totalvalue(5) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
+        totalvalue(0) = totalvalue(1) + totalvalue(2) + totalvalue(3) + totalvalue(4) + totalvalue(5) ' All up Total
 
         Label1.Text = totalvalue(1).ToString("C")
-
+        Label2.Text = totalvalue(2).ToString("C")
+        Label22.Text = totalvalue(4).ToString("C")
+        Label28.Text = totalvalue(3).ToString("C")
+        Label16.Text = totalvalue(5).ToString("C")
+        Label6.Text = totalvalue(0).ToString("C")
     End Sub
 
     Private Sub value_store()
@@ -335,13 +343,32 @@
 
         BathRoom(0) = BATH1G
         BathRoom(1) = BATH2G
-        BathRoom(2) = BATHUpgrade
+        BathRoom(2) = BATHUpgrades
 
     End Sub
 
+    Private Sub startingzero()
+        cbo_kitchenSAT.Text = 0
+        cbo_kitchenTV.Text = 0
+
+        cbo_LivingTV.Text = 0
+        cbo_LivingSAT.Text = 0
+
+        cbo_bed1SAT.Text = 0
+        cbo_bed1TV.Text = 0
+
+        cbo_bed2SAT.Text = 0
+        cbo_bed2TV.Text = 0
+
+        start_zerio = True
+
+
+
+
+    End Sub
     Private Sub input_rules()
         ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total. And Rules related to the 1G and 2G limits
-
+        If start_zerio = False Then startingzero()
 
         Dim netpointcheck As Integer
         Dim swtichpoints As Integer
@@ -738,7 +765,8 @@
             cbo_bath1G.Text = BATH1G
         End If
 
-
+        value_store()
+        priceing_math()
     End Sub
 
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
@@ -755,6 +783,7 @@
             KitchenA = False ' This Sets the selected option to false because the user unselected this option
             Kupgrade = 0 ' 0 is used to show no option has been selected and the user does not want a kitchen Upgrade.
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_KitchenB_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenB.CheckedChanged
@@ -771,6 +800,7 @@
             KitchenB = False
             Kupgrade = 0
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_KitchenC_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenC.CheckedChanged
@@ -787,6 +817,7 @@
             KitchenC = False
             Kupgrade = 0
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_HeatPumpLiving_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpLiving.CheckedChanged
@@ -797,6 +828,7 @@
             LRHeat = False ' If the Box was already ticked this then sets it to False unticking the box
             LRHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there living room
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBedOne_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedOne.CheckedChanged
@@ -807,6 +839,7 @@
             BROHeat = False
             BROHeatPump = 0
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBedTwo_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedTwo.CheckedChanged
@@ -817,16 +850,18 @@
             BRTHeat = False
             BRTHeatPump = 0
         End If
+        input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_UpgradeBathRoom.CheckedChanged
         If BATHOption = False Then
             BATHOption = True
-            BATHUpgrade = 1
+            BATHUpgrades = 1
         Else
             BATHOption = False
-            BATHUpgrade = 0
+            BATHUpgrades = 0
         End If
+        input_rules()
     End Sub
 
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
@@ -914,6 +949,7 @@
 
     Private Sub cbo_LivingSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingSAT.SelectedIndexChanged
         LRSAT = cbo_LivingSAT.Text
+        input_rules()
     End Sub
 
     Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
@@ -1041,8 +1077,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        value_store()
-        priceing_math()
+
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

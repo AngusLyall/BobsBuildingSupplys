@@ -83,6 +83,9 @@ Partial Class frm_OrderDetails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_OrderHeader
@@ -670,11 +673,11 @@ Partial Class frm_OrderDetails
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(394, 122)
+        Me.Label2.Location = New System.Drawing.Point(131, 216)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 15)
+        Me.Label2.Size = New System.Drawing.Size(13, 15)
         Me.Label2.TabIndex = 84
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "$"
         '
         'Label5
         '
@@ -694,11 +697,41 @@ Partial Class frm_OrderDetails
         Me.Label6.TabIndex = 85
         Me.Label6.Text = "Label6"
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(456, 215)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(13, 15)
+        Me.Label16.TabIndex = 86
+        Me.Label16.Text = "$"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(157, 347)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(13, 15)
+        Me.Label22.TabIndex = 87
+        Me.Label22.Text = "$"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(435, 347)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(13, 15)
+        Me.Label28.TabIndex = 88
+        Me.Label28.Text = "$"
+        '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 476)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -829,4 +862,7 @@ Partial Class frm_OrderDetails
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label28 As Label
 End Class
