@@ -303,12 +303,12 @@
         totalvalue(5) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
         totalvalue(0) = totalvalue(1) + totalvalue(2) + totalvalue(3) + totalvalue(4) + totalvalue(5) ' All up Total
 
-        Label1.Text = totalvalue(1).ToString("C")
-        Label2.Text = totalvalue(2).ToString("C")
-        Label22.Text = totalvalue(4).ToString("C")
-        Label28.Text = totalvalue(3).ToString("C")
-        Label16.Text = totalvalue(5).ToString("C")
-        Label6.Text = totalvalue(0).ToString("C")
+        lbl_kitch_cost.Text = $" Kitchen Cost {totalvalue(1).ToString("C")}"
+        lbl_living_cost.Text = $" Living Room Cost {totalvalue(2).ToString("C")}"
+        lbl_bedroom_two_cost.Text = $" Bed Room Two Cost {totalvalue(4).ToString("C")}"
+        lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}"
+        lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
+        lbl_totaldisplay.Text = $" Total Cost {totalvalue(0).ToString("C")} (+GST)"
     End Sub
 
     Private Sub value_store()
@@ -1076,11 +1076,11 @@
         userimputcheck = True
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -1088,7 +1088,21 @@
 
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        CustomerDetails.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lbl_bedroom_one.Click
 
     End Sub
 End Class

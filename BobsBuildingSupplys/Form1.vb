@@ -118,6 +118,7 @@ Public Class CustomerDetails
         RequiredInfomationCheck() ' checks if there are any empty boxes
         If requiredinfomation = True Then
             frm_OrderDetails.Show()
+            Me.Hide()
 
 
 
