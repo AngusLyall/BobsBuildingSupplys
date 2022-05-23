@@ -148,7 +148,7 @@ Partial Class CustomerDetails
         '
         'txt_CusDeliveryAddress
         '
-        Me.txt_CusDeliveryAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.txt_CusDeliveryAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txt_CusDeliveryAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_CusDeliveryAddress.Location = New System.Drawing.Point(191, 312)
         Me.txt_CusDeliveryAddress.Name = "txt_CusDeliveryAddress"
@@ -157,7 +157,7 @@ Partial Class CustomerDetails
         '
         'txt_CusBillingAdress
         '
-        Me.txt_CusBillingAdress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_CusBillingAdress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txt_CusBillingAdress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_CusBillingAdress.Location = New System.Drawing.Point(191, 275)
         Me.txt_CusBillingAdress.Name = "txt_CusBillingAdress"

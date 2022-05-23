@@ -88,6 +88,7 @@ Partial Class frm_OrderDetails
         Me.lbl_living_cost = New System.Windows.Forms.Label()
         Me.lbl_bedroom_two_cost = New System.Windows.Forms.Label()
         Me.lbl_bathroom_cost = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -688,11 +689,12 @@ Partial Class frm_OrderDetails
         'lbl_totaldisplay
         '
         Me.lbl_totaldisplay.AutoSize = True
-        Me.lbl_totaldisplay.Location = New System.Drawing.Point(389, 108)
+        Me.lbl_totaldisplay.Location = New System.Drawing.Point(381, 101)
         Me.lbl_totaldisplay.Name = "lbl_totaldisplay"
-        Me.lbl_totaldisplay.Size = New System.Drawing.Size(59, 15)
+        Me.lbl_totaldisplay.Size = New System.Drawing.Size(76, 15)
         Me.lbl_totaldisplay.TabIndex = 90
-        Me.lbl_totaldisplay.Text = "Total Cost"
+        Me.lbl_totaldisplay.Text = "lbl_total_cost"
+        Me.lbl_totaldisplay.Visible = False
         '
         'lbl_kitch_cost
         '
@@ -702,6 +704,7 @@ Partial Class frm_OrderDetails
         Me.lbl_kitch_cost.Size = New System.Drawing.Size(78, 15)
         Me.lbl_kitch_cost.TabIndex = 92
         Me.lbl_kitch_cost.Text = "lbl_kitch_cost"
+        Me.lbl_kitch_cost.Visible = False
         '
         'lbl_bedroom_one
         '
@@ -711,6 +714,7 @@ Partial Class frm_OrderDetails
         Me.lbl_bedroom_one.Size = New System.Drawing.Size(126, 15)
         Me.lbl_bedroom_one.TabIndex = 93
         Me.lbl_bedroom_one.Text = "lbl_bedroom_one_cost"
+        Me.lbl_bedroom_one.Visible = False
         '
         'lbl_living_cost
         '
@@ -720,6 +724,7 @@ Partial Class frm_OrderDetails
         Me.lbl_living_cost.Size = New System.Drawing.Size(81, 15)
         Me.lbl_living_cost.TabIndex = 94
         Me.lbl_living_cost.Text = "lbl_living_cost"
+        Me.lbl_living_cost.Visible = False
         '
         'lbl_bedroom_two_cost
         '
@@ -729,6 +734,7 @@ Partial Class frm_OrderDetails
         Me.lbl_bedroom_two_cost.Size = New System.Drawing.Size(126, 15)
         Me.lbl_bedroom_two_cost.TabIndex = 95
         Me.lbl_bedroom_two_cost.Text = "lbl_bedroom_two_cost"
+        Me.lbl_bedroom_two_cost.Visible = False
         '
         'lbl_bathroom_cost
         '
@@ -738,12 +744,23 @@ Partial Class frm_OrderDetails
         Me.lbl_bathroom_cost.Size = New System.Drawing.Size(76, 15)
         Me.lbl_bathroom_cost.TabIndex = 96
         Me.lbl_bathroom_cost.Text = "lbl_bath_cost"
+        Me.lbl_bathroom_cost.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(494, 493)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(53, 23)
+        Me.Button1.TabIndex = 97
+        Me.Button1.Text = "Next"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 519)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_bathroom_cost)
         Me.Controls.Add(Me.lbl_bedroom_two_cost)
         Me.Controls.Add(Me.lbl_living_cost)
@@ -888,4 +905,5 @@ Partial Class frm_OrderDetails
     Friend WithEvents lbl_bedroom_one As Label
     Friend WithEvents lbl_bedroom_two_cost As Label
     Friend WithEvents lbl_bathroom_cost As Label
+    Friend WithEvents Button1 As Button
 End Class

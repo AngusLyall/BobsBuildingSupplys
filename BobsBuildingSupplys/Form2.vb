@@ -101,13 +101,14 @@
             kitchennetworkvalue = 0
         End If
 
+        kitchencost(2) = kitchennetworkvalue
         'kitchen one G socket
         If Kitchen(3) > 0 Then
             kitchen1gvalue = Kitchen(3) * OneGSocket
         Else
             kitchen1gvalue = 0
         End If
-
+        kitchencost(3) = kitchen1gvalue
         'Kitchen Two G socket
         If Kitchen(4) > 0 Then
             kitchen2gvalue = Kitchen(4) * TwoGSocket
@@ -115,6 +116,7 @@
             kitchen2gvalue = 0
         End If
 
+        kitchencost(4) = kitchen2gvalue
         'Kitchen upgrade option.
         Select Case Kitchen(5)
             Case 0
@@ -128,14 +130,17 @@
 
         End Select
 
+        kitchencost(5) = Kitchenupgradevalue
         'Kitchen TV Point
         If Kitchen(0) > 0 Then
-            kitchenTVvalue = KTV * TV_Aerial_Point
+            kitchenTVvalue = KTV * TV_AERIAL_POINT
+            kitchencost(0) = kitchenTVvalue
         End If
 
         'Kitchen SAT point
         If Kitchen(1) > 0 Then
-            kitchenSATvalue = KSAT * TV_SAT_Point
+            kitchenSATvalue = KSAT * TV_SAT_POINT
+            kitchencost(1) = kitchenSATvalue
         End If
 
 
@@ -309,6 +314,14 @@
         lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}"
         lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
         lbl_totaldisplay.Text = $" Total Cost {totalvalue(0).ToString("C")} (+GST)"
+
+
+        lbl_kitch_cost.Show()
+        lbl_living_cost.Show()
+        lbl_bedroom_two_cost.Show()
+        lbl_bedroom_one.Show()
+        lbl_bathroom_cost.Show()
+        lbl_totaldisplay.Show()
     End Sub
 
     Private Sub value_store()
@@ -1104,5 +1117,10 @@
 
     Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lbl_bedroom_one.Click
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Form3.Show()
+        Me.Hide()
     End Sub
 End Class
