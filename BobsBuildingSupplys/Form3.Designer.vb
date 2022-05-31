@@ -23,6 +23,7 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lst_display = New System.Windows.Forms.ListBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lst_display
@@ -35,11 +36,21 @@ Partial Class Form3
         Me.lst_display.Size = New System.Drawing.Size(447, 349)
         Me.lst_display.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(362, 417)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(567, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lst_display)
         Me.Name = "Form3"
         Me.Text = "Form3"
@@ -48,4 +59,5 @@ Partial Class Form3
     End Sub
 
     Friend WithEvents lst_display As ListBox
+    Friend WithEvents Button1 As Button
 End Class

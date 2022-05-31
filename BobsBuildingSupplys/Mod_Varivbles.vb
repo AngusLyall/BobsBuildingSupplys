@@ -32,7 +32,7 @@
     Public BathRoom(2) As Integer
     Public BathRoomCost(2) As Integer
     Public LivingRoom(5) As Integer
-    Public LivingRoomCost As Integer
+    Public LivingRoomCost(5) As Integer
     Public BedRoomTwo(5) As Integer
     Public BedRoomTwoCost(5) As Integer
     Public BedRoomOne(5) As Integer

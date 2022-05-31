@@ -197,6 +197,7 @@
         End If
 
 
+
         'Bath Room Two G socket
         If BathRoom(1) > 0 Then
             Bath2gvalue = BathRoom(1) * TwoGSocket
@@ -315,6 +316,30 @@
         lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
         lbl_totaldisplay.Text = $" Total Cost {totalvalue(0).ToString("C")} (+GST)"
 
+        BathRoomCost(0) = Bath1gvalue
+        BathRoomCost(1) = Bath2gvalue
+        BathRoomCost(2) = BathUpgradevalue
+
+        BedRoomOneCost(0) = bedroomoneTVvalue
+        BedRoomOneCost(1) = bedroomoneSATvalue
+        BedRoomOneCost(2) = bedroomonenetworkvalue
+        BedRoomOneCost(3) = bedroomone1gvalue
+        BedRoomOneCost(4) = bedroomone2gvalue
+        BedRoomOneCost(5) = bedroomoneheatpumpvalue
+
+        BedRoomTwoCost(0) = bedroomtwoTVvalue
+        BedRoomTwoCost(1) = bedroomtwoSATvalue
+        BedRoomTwoCost(2) = bedroomtwonetworkvalue
+        BedRoomTwoCost(3) = bedroomtwo1gvalue
+        BedRoomTwoCost(4) = bedroomtwo2gvalue
+        BedRoomTwoCost(5) = bedroomtwoheatpumpvalue
+
+        LivingRoomCost(0) = livingTVvalue
+        LivingRoomCost(1) = livingSATvalue
+        LivingRoomCost(2) = livingnetworkvalue
+        LivingRoomCost(3) = living1gvalue
+        LivingRoomCost(4) = living2gvalue
+        LivingRoomCost(5) = livingheatpumpvalue
 
         lbl_kitch_cost.Show()
         lbl_living_cost.Show()
