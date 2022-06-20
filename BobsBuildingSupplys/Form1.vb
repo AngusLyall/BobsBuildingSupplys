@@ -3,7 +3,7 @@ Imports System.Net ' used for web requests
 Imports System.Xml ' used for the xml files that I create and read
 
 Public Class CustomerDetails
-    Dim Billingtextchanged As Boolean = False
+    Dim Billingtextchanged As Boolean = False ' these statments set up vairbles that are Booleans so they take a true False input.
     Dim deliverytextchanged As Boolean = False
     Dim requiredinfomation As Boolean = False
     Dim apiuserinput
@@ -13,12 +13,14 @@ Public Class CustomerDetails
 
     Private Sub CustomerDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim xmlfile As System.IO.StreamWriter
-        xmlfile = My.Computer.FileSystem.OpenTextFileWriter("xmlfile.xml", True)
-        xmlfile.Close()
+        xmlfile = My.Computer.FileSystem.OpenTextFileWriter("xmlfile.xml", True) ' this creates an XML file on start of the program for the google API results to be saved to and read from
+        xmlfile.Close() ' This closes the file it will be reopened later in the program this stops any edits from happening.
+        Form4.configpriceset()
+
     End Sub
 
     Private Sub txt_custfirstname_TextChanged(sender As Object, e As EventArgs) Handles txt_CusFirstName.TextChanged
-        CusFirstName = txt_CusFirstName.Text
+        CusFirstName = txt_CusFirstName.Text ' Sets the value of the text box to a varible when the text in the textbox is changed
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lbl_custLastName.Click
@@ -30,10 +32,10 @@ Public Class CustomerDetails
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles chk_DeliverySameBilling.CheckedChanged
-        If cusAdressSame = False Then
-            cusAdressSame = True
-            CusDeliveryAdress = CusBillAdress
-            txt_CusDeliveryAddress.Text = CusDeliveryAdress
+        If cusAdressSame = False Then ' This checks if the Adress same check box is checked if it is then it runs the code below
+            cusAdressSame = True ' changes the varible so the program knows what state the box is in (if it is ticked or not)
+            CusDeliveryAdress = CusBillAdress ' this makes the Delivery adress varible = to the billing adress important for storeing the values
+            txt_CusDeliveryAddress.Text = CusDeliveryAdress ' this makes the Delivery Adress textbox value = to the customer delivery afres
 
         Else
             cusAdressSame = False
@@ -48,14 +50,10 @@ Public Class CustomerDetails
         CusBusinessName = txt_CusBusinessName.Text
     End Sub
 
-    Private Sub txt_CusPhoneNumber_TextChanged(sender As Object, e As EventArgs) Handles txt_CusPhoneNumber.TextChanged
-        CusPhoneNumber = txt_CusPhoneNumber.Text
-    End Sub
-
     Private Sub txt_CusBillingAdress_TextChanged(sender As Object, e As EventArgs) Handles txt_CusBillingAdress.TextChanged
         CusBillAdress = txt_CusBillingAdress.Text
         Billingtextchanged = True
-        If cusAdressSame = True Then
+        If cusAdressSame = True Then ' this updates the delivery adress so as you type in the billing adress it updates the delivery adress if selected as being the same
             CusDeliveryAdress = CusBillAdress
             txt_CusDeliveryAddress.Text = CusDeliveryAdress
         End If
@@ -101,12 +99,12 @@ Public Class CustomerDetails
     End Sub
 
     Private Sub tmr_RequestLimiter_Tick(sender As Object, e As EventArgs) Handles tmr_RequestLimiter.Tick
-        If Billingtextchanged = True Then
+        If Billingtextchanged = True Then ' if the billing adress is changed between the timer ticks then it calls the api 
             apiuserinput = txt_CusBillingAdress
             apirequest()
-            Billingtextchanged = False
+            Billingtextchanged = False ' tells the computer it has run this by setting it to False
         End If
-        If deliverytextchanged = True Then
+        If deliverytextchanged = True Then ' Works the same as the billing adress but for the delivery adress
             apiuserinput = txt_CusDeliveryAddress
             apirequest()
             deliverytextchanged = False
@@ -116,14 +114,9 @@ Public Class CustomerDetails
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
-        If requiredinfomation = True Then
+        If requiredinfomation = False Then ' if requried infomation is set to False it then tells the code to move on if it doesn't it runs the else statment that tells the user to fill the infomation
             frm_OrderDetails.Show()
             Me.Hide()
-
-
-
-
-
         Else
             MessageBox.Show("Please Fill out the Requried Infomation Marked by a Asterisk")
         End If
@@ -136,52 +129,74 @@ Public Class CustomerDetails
     Private Sub RequiredInfomationCheck()
 
         requiredinfomation = False ' makes the RequiredInfomation vailble False that means it required no More Infomation
+        Dim customerdetailslist As New List(Of String) From {"CusFirstName", "CusLastName", "CusPhoneNumber", "CusBillAdress", "CusDeliveryAdress", "CusBusinessName "}
 
-        If CusFirstName = "" Then ' Checks if the vairble that stores the userinput contains anything if it does not it shows a red * and makes a varible true to stop the user moving on.
-            lbl_FirstNameRequired.Show() ' Displays a label which is a red * if the infomation is missing
-            requiredinfomation = True 'Makes the Requited infomation = true meaning we require more infomation if a box is empty
-        Else
-            lbl_FirstNameRequired.Hide()
+        Try
+            If CusFirstName = "" Then ' Checks if the vairble that stores the userinput contains anything if it does not it shows a red * and makes a varible true to stop the user moving on.
+                lbl_FirstNameRequired.Show() ' Displays a label which is a red * if the infomation is missing
+                requiredinfomation = True 'Makes the Requited infomation = true meaning we require more infomation if a box is empty
+            Else
+                lbl_FirstNameRequired.Hide() ' If the infomation is not equal to blank then it hides the red Red Astix which shows the required infomation.
 
-        End If
+            End If
 
-        If CusLastName = "" Then
-            lbl_LastNameRequired.Show()
-            requiredinfomation = True
-        Else
-            lbl_LastNameRequired.Hide()
-        End If
-
-        If CusPhoneNumber = "" Then
-            lbl_PhoneNumberRequired.Show()
-            requiredinfomation = True
-        Else
-            lbl_PhoneNumberRequired.Hide()
-        End If
-
-        If CusBillAdress = "" Then
-            lbl_BillingRequired.Show()
-            requiredinfomation = True
-        Else
-            lbl_BillingRequired.Hide()
-        End If
-
-        If CusDeliveryAdress = "" Then
-            lbl_DeliveryRequired.Show()
-            requiredinfomation = True
-        Else
-            lbl_DeliveryRequired.Hide()
-        End If
-
-        If cusTrade = True Then ' Because not all users will be a trade user this option is only required if they request the Trade Discount.
-            If CusBusinessName = "" Then
-                lbl_BusinessNameRequired.Show()
+            If CusLastName = "" Then
+                lbl_LastNameRequired.Show()
                 requiredinfomation = True
             Else
-                lbl_BusinessNameRequired.Hide()
+                lbl_LastNameRequired.Hide()
             End If
-        End If
+
+            If CusPhoneNumber = "" Then
+                lbl_PhoneNumberRequired.Show()
+                requiredinfomation = True
+            Else
+                lbl_PhoneNumberRequired.Hide()
+            End If
+
+            If CusBillAdress = "" Then
+                lbl_BillingRequired.Show()
+                requiredinfomation = True
+            Else
+                lbl_BillingRequired.Hide()
+            End If
+
+            If CusDeliveryAdress = "" Then
+                lbl_DeliveryRequired.Show()
+                requiredinfomation = True
+            Else
+                lbl_DeliveryRequired.Hide()
+            End If
+
+            If cusTrade = True Then ' Because not all users will be a trade user this option is only required if they request the Trade Discount.
+                If CusBusinessName = "" Then
+                    lbl_BusinessNameRequired.Show()
+                    requiredinfomation = True
+                Else
+                    lbl_BusinessNameRequired.Hide()
+                End If
+            End If
+        Catch
+            requiredinfomation = True
+        End Try
 
 
+
+
+
+    End Sub
+
+    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_CusPhoneNumber.MaskInputRejected
+        CusPhoneNumber = txt_CusPhoneNumber.Text
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        LoginForm1.Show() ' if the settings is selected it shows the login box
+        Me.Hide() ' hides current form
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Application.Exit() ' when the user clicks the box it ends the program
     End Sub
 End Class

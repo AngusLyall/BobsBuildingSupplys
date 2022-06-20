@@ -74,7 +74,7 @@
     Dim Bath2gvalue As Integer
 
 
-
+    Dim netpointcheck As Integer
 
     Dim tvpointdefult As Boolean = True
     Dim satpointdefult As Boolean = True
@@ -95,7 +95,7 @@
 
         ' Kitchen newtork
         If Kitchen(2) > 0 Then
-            kitchennetworkvalue = (Kitchen(2) * Network_Point) + Network_Switch
+            kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH
 
         Else
             kitchennetworkvalue = 0
@@ -104,14 +104,14 @@
         kitchencost(2) = kitchennetworkvalue
         'kitchen one G socket
         If Kitchen(3) > 0 Then
-            kitchen1gvalue = Kitchen(3) * OneGSocket
+            kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET
         Else
             kitchen1gvalue = 0
         End If
         kitchencost(3) = kitchen1gvalue
         'Kitchen Two G socket
         If Kitchen(4) > 0 Then
-            kitchen2gvalue = Kitchen(4) * TwoGSocket
+            kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET
         Else
             kitchen2gvalue = 0
         End If
@@ -122,24 +122,24 @@
             Case 0
                 Kitchenupgradevalue = 0
             Case 1
-                Kitchenupgradevalue = KitchenOptionA
+                Kitchenupgradevalue = Form4.KITCHENOPTIONA
             Case 2
-                Kitchenupgradevalue = KitchenOptionB
+                Kitchenupgradevalue = Form4.KITCHENOPTIONB
             Case 3
-                Kitchenupgradevalue = KitchenOptionC
+                Kitchenupgradevalue = Form4.KITCHENOPTIONC
 
         End Select
 
         kitchencost(5) = Kitchenupgradevalue
         'Kitchen TV Point
         If Kitchen(0) > 0 Then
-            kitchenTVvalue = KTV * TV_AERIAL_POINT
+            kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT
             kitchencost(0) = kitchenTVvalue
         End If
 
         'Kitchen SAT point
         If Kitchen(1) > 0 Then
-            kitchenSATvalue = KSAT * TV_SAT_POINT
+            kitchenSATvalue = KSAT * Form4.TV_SAT_POINT
             kitchencost(1) = kitchenSATvalue
         End If
 
@@ -147,41 +147,41 @@
         ' Living room Values '
         ' Living Room Roof Aerial + TV Point
         If LivingRoom(0) > 0 Then
-            livingTVvalue = TV_Aerial
+            livingTVvalue = Form4.TV_AERIAL
         Else
             livingTVvalue = 0
         End If
 
         'Living Room Sat dish + Tv point
         If LivingRoom(1) > 0 Then
-            livingSATvalue = TV_SAT
+            livingSATvalue = Form4.TV_SAT
         Else
             livingSATvalue = 0
         End If
 
         ' Living Room Network Point
         If LivingRoom(2) > 0 Then
-            livingnetworkvalue = LivingRoom(2) * Network_Point
+            livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
         Else
             livingnetworkvalue = 0
         End If
 
         'Living Room One G socket
         If LivingRoom(3) > 0 Then
-            living1gvalue = LivingRoom(3) * OneGSocket
+            living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
         Else
             living1gvalue = 0
         End If
 
         'Living Room Two G socket
         If LivingRoom(4) > 0 Then
-            living2gvalue = LivingRoom(4) * TwoGSocket
+            living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
         Else
             living2gvalue = 0
         End If
         ' Living room HeatPump
         If LivingRoom(5) > 0 Then
-            livingheatpumpvalue = HeatPump2
+            livingheatpumpvalue = Form4.HEATPUMP2
         Else
             livingheatpumpvalue = 0
         End If
@@ -191,7 +191,7 @@
 
         'Bath Room One G socket
         If BathRoom(0) > 0 Then
-            Bath1gvalue = BathRoom(0) * OneGSocket
+            Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
         Else
             Bath1gvalue = 0
         End If
@@ -200,13 +200,13 @@
 
         'Bath Room Two G socket
         If BathRoom(1) > 0 Then
-            Bath2gvalue = BathRoom(1) * TwoGSocket
+            Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
         Else
             Bath2gvalue = 0
         End If
 
         If BathRoom(2) > 0 Then
-            BathUpgradevalue = BathRoom(2) * BathUpgrade
+            BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
         Else
             BathUpgradevalue = 0
         End If
@@ -216,41 +216,41 @@
 
         ' TV Point
         If BedRoomTwo(0) > 0 Then
-            bedroomtwoTVvalue = TV_Aerial
+            bedroomtwoTVvalue = Form4.TV_AERIAL
         Else
             bedroomtwoTVvalue = 0
         End If
 
         ' Sat point
         If BedRoomTwo(1) > 0 Then
-            bedroomtwoSATvalue = TV_SAT
+            bedroomtwoSATvalue = Form4.TV_SAT
         Else
             bedroomtwoSATvalue = 0
         End If
 
         ' Network Point
         If BedRoomTwo(2) > 0 Then
-            bedroomtwonetworkvalue = BedRoomTwo(2) * Network_Point
+            bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
         Else
             bedroomtwonetworkvalue = 0
         End If
 
         ' One G socket
         If BedRoomTwo(3) > 0 Then
-            bedroomtwo1gvalue = BedRoomTwo(3) * OneGSocket
+            bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
         Else
             bedroomtwo1gvalue = 0
         End If
 
         ' Two G socket
         If BedRoomTwo(4) > 0 Then
-            bedroomtwo2gvalue = BedRoomTwo(4) * TwoGSocket
+            bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
         Else
             bedroomtwo2gvalue = 0
         End If
         ' HeatPump
         If BedRoomTwo(5) > 0 Then
-            bedroomtwoheatpumpvalue = HeatPump1
+            bedroomtwoheatpumpvalue = Form4.HEATPUMP1
         Else
             bedroomtwoheatpumpvalue = 0
         End If
@@ -260,41 +260,41 @@
 
         ' TV Point
         If BedRoomOne(0) > 0 Then
-            bedroomoneTVvalue = TV_Aerial
+            bedroomoneTVvalue = Form4.TV_AERIAL
         Else
             bedroomoneTVvalue = 0
         End If
 
         ' Sat point
         If BedRoomOne(1) > 0 Then
-            bedroomoneSATvalue = TV_SAT
+            bedroomoneSATvalue = Form4.TV_SAT
         Else
             bedroomoneSATvalue = 0
         End If
 
         ' Network Point
         If BedRoomOne(2) > 0 Then
-            bedroomonenetworkvalue = BedRoomOne(2) * Network_Point
+            bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
         Else
             bedroomonenetworkvalue = 0
         End If
 
         ' One G socket
         If BedRoomOne(3) > 0 Then
-            bedroomone1gvalue = BedRoomOne(3) * OneGSocket
+            bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
         Else
             bedroomone1gvalue = 0
         End If
 
         ' Two G socket
         If BedRoomOne(4) > 0 Then
-            bedroomone2gvalue = BedRoomOne(4) * TwoGSocket
+            bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
         Else
             bedroomone2gvalue = 0
         End If
         ' HeatPump
         If BedRoomOne(5) > 0 Then
-            bedroomoneheatpumpvalue = HeatPump1
+            bedroomoneheatpumpvalue = Form4.HEATPUMP1
         Else
             bedroomoneheatpumpvalue = 0
         End If
@@ -314,7 +314,7 @@
         lbl_bedroom_two_cost.Text = $" Bed Room Two Cost {totalvalue(4).ToString("C")}"
         lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}"
         lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
-        lbl_totaldisplay.Text = $" Total Cost {totalvalue(0).ToString("C")} (+GST)"
+        lbl_totaldisplay.Text = $" Total Options Cost {totalvalue(0).ToString("C")} (+GST)"
 
         BathRoomCost(0) = Bath1gvalue
         BathRoomCost(1) = Bath2gvalue
@@ -1145,7 +1145,14 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Form3.Show()
-        Me.Hide()
+        value_store()
+        input_rules()
+        Dim tempnetpointcheck As Integer = KNET + BRONET + BRTNET + LRNET
+        If tempnetpointcheck = 1 Then
+            MessageBox.Show("You need more then one network point!")
+        Else
+            Form3.Show()
+            Me.Hide()
+        End If
     End Sub
 End Class

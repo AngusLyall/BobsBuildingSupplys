@@ -689,7 +689,7 @@ Partial Class frm_OrderDetails
         'lbl_totaldisplay
         '
         Me.lbl_totaldisplay.AutoSize = True
-        Me.lbl_totaldisplay.Location = New System.Drawing.Point(381, 101)
+        Me.lbl_totaldisplay.Location = New System.Drawing.Point(281, 71)
         Me.lbl_totaldisplay.Name = "lbl_totaldisplay"
         Me.lbl_totaldisplay.Size = New System.Drawing.Size(76, 15)
         Me.lbl_totaldisplay.TabIndex = 90

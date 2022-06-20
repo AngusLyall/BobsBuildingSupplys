@@ -23,6 +23,7 @@ Partial Class CustomerDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerDetails))
         Me.lbl_CusTitle = New System.Windows.Forms.Label()
         Me.lbl_CustFirstName = New System.Windows.Forms.Label()
         Me.lbl_custLastName = New System.Windows.Forms.Label()
@@ -31,7 +32,6 @@ Partial Class CustomerDetails
         Me.lbl_BusinessName = New System.Windows.Forms.Label()
         Me.txt_CusBusinessName = New System.Windows.Forms.TextBox()
         Me.lbl_custphone = New System.Windows.Forms.Label()
-        Me.txt_CusPhoneNumber = New System.Windows.Forms.TextBox()
         Me.lbl_cusBillingAdress = New System.Windows.Forms.Label()
         Me.lbl_cusDeliveryAdress = New System.Windows.Forms.Label()
         Me.txt_CusDeliveryAddress = New System.Windows.Forms.TextBox()
@@ -46,6 +46,10 @@ Partial Class CustomerDetails
         Me.lbl_PhoneNumberRequired = New System.Windows.Forms.Label()
         Me.lbl_BillingRequired = New System.Windows.Forms.Label()
         Me.lbl_DeliveryRequired = New System.Windows.Forms.Label()
+        Me.txt_CusPhoneNumber = New System.Windows.Forms.MaskedTextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_CusTitle
@@ -118,13 +122,6 @@ Partial Class CustomerDetails
         Me.lbl_custphone.Size = New System.Drawing.Size(154, 30)
         Me.lbl_custphone.TabIndex = 7
         Me.lbl_custphone.Text = "Phone Number"
-        '
-        'txt_CusPhoneNumber
-        '
-        Me.txt_CusPhoneNumber.Location = New System.Drawing.Point(191, 236)
-        Me.txt_CusPhoneNumber.Name = "txt_CusPhoneNumber"
-        Me.txt_CusPhoneNumber.Size = New System.Drawing.Size(283, 23)
-        Me.txt_CusPhoneNumber.TabIndex = 8
         '
         'lbl_cusBillingAdress
         '
@@ -264,11 +261,42 @@ Partial Class CustomerDetails
         Me.lbl_DeliveryRequired.Text = "*"
         Me.lbl_DeliveryRequired.Visible = False
         '
+        'txt_CusPhoneNumber
+        '
+        Me.txt_CusPhoneNumber.HidePromptOnLeave = True
+        Me.txt_CusPhoneNumber.Location = New System.Drawing.Point(191, 236)
+        Me.txt_CusPhoneNumber.Mask = "(999) 000-0000"
+        Me.txt_CusPhoneNumber.Name = "txt_CusPhoneNumber"
+        Me.txt_CusPhoneNumber.Size = New System.Drawing.Size(283, 23)
+        Me.txt_CusPhoneNumber.TabIndex = 23
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(2, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(62, 24)
+        Me.Button2.TabIndex = 24
+        Me.Button2.Text = "Settings"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(450, 1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(31, 34)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 92
+        Me.PictureBox2.TabStop = False
+        '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 412)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.txt_CusPhoneNumber)
         Me.Controls.Add(Me.txt_CusDeliveryAddress)
         Me.Controls.Add(Me.lbl_DeliveryRequired)
         Me.Controls.Add(Me.lbl_BillingRequired)
@@ -283,7 +311,6 @@ Partial Class CustomerDetails
         Me.Controls.Add(Me.txt_CusBillingAdress)
         Me.Controls.Add(Me.lbl_cusDeliveryAdress)
         Me.Controls.Add(Me.lbl_cusBillingAdress)
-        Me.Controls.Add(Me.txt_CusPhoneNumber)
         Me.Controls.Add(Me.lbl_custphone)
         Me.Controls.Add(Me.txt_CusBusinessName)
         Me.Controls.Add(Me.lbl_BusinessName)
@@ -294,6 +321,7 @@ Partial Class CustomerDetails
         Me.Name = "CustomerDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Business Name"
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,7 +335,6 @@ Partial Class CustomerDetails
     Friend WithEvents lbl_BusinessName As Label
     Friend WithEvents txt_CusBusinessName As TextBox
     Friend WithEvents lbl_custphone As Label
-    Friend WithEvents txt_CusPhoneNumber As TextBox
     Friend WithEvents lbl_cusBillingAdress As Label
     Friend WithEvents lbl_cusDeliveryAdress As Label
     Friend WithEvents txt_CusDeliveryAddress As TextBox
@@ -322,4 +349,7 @@ Partial Class CustomerDetails
     Friend WithEvents lbl_PhoneNumberRequired As Label
     Friend WithEvents lbl_BillingRequired As Label
     Friend WithEvents lbl_DeliveryRequired As Label
+    Friend WithEvents txt_CusPhoneNumber As MaskedTextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

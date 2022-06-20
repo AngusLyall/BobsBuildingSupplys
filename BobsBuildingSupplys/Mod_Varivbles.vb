@@ -7,23 +7,7 @@
     Public CusDeliveryAdress As String
     Public cusTrade As Boolean = False
     Public cusAdressSame As Boolean = False
-    Public Const BASICKIT As Decimal = 65217.3913043
-    Public Const KITCHENOPTIONA As Integer = 2000
-    Public Const KITCHENOPTIONB As Integer = 3500
-    Public Const KITCHENOPTIONC As Integer = 6000
-    Public Const BATHUPGRADE As Integer = 2500
-    Public Const TV_AERIAL As Integer = 250
-    Public Const TV_AERIAL_POINT As Integer = 50
-    Public Const TV_SAT As Integer = 250
-    Public Const TV_SAT_POINT As Integer = 50
-    Public Const HEATPUMP1 As Integer = 1800
-    Public Const HEATPUMP2 As Integer = 2500
-    Public Const ONEGSOCKET As Integer = 40
-    Public Const TWOGSOCKET As Integer = 50
-    Public Const NETWORK_POINT As Integer = 50
-    Public Const NETWORK_SWITCH As Integer = 100
-    Public Const GST As Decimal = 1.15
-    Public Const TRADE As Decimal = 0.9
+
 
 
 
