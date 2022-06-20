@@ -48,11 +48,11 @@
 
     Dim networkvalue As Integer
 
-    Dim livingTVvalue As Integer
-    Dim livingSATvalue As Integer
-    Dim livingnetworkvalue As Integer
-    Dim living1gvalue As Integer
-    Dim living2gvalue As Integer
+    Dim livingTVvalue As Integer = 0
+    Dim livingSATvalue As Integer = 0
+    Dim livingnetworkvalue As Integer = 0
+    Dim living1gvalue As Integer = 0
+    Dim living2gvalue As Integer = 0
     Dim livingheatpumpvalue As Integer
 
     Dim bedroomtwoTVvalue As Integer
@@ -96,26 +96,17 @@
         ' Kitchen newtork
         If Kitchen(2) > 0 Then
             kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH
-
-        Else
-            kitchennetworkvalue = 0
         End If
-
         kitchencost(2) = kitchennetworkvalue
         'kitchen one G socket
         If Kitchen(3) > 0 Then
             kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET
-        Else
-            kitchen1gvalue = 0
         End If
         kitchencost(3) = kitchen1gvalue
         'Kitchen Two G socket
         If Kitchen(4) > 0 Then
             kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET
-        Else
-            kitchen2gvalue = 0
         End If
-
         kitchencost(4) = kitchen2gvalue
         'Kitchen upgrade option.
         Select Case Kitchen(5)
@@ -127,181 +118,107 @@
                 Kitchenupgradevalue = Form4.KITCHENOPTIONB
             Case 3
                 Kitchenupgradevalue = Form4.KITCHENOPTIONC
-
         End Select
-
         kitchencost(5) = Kitchenupgradevalue
         'Kitchen TV Point
         If Kitchen(0) > 0 Then
             kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT
             kitchencost(0) = kitchenTVvalue
         End If
-
         'Kitchen SAT point
         If Kitchen(1) > 0 Then
             kitchenSATvalue = KSAT * Form4.TV_SAT_POINT
             kitchencost(1) = kitchenSATvalue
         End If
-
-
         ' Living room Values '
         ' Living Room Roof Aerial + TV Point
         If LivingRoom(0) > 0 Then
             livingTVvalue = Form4.TV_AERIAL
-        Else
-            livingTVvalue = 0
         End If
-
         'Living Room Sat dish + Tv point
         If LivingRoom(1) > 0 Then
             livingSATvalue = Form4.TV_SAT
-        Else
-            livingSATvalue = 0
         End If
-
         ' Living Room Network Point
         If LivingRoom(2) > 0 Then
             livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
-        Else
-            livingnetworkvalue = 0
         End If
-
         'Living Room One G socket
         If LivingRoom(3) > 0 Then
             living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
-        Else
-            living1gvalue = 0
         End If
-
         'Living Room Two G socket
         If LivingRoom(4) > 0 Then
             living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
-        Else
-            living2gvalue = 0
         End If
         ' Living room HeatPump
         If LivingRoom(5) > 0 Then
             livingheatpumpvalue = Form4.HEATPUMP2
-        Else
-            livingheatpumpvalue = 0
         End If
-
-
         ''Bath Room Options ''
-
         'Bath Room One G socket
         If BathRoom(0) > 0 Then
             Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
-        Else
-            Bath1gvalue = 0
         End If
-
-
-
         'Bath Room Two G socket
         If BathRoom(1) > 0 Then
             Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
-        Else
-            Bath2gvalue = 0
         End If
 
         If BathRoom(2) > 0 Then
             BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
-        Else
-            BathUpgradevalue = 0
         End If
-
-
         ' Bed room Two Values '
-
         ' TV Point
         If BedRoomTwo(0) > 0 Then
             bedroomtwoTVvalue = Form4.TV_AERIAL
-        Else
-            bedroomtwoTVvalue = 0
         End If
-
         ' Sat point
         If BedRoomTwo(1) > 0 Then
             bedroomtwoSATvalue = Form4.TV_SAT
-        Else
-            bedroomtwoSATvalue = 0
         End If
-
         ' Network Point
         If BedRoomTwo(2) > 0 Then
             bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
-        Else
-            bedroomtwonetworkvalue = 0
         End If
-
         ' One G socket
         If BedRoomTwo(3) > 0 Then
             bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
-        Else
-            bedroomtwo1gvalue = 0
         End If
-
         ' Two G socket
         If BedRoomTwo(4) > 0 Then
             bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
-        Else
-            bedroomtwo2gvalue = 0
         End If
         ' HeatPump
         If BedRoomTwo(5) > 0 Then
             bedroomtwoheatpumpvalue = Form4.HEATPUMP1
-        Else
-            bedroomtwoheatpumpvalue = 0
         End If
-
-
         ' Bed room One Values '
-
         ' TV Point
         If BedRoomOne(0) > 0 Then
             bedroomoneTVvalue = Form4.TV_AERIAL
-        Else
-            bedroomoneTVvalue = 0
         End If
-
         ' Sat point
         If BedRoomOne(1) > 0 Then
             bedroomoneSATvalue = Form4.TV_SAT
-        Else
-            bedroomoneSATvalue = 0
         End If
-
         ' Network Point
         If BedRoomOne(2) > 0 Then
             bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
-        Else
-            bedroomonenetworkvalue = 0
         End If
-
         ' One G socket
         If BedRoomOne(3) > 0 Then
             bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
-        Else
-            bedroomone1gvalue = 0
         End If
-
         ' Two G socket
         If BedRoomOne(4) > 0 Then
             bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
-        Else
-            bedroomone2gvalue = 0
         End If
         ' HeatPump
         If BedRoomOne(5) > 0 Then
             bedroomoneheatpumpvalue = Form4.HEATPUMP1
-        Else
-            bedroomoneheatpumpvalue = 0
         End If
-
-
         ' total values 
-
         totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' Total Kitchen COST
         totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue ' Total Living Room COST
         totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue ' Total Bedroom One cost

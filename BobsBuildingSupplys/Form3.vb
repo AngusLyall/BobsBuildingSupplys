@@ -133,7 +133,7 @@
         For Each item In lst_display.Items
             printoutlist.Add(item)
         Next
-        Dim printoutstr As String = String.Join(vbNewLine, printoutlist)
+        Dim printoutstr As String = String.Join(vbCrLf, printoutlist)
         If ordersaved = False Then
             '' My.Computer.FileSystem.DeleteFile("ordernumber.txt")
             '' My.Computer.FileSystem.WriteAllText("ordernumber.txt", "" & currentordernumber, True)

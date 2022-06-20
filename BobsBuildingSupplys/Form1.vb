@@ -60,8 +60,8 @@ Public Class CustomerDetails
     End Sub
 
     Private Sub txt_CusDeliveryAddress_TextChanged(sender As Object, e As EventArgs) Handles txt_CusDeliveryAddress.TextChanged
-        CusDeliveryAdress = txt_CusDeliveryAddress.Text
-        deliverytextchanged = True
+        CusDeliveryAdress = txt_CusDeliveryAddress.Text ' this sets the varible = to the text
+        deliverytextchanged = True ' this is used for the timer to make sure its not trying to make api requests too often causes the program to run slow
     End Sub
 
     Private Sub chk_TradeCus_CheckedChanged(sender As Object, e As EventArgs) Handles chk_TradeCus.CheckedChanged

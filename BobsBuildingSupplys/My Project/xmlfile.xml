@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AutocompletionResponse>
+ <status>OK</status>
+ <prediction>
+  <description>17 Parkcliff Road, Tikitere, Rotorua, New Zealand</description>
+  <type>street_address</type>
+  <type>geocode</type>
+  <reference>ChIJfTxdn2iDbm0RzkyOMKpcLAU</reference>
+  <term>
+   <value>17</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>Parkcliff Road</value>
+   <offset>3</offset>
+  </term>
+  <term>
+   <value>Tikitere</value>
+   <offset>19</offset>
+  </term>
+  <term>
+   <value>Rotorua</value>
+   <offset>29</offset>
+  </term>
+  <term>
+   <value>New Zealand</value>
+   <offset>38</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>2</length>
+  </matched_substring>
+  <matched_substring>
+   <offset>3</offset>
+   <length>14</length>
+  </matched_substring>
+  <matched_substring>
+   <offset>19</offset>
+   <length>8</length>
+  </matched_substring>
+  <matched_substring>
+   <offset>29</offset>
+   <length>7</length>
+  </matched_substring>
+  <matched_substring>
+   <offset>38</offset>
+   <length>11</length>
+  </matched_substring>
+  <place_id>ChIJfTxdn2iDbm0RzkyOMKpcLAU</place_id>
+  <structured_formatting>
+   <description>17 Parkcliff Road</description>
+   <subdescription>Tikitere, Rotorua, New Zealand</subdescription>
+   <description_matched_substring>
+    <offset>0</offset>
+    <length>2</length>
+   </description_matched_substring>
+   <description_matched_substring>
+    <offset>3</offset>
+    <length>14</length>
+   </description_matched_substring>
+   <subdescription_matched_substring>
+    <offset>0</offset>
+    <length>8</length>
+   </subdescription_matched_substring>
+   <subdescription_matched_substring>
+    <offset>10</offset>
+    <length>7</length>
+   </subdescription_matched_substring>
+   <subdescription_matched_substring>
+    <offset>19</offset>
+    <length>11</length>
+   </subdescription_matched_substring>
+  </structured_formatting>
+ </prediction>
+</AutocompletionResponse>
