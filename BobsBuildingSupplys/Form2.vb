@@ -1,114 +1,24 @@
 ﻿Public Class frm_OrderDetails
-    Dim KTV As Integer = 0
-    Dim KSAT As Integer = 0
-    Dim KNET As Integer = 0
-    Dim K1G As Integer = 0
-    Dim K2G As Integer = 0
-    Dim Kupgrade As Integer = 0
-
-    Dim BROTV As Integer = 0
-    Dim BROSAT As Integer = 0
-    Dim BRONET As Integer = 0
-    Dim BRO1G As Integer = 0
-    Dim BRO2G As Integer = 0
-    Dim BROHeatPump As Integer = 0
-
-    Dim BRTTV As Integer = 0
-    Dim BRTSAT As Integer = 0
-    Dim BRTNET As Integer = 0
-    Dim BRT1G As Integer = 0
-    Dim BRT2G As Integer = 0
-    Dim BRTHeatPump As Integer = 0
-
-    Dim LRTV As Integer = 0
-    Dim LRSAT As Integer = 0
-    Dim LRNET As Integer = 0
-    Dim LR1G As Integer = 0
-    Dim LR2G As Integer = 0
-    Dim LRHeatPump As Integer = 0
-
-    Dim BATH1G As Integer = 0
-    Dim BATH2G As Integer = 0
-    Dim BATHUpgrades As Integer = 0
-
-    Dim KitchenA As Boolean = False
-    Dim KitchenB As Boolean = False
-    Dim KitchenC As Boolean = False
-    Dim LRHeat As Boolean = False
-    Dim BROHeat As Boolean = False
-    Dim BATHOption As Boolean = False
-    Dim BRTHeat As Boolean = False
-
-    Dim Kitchenupgradevalue As Integer
-    Dim kitchennetworkvalue As Integer
-    Dim kitchen1gvalue As Integer
-    Dim kitchen2gvalue As Integer
-    Dim kitchenTVvalue As Integer
-    Dim kitchenSATvalue As Integer
-
-    Dim networkvalue As Integer
-
-    Dim livingTVvalue As Integer = 0
-    Dim livingSATvalue As Integer = 0
-    Dim livingnetworkvalue As Integer = 0
-    Dim living1gvalue As Integer = 0
-    Dim living2gvalue As Integer = 0
-    Dim livingheatpumpvalue As Integer
-
-    Dim bedroomtwoTVvalue As Integer
-    Dim bedroomtwoSATvalue As Integer
-    Dim bedroomtwonetworkvalue As Integer
-    Dim bedroomtwo1gvalue As Integer
-    Dim bedroomtwo2gvalue As Integer
-    Dim bedroomtwoheatpumpvalue As Integer
-
-    Dim bedroomoneTVvalue As Integer
-    Dim bedroomoneSATvalue As Integer
-    Dim bedroomonenetworkvalue As Integer
-    Dim bedroomone1gvalue As Integer
-    Dim bedroomone2gvalue As Integer
-    Dim bedroomoneheatpumpvalue As Integer
-
-    Dim BathUpgradevalue As Integer
-    Dim Bath1gvalue As Integer
-    Dim Bath2gvalue As Integer
-
-
-    Dim netpointcheck As Integer
-
-    Dim tvpointdefult As Boolean = True
-    Dim satpointdefult As Boolean = True
-
-    Dim userimputcheck As Boolean = False
-
-    Dim start_zerio As Boolean = False
-
-
-
-
+    Dim KTV As Integer = 0 : Dim KSAT As Integer = 0 : Dim KNET As Integer = 0 : Dim K1G As Integer = 0 : Dim K2G As Integer = 0 : Dim Kupgrade As Integer = 0 : Dim BROTV As Integer = 0 : Dim BROSAT As Integer = 0
+    Dim BRONET As Integer = 0 : Dim BRO1G As Integer = 0 : Dim BRO2G As Integer = 0 : Dim BROHeatPump As Integer = 0 : Dim BRTTV As Integer = 0 : Dim BRTSAT As Integer = 0 : Dim BRTNET As Integer = 0 : Dim BRT1G As Integer = 0
+    Dim BRT2G As Integer = 0 : Dim BRTHeatPump As Integer = 0 : Dim LRTV As Integer = 0 : Dim LRSAT As Integer = 0 : Dim LRNET As Integer = 0 : Dim LR1G As Integer = 0 : Dim LR2G As Integer = 0 : Dim LRHeatPump As Integer = 0
+    Dim BATH1G As Integer = 0 : Dim BATH2G As Integer = 0 : Dim BATHUpgrades As Integer = 0 : Dim KitchenA As Boolean = False : Dim KitchenB As Boolean = False : Dim KitchenC As Boolean = False : Dim LRHeat As Boolean = False
+    Dim BROHeat As Boolean = False : Dim BATHOption As Boolean = False : Dim BRTHeat As Boolean = False : Dim Kitchenupgradevalue As Integer : Dim kitchennetworkvalue As Integer : Dim kitchen1gvalue As Integer : Dim kitchen2gvalue As Integer
+    Dim kitchenTVvalue As Integer : Dim kitchenSATvalue As Integer : Dim networkvalue As Integer : Dim livingTVvalue As Integer = 0 : Dim livingSATvalue As Integer = 0 : Dim livingnetworkvalue As Integer = 0 : Dim living1gvalue As Integer = 0
+    Dim living2gvalue As Integer = 0 : Dim livingheatpumpvalue As Integer : Dim bedroomtwoTVvalue As Integer : Dim bedroomtwoSATvalue As Integer : Dim bedroomtwonetworkvalue As Integer : Dim bedroomtwo1gvalue As Integer
+    Dim bedroomtwo2gvalue As Integer : Dim bedroomtwoheatpumpvalue As Integer : Dim bedroomoneTVvalue As Integer : Dim bedroomoneSATvalue As Integer : Dim bedroomonenetworkvalue As Integer : Dim bedroomone1gvalue As Integer
+    Dim bedroomone2gvalue As Integer : Dim bedroomoneheatpumpvalue As Integer : Dim BathUpgradevalue As Integer : Dim Bath1gvalue As Integer : Dim Bath2gvalue As Integer : Dim netpointcheck As Integer : Dim tvpointdefult As Boolean = True
+    Dim satpointdefult As Boolean = True : Dim userimputcheck As Boolean = False : Dim start_zerio As Boolean = False
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomerDetails.Hide()
-
     End Sub
     Private Sub priceing_math()
-        'kitchen Options'
-
-        ' Kitchen newtork
-        If Kitchen(2) > 0 Then
-            kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH
-        End If
+        kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH
         kitchencost(2) = kitchennetworkvalue
-        'kitchen one G socket
-        If Kitchen(3) > 0 Then
-            kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET
-        End If
+        kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET
         kitchencost(3) = kitchen1gvalue
-        'Kitchen Two G socket
-        If Kitchen(4) > 0 Then
-            kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET
-        End If
+        kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET
         kitchencost(4) = kitchen2gvalue
-        'Kitchen upgrade option.
         Select Case Kitchen(5)
             Case 0
                 Kitchenupgradevalue = 0
@@ -120,144 +30,62 @@
                 Kitchenupgradevalue = Form4.KITCHENOPTIONC
         End Select
         kitchencost(5) = Kitchenupgradevalue
-        'Kitchen TV Point
-        If Kitchen(0) > 0 Then
-            kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT
-            kitchencost(0) = kitchenTVvalue
-        End If
-        'Kitchen SAT point
-        If Kitchen(1) > 0 Then
-            kitchenSATvalue = KSAT * Form4.TV_SAT_POINT
-            kitchencost(1) = kitchenSATvalue
-        End If
-        ' Living room Values '
-        ' Living Room Roof Aerial + TV Point
-        If LivingRoom(0) > 0 Then
-            livingTVvalue = Form4.TV_AERIAL
-        End If
-        'Living Room Sat dish + Tv point
-        If LivingRoom(1) > 0 Then
-            livingSATvalue = Form4.TV_SAT
-        End If
-        ' Living Room Network Point
-        If LivingRoom(2) > 0 Then
-            livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
-        End If
-        'Living Room One G socket
-        If LivingRoom(3) > 0 Then
-            living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
-        End If
-        'Living Room Two G socket
-        If LivingRoom(4) > 0 Then
-            living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
-        End If
-        ' Living room HeatPump
-        If LivingRoom(5) > 0 Then
-            livingheatpumpvalue = Form4.HEATPUMP2
-        End If
-        ''Bath Room Options ''
-        'Bath Room One G socket
-        If BathRoom(0) > 0 Then
-            Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
-        End If
-        'Bath Room Two G socket
-        If BathRoom(1) > 0 Then
-            Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
-        End If
-
-        If BathRoom(2) > 0 Then
-            BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
-        End If
-        ' Bed room Two Values '
-        ' TV Point
-        If BedRoomTwo(0) > 0 Then
-            bedroomtwoTVvalue = Form4.TV_AERIAL
-        End If
-        ' Sat point
-        If BedRoomTwo(1) > 0 Then
-            bedroomtwoSATvalue = Form4.TV_SAT
-        End If
-        ' Network Point
-        If BedRoomTwo(2) > 0 Then
-            bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
-        End If
-        ' One G socket
-        If BedRoomTwo(3) > 0 Then
-            bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
-        End If
-        ' Two G socket
-        If BedRoomTwo(4) > 0 Then
-            bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
-        End If
-        ' HeatPump
-        If BedRoomTwo(5) > 0 Then
-            bedroomtwoheatpumpvalue = Form4.HEATPUMP1
-        End If
-        ' Bed room One Values '
-        ' TV Point
-        If BedRoomOne(0) > 0 Then
-            bedroomoneTVvalue = Form4.TV_AERIAL
-        End If
-        ' Sat point
-        If BedRoomOne(1) > 0 Then
-            bedroomoneSATvalue = Form4.TV_SAT
-        End If
-        ' Network Point
-        If BedRoomOne(2) > 0 Then
-            bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
-        End If
-        ' One G socket
-        If BedRoomOne(3) > 0 Then
-            bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
-        End If
-        ' Two G socket
-        If BedRoomOne(4) > 0 Then
-            bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
-        End If
-        ' HeatPump
-        If BedRoomOne(5) > 0 Then
-            bedroomoneheatpumpvalue = Form4.HEATPUMP1
-        End If
-        ' total values 
+        kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT
+        kitchencost(0) = kitchenTVvalue
+        kitchenSATvalue = KSAT * Form4.TV_SAT_POINT
+        kitchencost(1) = kitchenSATvalue
+        livingTVvalue = Form4.TV_AERIAL
+        livingSATvalue = Form4.TV_SAT
+        livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
+        living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
+        living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
+        livingheatpumpvalue = Form4.HEATPUMP2
+        Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
+        Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
+        BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
+        bedroomtwoTVvalue = Form4.TV_AERIAL
+        bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
+        bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
+        bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
+        bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL
+        bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT
+        bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
+        bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
+        bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
+        bedroomoneheatpumpvalue = BedRoomOne(5) * Form4.HEATPUMP1
         totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' Total Kitchen COST
         totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue ' Total Living Room COST
         totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue ' Total Bedroom One cost
         totalvalue(4) = bedroomtwoheatpumpvalue + bedroomtwonetworkvalue + bedroomtwo1gvalue + bedroomtwo2gvalue + bedroomtwoTVvalue + bedroomtwoSATvalue ' Total Bedroom Two Cost
         totalvalue(5) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
         totalvalue(0) = totalvalue(1) + totalvalue(2) + totalvalue(3) + totalvalue(4) + totalvalue(5) ' All up Total
-
         lbl_kitch_cost.Text = $" Kitchen Cost {totalvalue(1).ToString("C")}"
         lbl_living_cost.Text = $" Living Room Cost {totalvalue(2).ToString("C")}"
         lbl_bedroom_two_cost.Text = $" Bed Room Two Cost {totalvalue(4).ToString("C")}"
         lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}"
         lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
         lbl_totaldisplay.Text = $" Total Options Cost {totalvalue(0).ToString("C")} (+GST)"
-
+        Dim bedroomonelist As New List(Of Integer) From {bedroomoneTVvalue, bedroomoneSATvalue, bedroomonenetworkvalue, bedroomone1gvalue, bedroomone2gvalue, bedroomoneheatpumpvalue}
+        Dim counter As Integer = -1
+        For Each value In bedroomonelist
+            counter = counter + 1
+            BedRoomOneCost(0) = value
+        Next
+        Dim bedroomtwolist As New List(Of Integer) From {bedroomtwoTVvalue, bedroomtwoSATvalue, bedroomtwonetworkvalue, bedroomtwo1gvalue, bedroomtwo2gvalue, bedroomtwoheatpumpvalue}
+        counter = -1
+        For Each value As String In bedroomtwolist
+            counter = counter + 1
+            BedRoomTwoCost(0) = value
+        Next
         BathRoomCost(0) = Bath1gvalue
         BathRoomCost(1) = Bath2gvalue
         BathRoomCost(2) = BathUpgradevalue
-
-        BedRoomOneCost(0) = bedroomoneTVvalue
-        BedRoomOneCost(1) = bedroomoneSATvalue
-        BedRoomOneCost(2) = bedroomonenetworkvalue
-        BedRoomOneCost(3) = bedroomone1gvalue
-        BedRoomOneCost(4) = bedroomone2gvalue
-        BedRoomOneCost(5) = bedroomoneheatpumpvalue
-
-        BedRoomTwoCost(0) = bedroomtwoTVvalue
-        BedRoomTwoCost(1) = bedroomtwoSATvalue
-        BedRoomTwoCost(2) = bedroomtwonetworkvalue
-        BedRoomTwoCost(3) = bedroomtwo1gvalue
-        BedRoomTwoCost(4) = bedroomtwo2gvalue
-        BedRoomTwoCost(5) = bedroomtwoheatpumpvalue
-
         LivingRoomCost(0) = livingTVvalue
         LivingRoomCost(1) = livingSATvalue
         LivingRoomCost(2) = livingnetworkvalue
         LivingRoomCost(3) = living1gvalue
         LivingRoomCost(4) = living2gvalue
         LivingRoomCost(5) = livingheatpumpvalue
-
         lbl_kitch_cost.Show()
         lbl_living_cost.Show()
         lbl_bedroom_two_cost.Show()
@@ -265,7 +93,6 @@
         lbl_bathroom_cost.Show()
         lbl_totaldisplay.Show()
     End Sub
-
     Private Sub value_store()
         ' This Stores the values into an array so I can access this infomation easily on other forms and save this infomation to text files.
         Kitchen(0) = KTV
@@ -274,98 +101,53 @@
         Kitchen(3) = K1G
         Kitchen(4) = K2G
         Kitchen(5) = Kupgrade
-
         BedRoomOne(0) = BROTV
         BedRoomOne(1) = BROSAT
         BedRoomOne(2) = BRONET
         BedRoomOne(3) = BRO1G
         BedRoomOne(4) = BRO2G
         BedRoomOne(5) = BROHeatPump
-
         BedRoomTwo(0) = BRTTV
         BedRoomTwo(1) = BRTSAT
         BedRoomTwo(2) = BRTNET
         BedRoomTwo(3) = BRT1G
         BedRoomTwo(4) = BRT2G
         BedRoomTwo(5) = BRTHeatPump
-
         LivingRoom(0) = LRTV
         LivingRoom(1) = LRSAT
         LivingRoom(2) = LRNET
         LivingRoom(3) = LR1G
         LivingRoom(4) = LR2G
         LivingRoom(5) = LRHeatPump
-
         BathRoom(0) = BATH1G
         BathRoom(1) = BATH2G
         BathRoom(2) = BATHUpgrades
-
     End Sub
-
     Private Sub startingzero()
         cbo_kitchenSAT.Text = KSAT
         cbo_kitchenTV.Text = KTV
-
         cbo_LivingTV.Text = LRTV
         cbo_LivingSAT.Text = LRSAT
-
         cbo_bed1SAT.Text = BROSAT
         cbo_bed1TV.Text = BROTV
-
         cbo_bed2SAT.Text = BRTSAT
         cbo_bed2TV.Text = BRTTV
-
         start_zerio = True
-
-
-
-
     End Sub
     Private Sub input_rules()
         ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total. And Rules related to the 1G and 2G limits
         If start_zerio = False Then startingzero()
-
-        Dim netpointcheck As Integer
-        Dim swtichpoints As Integer
-        Dim kitchendefult As Boolean = True
-        Dim tvpointcheck As Integer
-        Dim satpointcheck As Integer
-        Dim socketscheck As Integer
-
-        Dim remainingsocket As Integer = 12
-
-        Dim remainingpoints As Integer = 8
-
-        Dim BROList As Integer
-        Dim BRTList As Integer
-        Dim LRList As Integer
-        Dim KitList As Integer
-
-        Dim BROListsocket_2G As Integer
-        Dim BROListsocket_1G As Integer
-        Dim BRTListsocket_2G As Integer
-        Dim BRTListsocket_1G As Integer
-        Dim LRListsocket_2G As Integer
-        Dim LRListsocket_1G As Integer
-        Dim KitListsocket_2G As Integer
-        Dim KitListsocket_1G As Integer
-        Dim BathListScoket_1G As Integer
-        Dim BathListSocket_2G As Integer
-
-
-
+        Dim netpointcheck As Integer : Dim swtichpoints As Integer : Dim kitchendefult As Boolean = True : Dim tvpointcheck As Integer : Dim satpointcheck As Integer : Dim socketscheck As Integer
+        Dim remainingsocket As Integer = 12 : Dim remainingpoints As Integer = 8 : Dim BROList As Integer : Dim BRTList As Integer : Dim LRList As Integer : Dim KitList As Integer : Dim BROListsocket_2G As Integer
+        Dim BROListsocket_1G As Integer : Dim BRTListsocket_2G As Integer : Dim BRTListsocket_1G As Integer : Dim LRListsocket_2G As Integer : Dim LRListsocket_1G As Integer : Dim KitListsocket_2G As Integer
+        Dim KitListsocket_1G As Integer : Dim BathListScoket_1G As Integer : Dim BathListSocket_2G As Integer
         socketscheck = K1G + K2G + LR1G + LR2G + BATH1G + BATH2G + BRT1G + BRT2G + BRO1G + BRO2G ' This checks the amount of Sockets in toal we can only have 12 and total 4 per room
-
         swtichpoints = BRONET + BRTNET + LRNET ' This is used to check if one point is in the kitchen where the router is there needs to be one point from the router to the switch
         netpointcheck = KNET + BRONET + BRTNET + LRNET ' This Adds the SUM of all the current network points
-
         remainingpoints = 8 - netpointcheck ' this removes all the current points from 8 this then displays the remaining points we have acess to.
         remainingsocket = 12 - socketscheck
-        'Label2.Text = remainingsocket
-
         tvpointcheck = KTV + BROTV + BRTTV
         satpointcheck = KSAT + BROSAT + BRTSAT
-
         If swtichpoints = 0 Then
             If kitchendefult = False Then
                 cbo_kitchenNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
@@ -381,7 +163,6 @@
                 kitchendefult = False ' this is to confirm its state
             End If
         End If
-
         'Checks if a Tv Point is slected and then forces one into the living room.
         If tvpointcheck > 0 Then
             If LRTV = 0 Then
@@ -391,14 +172,12 @@
                 tvpointdefult = False
             End If
         End If
-
         If tvpointcheck = 0 Then
             If tvpointdefult = False Then
                 cbo_LivingTV.Items.Add("0")
                 tvpointdefult = True
             End If
         End If
-
         ' Checks if there is a SAT point in all rooms but Living room and forces one into the living room.
         If satpointcheck > 0 Then ' Checks if there is a Sat Point in the other rooms
             If LRSAT = 0 Then ' Checks if there is no option selected in the Living room for a SAT point
@@ -408,322 +187,185 @@
                 satpointdefult = False
             End If
         End If
-
         If satpointcheck = 0 Then
             If satpointdefult = False Then
                 cbo_LivingSAT.Items.Add("0") ' Adds 0 to the list when all other rooms have no SAT point and allows the user to select 0 points in livingroom
                 satpointdefult = True ' This Checks if it is in the defult list state of 0,1 
             End If
         End If
-
         ' Bed Room One
-        If remainingpoints < 5 Then ' If there are less then 5 Points remaining this then forces the box to have less 4 or less points
-            cbo_bed1Net.Items.Clear() ' this clears the items stored in the box
+        cbo_bed1Net.Items.Clear() ' this clears the items stored in the box
+        If remainingpoints < 5 Then
             BROList = remainingpoints + BRONET ' this adds the current amount in Bedroom 1 to the remaining points this is so its not counted so we can changed the remaining points and dont have to set this value to 0 or we can only select less values then what is avaible.
-            If BROList > 4 Then BROList = 4 ' If the Previous line makes BROList more then 4 it makes it = 4 this stops the user for access more points I encounted this error though testing
-            Do Until BROList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
-                cbo_bed1Net.Items.Add(BROList) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
-                BROList = BROList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
-            Loop
-            cbo_bed1Net.Text = BRONET
-        Else ' If there are more then 5 remaining points this forces the Box to have its maxium of 4 per room
-            cbo_bed1Net.Items.Clear() ' clears the box to remove old values and stop duplicates
-            BROList = 4 ' this sets the list to 4 the limit per room
-            Do Until BROList = -1 ' loops the value so the list will display 0 1 2 3 4.
-                cbo_bed1Net.Items.Add(BROList) ' this adds the values to the list (combo box)
-                BROList = BROList - 1 ' this removes one each time so it counts down or it would just loop adding 4 endlessly so it now will do  4 then remove one then 3 then remove one ect.
-            Loop
-            cbo_bed1Net.Text = BRONET
-
+        Else
+            BROList = 4
         End If
-
+        If BROList > 4 Then BROList = 4 ' If the Previous line makes BROList more then 4 it makes it = 4 this stops the user for access more points I encounted this error though testing
+        Do Until BROList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed1Net.Items.Add(BROList) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
+            BROList = BROList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
+        Loop
+        cbo_bed1Net.Text = BRONET
         ' Bed Room One (2G) Socket Check
-
+        cbo_bed1_2G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bed1_2G.Items.Clear()
             BROListsocket_2G = remainingsocket + BRO2G
-            If BROListsocket_2G > 4 Then BROListsocket_2G = 4
-            Do Until BROListsocket_2G = -1
-                cbo_bed1_2G.Items.Add(BROListsocket_2G) ' Change cbo_bed2Net to the Box 
-                BROListsocket_2G = BROListsocket_2G - 1
-            Loop
-            cbo_bed1_2G.Text = BRO2G
         Else
-            cbo_bed1_2G.Items.Clear()
             BROListsocket_2G = 4
-            Do Until BROListsocket_2G = -1
-                cbo_bed1_2G.Items.Add(BROListsocket_2G)
-                BROListsocket_2G = BROListsocket_2G - 1
-            Loop
-            cbo_bed1_2G.Text = BRO2G
         End If
-
-
-
+        If BROListsocket_2G > 4 Then BROListsocket_2G = 4
+        Do Until BROListsocket_2G = -1
+            cbo_bed1_2G.Items.Add(BROListsocket_2G) ' Change cbo_bed2Net to the Box 
+            BROListsocket_2G = BROListsocket_2G - 1
+        Loop
+        cbo_bed1_2G.Text = BRO2G
         ' Bed Room One (1G) Socket Check
+        cbo_bed1_1G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bed1_1G.Items.Clear()
             BROListsocket_1G = remainingsocket + BRO1G
-            If BROListsocket_1G > 4 Then BROListsocket_1G = 4
-            Do Until BROListsocket_1G = -1
-                cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
-                BROListsocket_1G = BROListsocket_1G - 1
-            Loop
-            cbo_bed1_1G.Text = BRO1G
         Else
-            cbo_bed1_1G.Items.Clear()
             BROListsocket_1G = 4
-            Do Until BROListsocket_1G = -1
-                cbo_bed1_1G.Items.Add(BROListsocket_1G)
-                BROListsocket_1G = BROListsocket_1G - 1
-            Loop
-            cbo_bed1_1G.Text = BRO1G
         End If
-
-
+        If BROListsocket_1G > 4 Then BROListsocket_1G = 4
+        Do Until BROListsocket_1G = -1
+            cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
+            BROListsocket_1G = BROListsocket_1G - 1
+        Loop
+        cbo_bed1_1G.Text = BRO1G
         ' Bed Room Two
+        cbo_bed2Net.Items.Clear()
         If remainingpoints < 5 Then
-            cbo_bed2Net.Items.Clear()
             BRTList = remainingpoints + BRTNET
-            If BRTList > 4 Then BRTList = 4
-            Do Until BRTList = -1
-                cbo_bed2Net.Items.Add(BRTList)
-                BRTList = BRTList - 1
-            Loop
-            cbo_bed2Net.Text = BRTNET
         Else
-            cbo_bed2Net.Items.Clear()
             BRTList = 4
-            Do Until BRTList = -1
-                cbo_bed2Net.Items.Add(BRTList)
-                BRTList = BRTList - 1
-            Loop
-            cbo_bed2Net.Text = BRTNET
         End If
-
+        If BRTList > 4 Then BRTList = 4
+        Do Until BRTList = -1
+            cbo_bed2Net.Items.Add(BRTList)
+            BRTList = BRTList - 1
+        Loop
+        cbo_bed2Net.Text = BRTNET
         ' Bed Room 2 (2G) Socket Check
+        cbo_bed2_2G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bed2_2G.Items.Clear()
             BRTListsocket_2G = remainingsocket + BRT2G
-            If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4
-            Do Until BRTListsocket_2G = -1
-                cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
-                BRTListsocket_2G = BRTListsocket_2G - 1
-            Loop
-            cbo_bed2_2G.Text = BRT2G
         Else
-            cbo_bed2_2G.Items.Clear()
             BRTListsocket_2G = 4
-            Do Until BRTListsocket_2G = -1
-                cbo_bed2_2G.Items.Add(BRTListsocket_2G)
-                BRTListsocket_2G = BRTListsocket_2G - 1
-            Loop
-            cbo_bed2_2G.Text = BRT2G
         End If
-
-
+        If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4
+        Do Until BRTListsocket_2G = -1
+            cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
+            BRTListsocket_2G = BRTListsocket_2G - 1
+        Loop
+        cbo_bed2_2G.Text = BRT2G
         ' Bed Room 2 (1G) Socket Check
+        cbo_bed2_1G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bed2_1G.Items.Clear()
             BRTListsocket_1G = remainingsocket + BRT1G
-            If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4
-            Do Until BRTListsocket_1G = -1
-                cbo_bed2_1G.Items.Add(BRTListsocket_1G) ' Change cbo_bed2Net to the Box 
-                BRTListsocket_1G = BRTListsocket_1G - 1
-            Loop
-            cbo_bed2_1G.Text = BRT1G
         Else
-            cbo_bed2_1G.Items.Clear()
             BRTListsocket_1G = 4
-            Do Until BRTListsocket_1G = -1
-                cbo_bed2_1G.Items.Add(BRTListsocket_1G)
-                BRTListsocket_1G = BRTListsocket_1G - 1
-            Loop
-            cbo_bed2_1G.Text = BRT1G
         End If
-
-
-
-
+        If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4
+        Do Until BRTListsocket_1G = -1
+            cbo_bed2_1G.Items.Add(BRTListsocket_1G) ' Change cbo_bed2Net to the Box 
+            BRTListsocket_1G = BRTListsocket_1G - 1
+        Loop
+        cbo_bed2_1G.Text = BRT1G
         '  Living Room
-        If remainingpoints < 5 Then
-            cbo_LivingNet.Items.Clear()
-            LRList = remainingpoints + LRNET
-            If LRList > 4 Then LRList = 4
-            Do Until LRList = -1
-                cbo_LivingNet.Items.Add(LRList)
-                LRList = LRList - 1
-            Loop
-            cbo_LivingNet.Text = LRNET
-        Else
-            cbo_LivingNet.Items.Clear()
-            LRList = 4
-            Do Until LRList = -1
-                cbo_LivingNet.Items.Add(LRList)
-                LRList = LRList - 1
-            Loop
-            cbo_LivingNet.Text = LRNET
-        End If
-
-
+        cbo_LivingNet.Items.Clear()
+        If remainingpoints < 5 Then LRList = remainingpoints + LRNET Else LRList = 4
+        If LRList > 4 Then LRList = 4
+        Do Until LRList = -1
+            cbo_LivingNet.Items.Add(LRList)
+            LRList = LRList - 1
+        Loop
+        cbo_LivingNet.Text = LRNET
         ' Living Room (2G) Socket Check
-        If remainingsocket < 5 Then
-            cbo_Living2G.Items.Clear()
-            LRListsocket_2G = remainingsocket + LR2G
-            If LRListsocket_2G > 4 Then LRListsocket_2G = 4
-            Do Until LRListsocket_2G = -1
-                cbo_Living2G.Items.Add(LRListsocket_2G) ' Change cbo_bed2Net to the Box 
-                LRListsocket_2G = LRListsocket_2G - 1
-            Loop
-            cbo_Living2G.Text = LR2G
-        Else
-            cbo_Living2G.Items.Clear()
-            LRListsocket_2G = 4
-            Do Until LRListsocket_2G = -1
-                cbo_Living2G.Items.Add(LRListsocket_2G)
-                LRListsocket_2G = LRListsocket_2G - 1
-            Loop
-            cbo_Living2G.Text = LR2G
-        End If
-
-
+        cbo_Living2G.Items.Clear()
+        If remainingsocket < 5 Then LRListsocket_2G = remainingsocket + LR2G Else LRListsocket_2G = 4
+        If LRListsocket_2G > 4 Then LRListsocket_2G = 4
+        Do Until LRListsocket_2G = -1
+            cbo_Living2G.Items.Add(LRListsocket_2G) ' Change cbo_bed2Net to the Box 
+            LRListsocket_2G = LRListsocket_2G - 1
+        Loop
+        cbo_Living2G.Text = LR2G
         ' Living Room 2 (1G) Socket Check
-        If remainingsocket < 5 Then
-            cbo_Living1G.Items.Clear()
-            LRListsocket_1G = remainingsocket + LR1G
-            If LRListsocket_1G > 4 Then LRListsocket_1G = 4
-            Do Until LRListsocket_1G = -1
-                cbo_Living1G.Items.Add(LRListsocket_1G) ' Change cbo_bed2Net to the Box 
-                LRListsocket_1G = LRListsocket_1G - 1
-            Loop
-            cbo_Living1G.Text = LR1G
-        Else
-            cbo_Living1G.Items.Clear()
-            LRListsocket_1G = 4
-            Do Until LRListsocket_1G = -1
-                cbo_Living1G.Items.Add(LRListsocket_1G)
-                LRListsocket_1G = LRListsocket_1G - 1
-            Loop
-            cbo_Living1G.Text = LR1G
-        End If
-
-
+        cbo_Living1G.Items.Clear()
+        If remainingsocket < 5 Then LRListsocket_1G = remainingsocket + LR1G Else LRListsocket_1G = 4
+        If LRListsocket_1G > 4 Then LRListsocket_1G = 4
+        Do Until LRListsocket_1G = -1
+            cbo_Living1G.Items.Add(LRListsocket_1G) ' Change cbo_bed2Net to the Box 
+            LRListsocket_1G = LRListsocket_1G - 1
+        Loop
+        cbo_Living1G.Text = LR1G
         ' kitchen
-        If remainingpoints < 5 Then
-            cbo_kitchenNet.Items.Clear()
-            cbo_kitchenNet.Text = KNET
-            KitList = remainingpoints + KNET
-            If KitList > 4 Then KitList = 4
-            Dim zerovalue As Integer
-            If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
-            Do Until KitList = zerovalue
-                cbo_kitchenNet.Items.Add(KitList)
-                KitList = KitList - 1
-            Loop
-            cbo_kitchenNet.Text = KNET
-        Else
-            cbo_kitchenNet.Items.Clear()
-            cbo_kitchenNet.Text = KNET
-            KitList = 4
-            Dim zerovalue As Integer
-            If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
-            Do Until KitList = zerovalue
-                cbo_kitchenNet.Items.Add(KitList)
-                KitList = KitList - 1
-            Loop
-            cbo_kitchenNet.Text = KNET
-        End If
-
+        cbo_kitchenNet.Items.Clear()
+        cbo_kitchenNet.Text = KNET
+        If remainingpoints < 5 Then KitList = remainingpoints + KNET Else KitList = 4
+        If KitList > 4 Then KitList = 4
+        Dim zerovalue As Integer
+        If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
+        Do Until KitList = zerovalue
+            cbo_kitchenNet.Items.Add(KitList)
+            KitList = KitList - 1
+        Loop
+        cbo_kitchenNet.Text = KNET
         ' Kitchen 2 (2G) Socket Check
+        cbo_kitchen2G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_kitchen2G.Items.Clear()
             KitListsocket_2G = remainingsocket + K2G
-            If KitListsocket_2G > 4 Then KitListsocket_2G = 4
-            Do Until KitListsocket_2G = -1
-                cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Change cbo_bed2Net to the Box 
-                KitListsocket_2G = KitListsocket_2G - 1
-            Loop
-            cbo_kitchen2G.Text = K2G
         Else
-            cbo_kitchen2G.Items.Clear()
             KitListsocket_2G = 4
-            Do Until KitListsocket_2G = -1
-                cbo_kitchen2G.Items.Add(KitListsocket_2G)
-                KitListsocket_2G = KitListsocket_2G - 1
-            Loop
-            cbo_kitchen2G.Text = K2G
         End If
-
-
+        If KitListsocket_2G > 4 Then KitListsocket_2G = 4
+        Do Until KitListsocket_2G = -1
+            cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Change cbo_bed2Net to the Box 
+            KitListsocket_2G = KitListsocket_2G - 1
+        Loop
+        cbo_kitchen2G.Text = K2G
         ' Kitchen (1G) Socket Check
+        cbo_kitchen1G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_kitchen1G.Items.Clear()
             KitListsocket_1G = remainingsocket + K1G
-            If KitListsocket_1G > 4 Then KitListsocket_1G = 4
-            Do Until KitListsocket_1G = -1
-                cbo_kitchen1G.Items.Add(KitListsocket_1G) ' Change cbo_bed2Net to the Box 
-                KitListsocket_1G = KitListsocket_1G - 1
-            Loop
-            cbo_kitchen1G.Text = K1G
         Else
-            cbo_kitchen1G.Items.Clear()
             KitListsocket_1G = 4
-            Do Until KitListsocket_1G = -1
-                cbo_kitchen1G.Items.Add(KitListsocket_1G)
-                KitListsocket_1G = KitListsocket_1G - 1
-            Loop
-            cbo_kitchen1G.Text = K1G
         End If
-
-
-        ' Bath Room
-
+        If KitListsocket_1G > 4 Then KitListsocket_1G = 4
+        Do Until KitListsocket_1G = -1
+            cbo_kitchen1G.Items.Add(KitListsocket_1G) ' Change cbo_bed2Net to the Box 
+            KitListsocket_1G = KitListsocket_1G - 1
+        Loop
+        cbo_kitchen1G.Text = K1G
         ' Bath Room One 2 (2G) Socket Check
-
+        cbo_bath2G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bath2G.Items.Clear()
             BathListSocket_2G = remainingsocket + BATH2G
-            If BathListSocket_2G > 4 Then BathListSocket_2G = 4
-            Do Until BathListSocket_2G = -1
-                cbo_bath2G.Items.Add(BathListSocket_2G) ' Change cbo_bed2Net to the Box 
-                BathListSocket_2G = BathListSocket_2G - 1
-            Loop
-            cbo_bath2G.Text = BATH2G
         Else
-            cbo_bath2G.Items.Clear()
             BathListSocket_2G = 4
-            Do Until BathListSocket_2G = -1
-                cbo_bath2G.Items.Add(BathListSocket_2G)
-                BathListSocket_2G = BathListSocket_2G - 1
-            Loop
-            cbo_bath2G.Text = BATH2G
         End If
-
-
+        If BathListSocket_2G > 4 Then BathListSocket_2G = 4
+        Do Until BathListSocket_2G = -1
+            cbo_bath2G.Items.Add(BathListSocket_2G) ' Change cbo_bed2Net to the Box 
+            BathListSocket_2G = BathListSocket_2G - 1
+        Loop
+        cbo_bath2G.Text = BATH2G
         ' Bath Room One (1G) Socket Check
+        cbo_bath1G.Items.Clear()
         If remainingsocket < 5 Then
-            cbo_bath1G.Items.Clear()
             BathListScoket_1G = remainingsocket + BATH1G
-            If BathListScoket_1G > 4 Then BathListScoket_1G = 4
-            Do Until BathListScoket_1G = -1
-                cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
-                BathListScoket_1G = BathListScoket_1G - 1
-            Loop
-            cbo_bath1G.Text = BATH1G
         Else
-            cbo_bath1G.Items.Clear()
             BathListScoket_1G = 4
-            Do Until BathListScoket_1G = -1
-                cbo_bath1G.Items.Add(BathListScoket_1G)
-                BathListScoket_1G = BathListScoket_1G - 1
-            Loop
-            cbo_bath1G.Text = BATH1G
         End If
+        If BathListScoket_1G > 4 Then BathListScoket_1G = 4
+        Do Until BathListScoket_1G = -1
+            cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
+            BathListScoket_1G = BathListScoket_1G - 1
+        Loop
+        cbo_bath1G.Text = BATH1G
 
         value_store()
         priceing_math()
     End Sub
-
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
         If KitchenA = False Then ' This checks if the box is currently ticked if it is false it is not ticked to it runs the next statment
             If KitchenB Or KitchenC = True Then ' This looks if Kitchen option B or option C have been selected if it has one of then will be = to true
@@ -740,7 +382,6 @@
         End If
         input_rules()
     End Sub
-
     Private Sub chk_KitchenB_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenB.CheckedChanged
         If KitchenB = False Then
             If KitchenA Or KitchenC = True Then
@@ -757,7 +398,6 @@
         End If
         input_rules()
     End Sub
-
     Private Sub chk_KitchenC_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenC.CheckedChanged
         If KitchenC = False Then
             If KitchenA Or KitchenB = True Then
@@ -776,52 +416,42 @@
     End Sub
 
     Private Sub chk_HeatPumpLiving_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpLiving.CheckedChanged
-        If LRHeat = False Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
-            LRHeat = True ' This then changes the varible to true indicating the the tick box has not been selected.
+        If LRHeatPump = 0 Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
             LRHeatPump = 1 ' Sets the Value to One meaning the user would like a heatpump in there living room
         Else
-            LRHeat = False ' If the Box was already ticked this then sets it to False unticking the box
             LRHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there living room
         End If
         input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBedOne_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedOne.CheckedChanged
-        If BROHeat = False Then
-            BROHeat = True
+        If BROHeatPump = 0 Then
             BROHeatPump = 1
         Else
-            BROHeat = False
             BROHeatPump = 0
         End If
         input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBedTwo_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedTwo.CheckedChanged
-        If BRTHeat = False Then
-            BRTHeat = True
+        If BRTHeatPump = 0 Then
             BRTHeatPump = 1
         Else
-            BRTHeat = False
             BRTHeatPump = 0
         End If
         input_rules()
     End Sub
 
     Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_UpgradeBathRoom.CheckedChanged
-        If BATHOption = False Then
-            BATHOption = True
+        If BATHUpgrades = 0 Then
             BATHUpgrades = 1
         Else
-            BATHOption = False
             BATHUpgrades = 0
         End If
         input_rules()
     End Sub
-
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
         KNET = cbo_kitchenNet.Text ' This sets the value KNET to the value of the combo box
-
         If userimputcheck = True Then
             userimputcheck = False
             input_rules() ' This calls the sub Imput_Rules this sub is used to check and stop the user from having too many network points and limits it. This Doesn't give the user access to have more then the maxium so they cannot make a mistake and selected more then allowed.
@@ -842,7 +472,6 @@
     End Sub
     Private Sub cbo_bed1Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1Net.SelectedIndexChanged
         BRONET = cbo_bed1Net.Text
-
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
@@ -851,7 +480,6 @@
     Private Sub cbo_bed1Net_userinput() Handles cbo_bed1Net.MouseClick, cbo_bed1Net.Enter, cbo_bed1Net.KeyPress, cbo_bed1Net.KeyUp, cbo_bed1Net.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_bed2Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2Net.SelectedIndexChanged
         BRTNET = cbo_bed2Net.Text
         If userimputcheck = True Then
@@ -871,42 +499,34 @@
         KSAT = cbo_kitchenSAT.Text
         input_rules()
     End Sub
-
     Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
         K1G = cbo_kitchen1G.Text
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
     End Sub
     Private Sub kitchen_1G_userinput() Handles cbo_kitchen1G.MouseClick, cbo_kitchen1G.Enter, cbo_kitchen1G.KeyPress, cbo_kitchen1G.KeyUp, cbo_kitchen1G.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_kitchen2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen2G.SelectedIndexChanged
         K2G = cbo_kitchen2G.Text
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
     End Sub
-
     Private Sub kitchen_2G_userinput() Handles cbo_kitchen2G.MouseClick, cbo_kitchen2G.Enter, cbo_kitchen2G.KeyPress, cbo_kitchen2G.KeyUp, cbo_kitchen2G.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_LivingTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingTV.SelectedIndexChanged
         LRTV = cbo_LivingTV.Text
         input_rules()
     End Sub
-
     Private Sub cbo_LivingSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingSAT.SelectedIndexChanged
         LRSAT = cbo_LivingSAT.Text
         input_rules()
     End Sub
-
     Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
         LR1G = cbo_Living1G.Text
         If userimputcheck = True Then
@@ -917,80 +537,62 @@
     Private Sub living_1G_userinput() Handles cbo_Living1G.MouseClick, cbo_Living1G.Enter, cbo_Living1G.KeyPress, cbo_Living1G.KeyUp, cbo_Living1G.KeyDown
         userimputcheck = True
     End Sub
-
-
     Private Sub cbo_Living2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living2G.SelectedIndexChanged
         LR2G = cbo_Living2G.Text
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
     End Sub
-
     Private Sub living_2G_userinput() Handles cbo_Living2G.MouseClick, cbo_Living2G.Enter, cbo_Living2G.KeyPress, cbo_Living2G.KeyUp, cbo_Living2G.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_bath1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath1G.SelectedIndexChanged
         BATH1G = cbo_bath1G.Text
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
     End Sub
-
     Private Sub bath_1G_userinput() Handles cbo_bath1G.MouseClick, cbo_bath1G.Enter, cbo_bath1G.KeyPress, cbo_bath1G.KeyUp, cbo_bath1G.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_bath2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath2G.SelectedIndexChanged
         BATH2G = cbo_bath2G.Text
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
     End Sub
-
     Private Sub bath_2G_userinput() Handles cbo_bath2G.MouseClick, cbo_bath2G.Enter, cbo_bath2G.KeyPress, cbo_bath2G.KeyUp, cbo_bath2G.KeyDown
         userimputcheck = True
     End Sub
-
     Private Sub cbo_bed2TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2TV.SelectedIndexChanged
         BRTTV = cbo_bed2TV.Text
         input_rules()
     End Sub
-
     Private Sub cbo_bed2SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2SAT.SelectedIndexChanged
         BRTSAT = cbo_bed2SAT.Text
         input_rules()
     End Sub
-
     Private Sub cbo_bed2_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_1G.SelectedIndexChanged
         BRT1G = cbo_bed2_1G.Text
-
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
-
         End If
-
     End Sub
     Private Sub bed2_1G_userinput() Handles cbo_bed2_1G.MouseClick, cbo_bed2_1G.Enter, cbo_bed2_1G.KeyPress, cbo_bed2_1G.KeyUp, cbo_bed2_1G.KeyDown
         userimputcheck = True
     End Sub
     Private Sub cbo_bed2_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_2G.SelectedIndexChanged
         BRT2G = cbo_bed2_2G.Text
-
         If userimputcheck = True Then
             userimputcheck = False
             input_rules()
 
         End If
     End Sub
-
     Private Sub bed2_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
         userimputcheck = True
     End Sub
@@ -999,7 +601,6 @@
         BROTV = cbo_bed1TV.Text
         input_rules()
     End Sub
-
     Private Sub cbo_bed1SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1SAT.SelectedIndexChanged
         BROSAT = cbo_bed1SAT.Text
         input_rules()
@@ -1013,7 +614,6 @@
 
         End If
     End Sub
-
     Private Sub bed1_1G_userinput() Handles cbo_bed1_1G.MouseClick, cbo_bed1_1G.Enter, cbo_bed1_1G.KeyPress, cbo_bed1_1G.KeyUp, cbo_bed1_1G.KeyDown
         userimputcheck = True
     End Sub
@@ -1026,41 +626,16 @@
 
         End If
     End Sub
-
     Private Sub bed1_2G_userinput() Handles cbo_bed1_2G.MouseClick, cbo_bed1_2G.Enter, cbo_bed1_2G.KeyPress, cbo_bed1_2G.KeyUp, cbo_bed1_2G.KeyDown
         userimputcheck = True
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
         CustomerDetails.Show()
         Me.Hide()
     End Sub
-
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
     End Sub
-
-    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lbl_bedroom_one.Click
-
-    End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         value_store()
         input_rules()

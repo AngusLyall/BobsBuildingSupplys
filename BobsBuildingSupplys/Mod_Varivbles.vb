@@ -7,10 +7,6 @@
     Public CusDeliveryAdress As String
     Public cusTrade As Boolean = False
     Public cusAdressSame As Boolean = False
-
-
-
-
     Public Kitchen(5) As Integer
     Public kitchencost(5) As Integer
     Public BathRoom(2) As Integer
@@ -22,7 +18,4 @@
     Public BedRoomOne(5) As Integer
     Public BedRoomOneCost(5) As Integer
     Public totalvalue(5) As Integer ' 0 = total,  1 = kitchen,  2 = living room,  3= bedroom1, 4 = bedroom2, 5= bathroom
-
-
-
 End Module
