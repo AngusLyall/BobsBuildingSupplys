@@ -3,7 +3,7 @@
     Dim BRONET As Integer = 0 : Dim BRO1G As Integer = 0 : Dim BRO2G As Integer = 0 : Dim BROHeatPump As Integer = 0 : Dim BRTTV As Integer = 0 : Dim BRTSAT As Integer = 0 : Dim BRTNET As Integer = 0 : Dim BRT1G As Integer = 0
     Dim BRT2G As Integer = 0 : Dim BRTHeatPump As Integer = 0 : Dim LRTV As Integer = 0 : Dim LRSAT As Integer = 0 : Dim LRNET As Integer = 0 : Dim LR1G As Integer = 0 : Dim LR2G As Integer = 0 : Dim LRHeatPump As Integer = 0
     Dim BATH1G As Integer = 0 : Dim BATH2G As Integer = 0 : Dim BATHUpgrades As Integer = 0 : Dim KitchenA As Boolean = False : Dim KitchenB As Boolean = False : Dim KitchenC As Boolean = False : Dim LRHeat As Boolean = False
-    Dim BROHeat As Boolean = False : Dim BATHOption As Boolean = False : Dim BRTHeat As Boolean = False : Dim Kitchenupgradevalue As Integer : Dim kitchennetworkvalue As Integer : Dim kitchen1gvalue As Integer : Dim kitchen2gvalue As Integer
+    Dim BROHeat As Boolean = False : Dim BATHOption As Boolean = False : Dim BRTHeat As Boolean = False : Dim Kitchenupgradevalue As Integer : Dim kitchennetworkvalue As Integer = 0 : Dim kitchen1gvalue As Integer : Dim kitchen2gvalue As Integer
     Dim kitchenTVvalue As Integer : Dim kitchenSATvalue As Integer : Dim networkvalue As Integer : Dim livingTVvalue As Integer = 0 : Dim livingSATvalue As Integer = 0 : Dim livingnetworkvalue As Integer = 0 : Dim living1gvalue As Integer = 0
     Dim living2gvalue As Integer = 0 : Dim livingheatpumpvalue As Integer : Dim bedroomtwoTVvalue As Integer : Dim bedroomtwoSATvalue As Integer : Dim bedroomtwonetworkvalue As Integer : Dim bedroomtwo1gvalue As Integer
     Dim bedroomtwo2gvalue As Integer : Dim bedroomtwoheatpumpvalue As Integer : Dim bedroomoneTVvalue As Integer : Dim bedroomoneSATvalue As Integer : Dim bedroomonenetworkvalue As Integer : Dim bedroomone1gvalue As Integer
@@ -13,42 +13,42 @@
         CustomerDetails.Hide()
     End Sub
     Private Sub priceing_math()
-        kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH
-        kitchencost(2) = kitchennetworkvalue
-        kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET
-        kitchencost(3) = kitchen1gvalue
-        kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET
-        kitchencost(4) = kitchen2gvalue
-        Select Case Kitchen(5)
-            Case 0
-                Kitchenupgradevalue = 0
-            Case 1
-                Kitchenupgradevalue = Form4.KITCHENOPTIONA
-            Case 2
-                Kitchenupgradevalue = Form4.KITCHENOPTIONB
-            Case 3
-                Kitchenupgradevalue = Form4.KITCHENOPTIONC
-        End Select
-        kitchencost(5) = Kitchenupgradevalue
-        kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT
-        kitchencost(0) = kitchenTVvalue
-        kitchenSATvalue = KSAT * Form4.TV_SAT_POINT
-        kitchencost(1) = kitchenSATvalue
-        livingTVvalue = Form4.TV_AERIAL
-        livingSATvalue = Form4.TV_SAT
+        If Kitchen(2) > 0 Then kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH ' checks how many kitchen network points are selected if there are more then zero it time the amout of outlets by the price then adds 100 fro the switch
+        kitchencost(2) = kitchennetworkvalue ' this sets the cost array as the networkworkvalue varible which is the cost of the kitchen network
+        kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET ' This times the amount of sockets the user has selected by the cost of one socket.
+        kitchencost(3) = kitchen1gvalue ' this sets the cost array as the value worked out above.   
+        kitchen2gvalue = Kitchen(4) * Form4.TWOGSOCKET ' Times the amount of selected 2g sockets selected in the kitchen with the price of twog socket
+        kitchencost(4) = kitchen2gvalue ' this sets the cost array as the value of the 2g sockets worked out above
+        Select Case Kitchen(5) ' This gives the case fucntion what value to look for the array stores the values 0 ,1,2 or 3 this corresponds to the kitchen option selected
+            Case 0 ' if the kitchen array kitchen(5) is holding the value 0 run the next line
+                Kitchenupgradevalue = 0 ' this sets the cost of the kitchen upgrade to 0 as no upgrade was selected
+            Case 1 ' if the kitchen array kitchen(5) is holding the value 1 representing kitchen option A it will run the next line of code
+                Kitchenupgradevalue = Form4.KITCHENOPTIONA ' this sets the cost varible as the cost of Kitchen Option A
+            Case 2 ' if the kitchen array kitchen(5) is holding the value 2 representing kitchen option B it will run the next line of code
+                Kitchenupgradevalue = Form4.KITCHENOPTIONB ' this sets the cost varible as the cost of Kitchen Option B
+            Case 3 ' if the kitchen array kitchen(5) is holding the value 3 representing kitchen option C it will run the next line of code
+                Kitchenupgradevalue = Form4.KITCHENOPTIONC ' this sets the cost varible as the cost of Kitchen Option C
+        End Select ' this tells the program that the case function is over.
+        kitchencost(5) = Kitchenupgradevalue ' this sets the cost array to be equal to the value of the kitchen upgrade set above in the case function it is used in the quote to display the value
+        kitchenTVvalue = KTV * Form4.TV_AERIAL_POINT ' this sets the value varible of the to the amount of kitchen Tv points selected times by the cost of a tv aerial point.
+        kitchencost(0) = kitchenTVvalue ' this sets the cost array value to the cost of the tv aerial point based on how many the user selected this is used on form 3 in the quote display
+        kitchenSATvalue = KSAT * Form4.TV_SAT_POINT ' this set the cost varible value to the amount of User selected sat points times by the value of the Tv sat points 
+        kitchencost(1) = kitchenSATvalue 'this sets cost array equal to the value set above and is used to display on the quote.
+        livingTVvalue = LivingRoom(0) * Form4.TV_AERIAL
+        livingSATvalue = LivingRoom(1) * Form4.TV_SAT
         livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
         living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
         living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
-        livingheatpumpvalue = Form4.HEATPUMP2
+        livingheatpumpvalue = LivingRoom(5) * Form4.HEATPUMP2
         Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
         Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
         BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
-        bedroomtwoTVvalue = Form4.TV_AERIAL
+        bedroomtwoTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT
         bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
         bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
         bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
-        bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL
-        bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT
+        bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT
+        bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT_POINT
         bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
         bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
         bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
@@ -157,151 +157,134 @@
 
         If swtichpoints > 0 Then ' this checks if anyother point has a value grater then one this means a point has been selected in another form this then adds 1 to the Kitchen
             If KNET = 0 Then
-                KNET = 1
+                KNET = 1 ' sets KNET varible to one so the system knows that the kitchen network should ahve one point.
                 cbo_kitchenNet.Text = 1 ' this adds the one to the kitchen
-                cbo_kitchenNet.Items.Remove("0")
+                cbo_kitchenNet.Items.Remove("0") ' this removes the 0 option while more then one switch point is selected stopping the user from picking zero.
                 kitchendefult = False ' this is to confirm its state
             End If
         End If
+
         'Checks if a Tv Point is slected and then forces one into the living room.
-        If tvpointcheck > 0 Then
-            If LRTV = 0 Then
-                LRTV = 1
-                cbo_LivingTV.Text = 1
-                cbo_LivingTV.Items.Remove("0")
-                tvpointdefult = False
+        If tvpointcheck > 0 Then ' if there is a tv point selected runs the following code
+            If LRTV = 0 Then ' this checks if there is a point in the living room where the aerial roof mount has to be selected with a tv point
+                LRTV = 1 ' this sets the tv aerial points to one in the living room when a point is selected in any other room
+                cbo_LivingTV.Text = 1 ' this sets the text to match the vairble above so it displays to the user the correct value.
+                cbo_LivingTV.Items.Remove("0") ' this remove the option 0 so the user cannot select more points
+                tvpointdefult = False ' this tells the program that it is not in its defult state and is missing the 0 option this is needed so there are not alot of zeros or no zeros when some are wanted.
             End If
         End If
-        If tvpointcheck = 0 Then
-            If tvpointdefult = False Then
-                cbo_LivingTV.Items.Add("0")
-                tvpointdefult = True
-            End If
+        If tvpointcheck = 0 And tvpointdefult = False Then ' this checks if there are any tv points selected and if it is in its defult state if it is it can contiune this stops if from adding lots of 0s
+            cbo_LivingTV.Items.Add("0") ' because there were 0 tv points and it was not in its defult state it adds a 0
+            tvpointdefult = True ' this sets it to the defult state because it has the zero option for the user to select.
         End If
+
         ' Checks if there is a SAT point in all rooms but Living room and forces one into the living room.
         If satpointcheck > 0 Then ' Checks if there is a Sat Point in the other rooms
             If LRSAT = 0 Then ' Checks if there is no option selected in the Living room for a SAT point
                 LRSAT = 1 ' Sets the Value we complare and store to 1
                 cbo_LivingSAT.Text = 1 ' Sets the text to 1 displaying they have one SAT point 
                 cbo_LivingSAT.Items.Remove("0") ' Removes the 0 option from the living room if they have a SAT point in another room
-                satpointdefult = False
+                satpointdefult = False ' this sets the defult state to false telling the program that the user option 0 is not avalible. 
             End If
         End If
-        If satpointcheck = 0 Then
-            If satpointdefult = False Then
-                cbo_LivingSAT.Items.Add("0") ' Adds 0 to the list when all other rooms have no SAT point and allows the user to select 0 points in livingroom
-                satpointdefult = True ' This Checks if it is in the defult list state of 0,1 
-            End If
+        If satpointcheck = 0 And satpointdefult = False Then ' this checks if there are 0 Sat points selected and that it is not in defult state to stop the program from adding more then one 0 option.
+            cbo_LivingSAT.Items.Add("0") ' Adds 0 to the list when all other rooms have no SAT point and allows the user to select 0 points in livingroom
+            satpointdefult = True ' This sets the varible so the program knows its in the defult state of having one zero.
         End If
+
         ' Bed Room One
-        cbo_bed1Net.Items.Clear() ' this clears the items stored in the box
-        If remainingpoints < 5 Then
-            BROList = remainingpoints + BRONET ' this adds the current amount in Bedroom 1 to the remaining points this is so its not counted so we can changed the remaining points and dont have to set this value to 0 or we can only select less values then what is avaible.
-        Else
-            BROList = 4
-        End If
-        If BROList > 4 Then BROList = 4 ' If the Previous line makes BROList more then 4 it makes it = 4 this stops the user for access more points I encounted this error though testing
+        cbo_bed1Net.Items.Clear() ' This removes all the items from the combo box so starts empty 
+        If remainingpoints < 5 Then BROList = remainingpoints + BRONET Else BROList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
+        If BROList > 4 Then BROList = 4 ' in line 195 it can makes BROList more then 4. so if it does this makes it = 4 this stops the user for access more points I encounted this error though testing
         Do Until BROList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
             cbo_bed1Net.Items.Add(BROList) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
             BROList = BROList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
-        cbo_bed1Net.Text = BRONET
+        cbo_bed1Net.Text = BRONET ' this updates the text back to what the user selected because when the combo box is cleared it removes the user inputted value.
+
         ' Bed Room One (2G) Socket Check
-        cbo_bed1_2G.Items.Clear()
-        If remainingsocket < 5 Then
-            BROListsocket_2G = remainingsocket + BRO2G
-        Else
-            BROListsocket_2G = 4
-        End If
-        If BROListsocket_2G > 4 Then BROListsocket_2G = 4
-        Do Until BROListsocket_2G = -1
-            cbo_bed1_2G.Items.Add(BROListsocket_2G) ' Change cbo_bed2Net to the Box 
-            BROListsocket_2G = BROListsocket_2G - 1
+        cbo_bed1_2G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BROListsocket_2G = remainingsocket + BRO2G Else BROListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
+        If BROListsocket_2G > 4 Then BROListsocket_2G = 4 ' BROList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BROListsocket_2G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed1_2G.Items.Add(BROListsocket_2G) ' adds the numbers to the "collection" so the user can only select the avaible points so they cannot go over the limit
+            BROListsocket_2G = BROListsocket_2G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
-        cbo_bed1_2G.Text = BRO2G
+        cbo_bed1_2G.Text = BRO2G ' this updates the text back to what the user selected because when the combo box is cleared it removes the user inputted value.
+
         ' Bed Room One (1G) Socket Check
-        cbo_bed1_1G.Items.Clear()
-        If remainingsocket < 5 Then
-            BROListsocket_1G = remainingsocket + BRO1G
-        Else
-            BROListsocket_1G = 4
-        End If
+        cbo_bed1_1G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BROListsocket_1G = remainingsocket + BRO1G Else BROListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points  
         If BROListsocket_1G > 4 Then BROListsocket_1G = 4
         Do Until BROListsocket_1G = -1
             cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
             BROListsocket_1G = BROListsocket_1G - 1
         Loop
         cbo_bed1_1G.Text = BRO1G
+
         ' Bed Room Two
-        cbo_bed2Net.Items.Clear()
-        If remainingpoints < 5 Then
-            BRTList = remainingpoints + BRTNET
-        Else
-            BRTList = 4
-        End If
+        cbo_bed2Net.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingpoints < 5 Then BRTList = remainingpoints + BRTNET Else BRTList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If BRTList > 4 Then BRTList = 4
         Do Until BRTList = -1
             cbo_bed2Net.Items.Add(BRTList)
             BRTList = BRTList - 1
         Loop
         cbo_bed2Net.Text = BRTNET
+
         ' Bed Room 2 (2G) Socket Check
-        cbo_bed2_2G.Items.Clear()
-        If remainingsocket < 5 Then
-            BRTListsocket_2G = remainingsocket + BRT2G
-        Else
-            BRTListsocket_2G = 4
-        End If
+        cbo_bed2_2G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BRTListsocket_2G = remainingsocket + BRT2G Else BRTListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4
         Do Until BRTListsocket_2G = -1
             cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
             BRTListsocket_2G = BRTListsocket_2G - 1
         Loop
         cbo_bed2_2G.Text = BRT2G
+
         ' Bed Room 2 (1G) Socket Check
-        cbo_bed2_1G.Items.Clear()
-        If remainingsocket < 5 Then
-            BRTListsocket_1G = remainingsocket + BRT1G
-        Else
-            BRTListsocket_1G = 4
-        End If
+        cbo_bed2_1G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BRTListsocket_1G = remainingsocket + BRT1G Else BRTListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4
         Do Until BRTListsocket_1G = -1
             cbo_bed2_1G.Items.Add(BRTListsocket_1G) ' Change cbo_bed2Net to the Box 
             BRTListsocket_1G = BRTListsocket_1G - 1
         Loop
         cbo_bed2_1G.Text = BRT1G
+
         '  Living Room
-        cbo_LivingNet.Items.Clear()
-        If remainingpoints < 5 Then LRList = remainingpoints + LRNET Else LRList = 4
+        cbo_LivingNet.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingpoints < 5 Then LRList = remainingpoints + LRNET Else LRList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If LRList > 4 Then LRList = 4
         Do Until LRList = -1
             cbo_LivingNet.Items.Add(LRList)
             LRList = LRList - 1
         Loop
         cbo_LivingNet.Text = LRNET
+
         ' Living Room (2G) Socket Check
-        cbo_Living2G.Items.Clear()
-        If remainingsocket < 5 Then LRListsocket_2G = remainingsocket + LR2G Else LRListsocket_2G = 4
+        cbo_Living2G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then LRListsocket_2G = remainingsocket + LR2G Else LRListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If LRListsocket_2G > 4 Then LRListsocket_2G = 4
         Do Until LRListsocket_2G = -1
             cbo_Living2G.Items.Add(LRListsocket_2G) ' Change cbo_bed2Net to the Box 
             LRListsocket_2G = LRListsocket_2G - 1
         Loop
         cbo_Living2G.Text = LR2G
+
         ' Living Room 2 (1G) Socket Check
-        cbo_Living1G.Items.Clear()
-        If remainingsocket < 5 Then LRListsocket_1G = remainingsocket + LR1G Else LRListsocket_1G = 4
+        cbo_Living1G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then LRListsocket_1G = remainingsocket + LR1G Else LRListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If LRListsocket_1G > 4 Then LRListsocket_1G = 4
         Do Until LRListsocket_1G = -1
             cbo_Living1G.Items.Add(LRListsocket_1G) ' Change cbo_bed2Net to the Box 
             LRListsocket_1G = LRListsocket_1G - 1
         Loop
         cbo_Living1G.Text = LR1G
+
         ' kitchen
-        cbo_kitchenNet.Items.Clear()
-        cbo_kitchenNet.Text = KNET
-        If remainingpoints < 5 Then KitList = remainingpoints + KNET Else KitList = 4
+        cbo_kitchenNet.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingpoints < 5 Then KitList = remainingpoints + KNET Else KitList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If KitList > 4 Then KitList = 4
         Dim zerovalue As Integer
         If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
@@ -310,52 +293,40 @@
             KitList = KitList - 1
         Loop
         cbo_kitchenNet.Text = KNET
+
         ' Kitchen 2 (2G) Socket Check
-        cbo_kitchen2G.Items.Clear()
-        If remainingsocket < 5 Then
-            KitListsocket_2G = remainingsocket + K2G
-        Else
-            KitListsocket_2G = 4
-        End If
+        cbo_kitchen2G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then KitListsocket_2G = remainingsocket + K2G Else KitListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If KitListsocket_2G > 4 Then KitListsocket_2G = 4
         Do Until KitListsocket_2G = -1
             cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Change cbo_bed2Net to the Box 
             KitListsocket_2G = KitListsocket_2G - 1
         Loop
         cbo_kitchen2G.Text = K2G
+
         ' Kitchen (1G) Socket Check
-        cbo_kitchen1G.Items.Clear()
-        If remainingsocket < 5 Then
-            KitListsocket_1G = remainingsocket + K1G
-        Else
-            KitListsocket_1G = 4
-        End If
+        cbo_kitchen1G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then KitListsocket_1G = remainingsocket + K1G Else KitListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If KitListsocket_1G > 4 Then KitListsocket_1G = 4
         Do Until KitListsocket_1G = -1
             cbo_kitchen1G.Items.Add(KitListsocket_1G) ' Change cbo_bed2Net to the Box 
             KitListsocket_1G = KitListsocket_1G - 1
         Loop
         cbo_kitchen1G.Text = K1G
+
         ' Bath Room One 2 (2G) Socket Check
-        cbo_bath2G.Items.Clear()
-        If remainingsocket < 5 Then
-            BathListSocket_2G = remainingsocket + BATH2G
-        Else
-            BathListSocket_2G = 4
-        End If
+        cbo_bath2G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BathListSocket_2G = remainingsocket + BATH2G Else BathListSocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If BathListSocket_2G > 4 Then BathListSocket_2G = 4
         Do Until BathListSocket_2G = -1
             cbo_bath2G.Items.Add(BathListSocket_2G) ' Change cbo_bed2Net to the Box 
             BathListSocket_2G = BathListSocket_2G - 1
         Loop
         cbo_bath2G.Text = BATH2G
+
         ' Bath Room One (1G) Socket Check
-        cbo_bath1G.Items.Clear()
-        If remainingsocket < 5 Then
-            BathListScoket_1G = remainingsocket + BATH1G
-        Else
-            BathListScoket_1G = 4
-        End If
+        cbo_bath1G.Items.Clear() ' This removes all the items from the combo box so starts empty
+        If remainingsocket < 5 Then BathListScoket_1G = remainingsocket + BATH1G Else BathListScoket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If BathListScoket_1G > 4 Then BathListScoket_1G = 4
         Do Until BathListScoket_1G = -1
             cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
@@ -380,7 +351,7 @@
             KitchenA = False ' This Sets the selected option to false because the user unselected this option
             Kupgrade = 0 ' 0 is used to show no option has been selected and the user does not want a kitchen Upgrade.
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub chk_KitchenB_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenB.CheckedChanged
         If KitchenB = False Then
@@ -396,7 +367,7 @@
             KitchenB = False
             Kupgrade = 0
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub chk_KitchenC_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenC.CheckedChanged
         If KitchenC = False Then
@@ -412,7 +383,7 @@
             KitchenC = False
             Kupgrade = 0
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpLiving_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpLiving.CheckedChanged
@@ -421,7 +392,7 @@
         Else
             LRHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there living room
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpBedOne_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedOne.CheckedChanged
@@ -430,7 +401,7 @@
         Else
             BROHeatPump = 0
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpBedTwo_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedTwo.CheckedChanged
@@ -439,7 +410,7 @@
         Else
             BRTHeatPump = 0
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_UpgradeBathRoom.CheckedChanged
@@ -448,43 +419,43 @@
         Else
             BATHUpgrades = 0
         End If
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_kitchenNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenNet.SelectedIndexChanged
         KNET = cbo_kitchenNet.Text ' This sets the value KNET to the value of the combo box
-        If userimputcheck = True Then
-            userimputcheck = False
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
             input_rules() ' This calls the sub Imput_Rules this sub is used to check and stop the user from having too many network points and limits it. This Doesn't give the user access to have more then the maxium so they cannot make a mistake and selected more then allowed.
         End If
     End Sub
     Private Sub kitchen_net_userinput() Handles cbo_kitchenNet.MouseClick, cbo_kitchenNet.Enter, cbo_kitchenNet.KeyPress, cbo_kitchenNet.KeyUp, cbo_kitchenNet.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_LivingNet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingNet.SelectedIndexChanged
         LRNET = cbo_LivingNet.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub cbo_LivingNet_userinput() Handles cbo_LivingNet.MouseClick, cbo_LivingNet.Enter, cbo_LivingNet.KeyPress, cbo_LivingNet.KeyUp, cbo_LivingNet.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bed1Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1Net.SelectedIndexChanged
         BRONET = cbo_bed1Net.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub cbo_bed1Net_userinput() Handles cbo_bed1Net.MouseClick, cbo_bed1Net.Enter, cbo_bed1Net.KeyPress, cbo_bed1Net.KeyUp, cbo_bed1Net.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bed2Net_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2Net.SelectedIndexChanged
         BRTNET = cbo_bed2Net.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub cbo_bed2Net_userinput() Handles cbo_bed2Net.MouseClick, cbo_bed2Net.Enter, cbo_bed2Net.KeyPress, cbo_bed2Net.KeyUp, cbo_bed2Net.KeyDown
@@ -492,159 +463,159 @@
     End Sub
     Private Sub cbo_kitchenTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenTV.SelectedIndexChanged
         KTV = cbo_kitchenTV.Text ' Sets the varible KTV to the value of the combo box this will be used to store in the array or can be used to check rules.
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub cbo_kitchenSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchenSAT.SelectedIndexChanged
         KSAT = cbo_kitchenSAT.Text
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_kitchen1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen1G.SelectedIndexChanged
         K1G = cbo_kitchen1G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub kitchen_1G_userinput() Handles cbo_kitchen1G.MouseClick, cbo_kitchen1G.Enter, cbo_kitchen1G.KeyPress, cbo_kitchen1G.KeyUp, cbo_kitchen1G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_kitchen2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_kitchen2G.SelectedIndexChanged
         K2G = cbo_kitchen2G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub kitchen_2G_userinput() Handles cbo_kitchen2G.MouseClick, cbo_kitchen2G.Enter, cbo_kitchen2G.KeyPress, cbo_kitchen2G.KeyUp, cbo_kitchen2G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_LivingTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingTV.SelectedIndexChanged
         LRTV = cbo_LivingTV.Text
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_LivingSAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_LivingSAT.SelectedIndexChanged
         LRSAT = cbo_LivingSAT.Text
-        input_rules()
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_Living1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living1G.SelectedIndexChanged
-        LR1G = cbo_Living1G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        LR1G = cbo_Living1G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub living_1G_userinput() Handles cbo_Living1G.MouseClick, cbo_Living1G.Enter, cbo_Living1G.KeyPress, cbo_Living1G.KeyUp, cbo_Living1G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_Living2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Living2G.SelectedIndexChanged
-        LR2G = cbo_Living2G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        LR2G = cbo_Living2G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub living_2G_userinput() Handles cbo_Living2G.MouseClick, cbo_Living2G.Enter, cbo_Living2G.KeyPress, cbo_Living2G.KeyUp, cbo_Living2G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bath1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath1G.SelectedIndexChanged
-        BATH1G = cbo_bath1G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BATH1G = cbo_bath1G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub bath_1G_userinput() Handles cbo_bath1G.MouseClick, cbo_bath1G.Enter, cbo_bath1G.KeyPress, cbo_bath1G.KeyUp, cbo_bath1G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bath2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bath2G.SelectedIndexChanged
-        BATH2G = cbo_bath2G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BATH2G = cbo_bath2G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub bath_2G_userinput() Handles cbo_bath2G.MouseClick, cbo_bath2G.Enter, cbo_bath2G.KeyPress, cbo_bath2G.KeyUp, cbo_bath2G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bed2TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2TV.SelectedIndexChanged
-        BRTTV = cbo_bed2TV.Text
-        input_rules()
+        BRTTV = cbo_bed2TV.Text ' this updates the BRTTV varible when the amount of tv points in bed room two are updated.
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_bed2SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2SAT.SelectedIndexChanged
-        BRTSAT = cbo_bed2SAT.Text
-        input_rules()
+        BRTSAT = cbo_bed2SAT.Text 'Updates the varible BRTSAT when the amount of SAT points in bed room 2 are changed
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_bed2_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_1G.SelectedIndexChanged
-        BRT1G = cbo_bed2_1G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BRT1G = cbo_bed2_1G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
         End If
     End Sub
     Private Sub bed2_1G_userinput() Handles cbo_bed2_1G.MouseClick, cbo_bed2_1G.Enter, cbo_bed2_1G.KeyPress, cbo_bed2_1G.KeyUp, cbo_bed2_1G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub cbo_bed2_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed2_2G.SelectedIndexChanged
-        BRT2G = cbo_bed2_2G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BRT2G = cbo_bed2_2G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False  ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
 
         End If
     End Sub
     Private Sub bed2_2G_userinput() Handles cbo_bed2_2G.MouseClick, cbo_bed2_2G.Enter, cbo_bed2_2G.KeyPress, cbo_bed2_2G.KeyUp, cbo_bed2_2G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
 
     Private Sub cbo_bed1TV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1TV.SelectedIndexChanged
-        BROTV = cbo_bed1TV.Text
-        input_rules()
+        BROTV = cbo_bed1TV.Text ' when the amount of tv points are changed in the bed room one this varible will be changed to the selected value
+        input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub cbo_bed1SAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1SAT.SelectedIndexChanged
-        BROSAT = cbo_bed1SAT.Text
-        input_rules()
+        BROSAT = cbo_bed1SAT.Text ' When the amount of sat points in bedroom1 are changed it saves its value to a varible 
+        input_rules() ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub cbo_bed1_1G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_1G.SelectedIndexChanged
-        BRO1G = cbo_bed1_1G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BRO1G = cbo_bed1_1G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input
+            userimputcheck = False ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
 
         End If
     End Sub
     Private Sub bed1_1G_userinput() Handles cbo_bed1_1G.MouseClick, cbo_bed1_1G.Enter, cbo_bed1_1G.KeyPress, cbo_bed1_1G.KeyUp, cbo_bed1_1G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
 
     Private Sub cbo_bed1_2G_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_bed1_2G.SelectedIndexChanged
-        BRO2G = cbo_bed1_2G.Text
-        If userimputcheck = True Then
-            userimputcheck = False
-            input_rules()
+        BRO2G = cbo_bed1_2G.Text ' when the selected item is changed it calls this sub and then sets this varible to the value of the selected item in the combo box.
+        If userimputcheck = True Then ' to stop the from calling input rules because the input rules updates the combobox it was cause a loop to fix it this if stament checks if there was a user input 
+            userimputcheck = False ' if there was a user input it then sets it to false to stop the program looping its self
+            input_rules() ' calls the input_rules sub if it is not in this if statment it will loop itself and remove the values stored.
 
         End If
     End Sub
     Private Sub bed1_2G_userinput() Handles cbo_bed1_2G.MouseClick, cbo_bed1_2G.Enter, cbo_bed1_2G.KeyPress, cbo_bed1_2G.KeyUp, cbo_bed1_2G.KeyDown
-        userimputcheck = True
+        userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        CustomerDetails.Show()
-        Me.Hide()
+        CustomerDetails.Show() ' if the back arrow is clicked it shows the Prvious form
+        Me.Hide() ' hide current form
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Application.Exit()
+        Application.Exit() ' if the exit icon is clicked this exits the application and closes it.
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        value_store()
-        input_rules()
-        Dim tempnetpointcheck As Integer = KNET + BRONET + BRTNET + LRNET
-        If tempnetpointcheck = 1 Then
-            MessageBox.Show("You need more then one network point!")
-        Else
-            Form3.Show()
-            Me.Hide()
+        value_store() ' when the next button is hit it calls this sub to store the values into an array.
+        input_rules() ' this then checks if the stored values are vaild and doesn't allow the user to have an invalid input
+        Dim tempnetpointcheck As Integer = KNET + BRONET + BRTNET + LRNET ' this temp vairble is used to check how many network points are selected by adding them all up
+        If tempnetpointcheck = 1 Then ' if they have one is shows a message box forceing the user to select more they can have 0 or 2 + they cannot have one
+            MessageBox.Show("You need more then one network point!") ' this communicates with the user the error so they can fix it though a message box.
+        Else ' if the condition that tempnetpointcheck = 1 is not met it runs the two lines below
+            Form3.Show() ' if they have 0 or 2 + points selected it will show the next form
+            Me.Hide() ' after the next form is opened it hides my current form.
         End If
     End Sub
 End Class

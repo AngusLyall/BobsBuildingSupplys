@@ -29,8 +29,12 @@ Partial Class Form3
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.icon = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.icon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lst_display
@@ -38,14 +42,14 @@ Partial Class Form3
         Me.lst_display.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lst_display.FormattingEnabled = True
         Me.lst_display.ItemHeight = 15
-        Me.lst_display.Location = New System.Drawing.Point(66, 36)
+        Me.lst_display.Location = New System.Drawing.Point(41, 42)
         Me.lst_display.Name = "lst_display"
-        Me.lst_display.Size = New System.Drawing.Size(447, 349)
+        Me.lst_display.Size = New System.Drawing.Size(407, 319)
         Me.lst_display.TabIndex = 0
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(66, 391)
+        Me.Button1.Location = New System.Drawing.Point(41, 367)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
@@ -65,16 +69,16 @@ Partial Class Form3
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(533, 1)
+        Me.PictureBox2.Location = New System.Drawing.Point(459, 5)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 34)
+        Me.PictureBox2.Size = New System.Drawing.Size(26, 25)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 90
         Me.PictureBox2.TabStop = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(147, 391)
+        Me.Button2.Location = New System.Drawing.Point(122, 367)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 91
@@ -91,20 +95,40 @@ Partial Class Form3
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'PrintDocument1
+        '
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'icon
+        '
+        Me.icon.Image = CType(resources.GetObject("icon.Image"), System.Drawing.Image)
+        Me.icon.Location = New System.Drawing.Point(398, 5)
+        Me.icon.Name = "icon"
+        Me.icon.Size = New System.Drawing.Size(94, 90)
+        Me.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.icon.TabIndex = 92
+        Me.icon.TabStop = False
+        Me.icon.Visible = False
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(567, 450)
+        Me.ClientSize = New System.Drawing.Size(489, 420)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lst_display)
+        Me.Controls.Add(Me.icon)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.icon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -115,4 +139,7 @@ Partial Class Form3
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Button2 As Button
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents icon As PictureBox
 End Class

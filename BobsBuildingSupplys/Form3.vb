@@ -1,8 +1,12 @@
-﻿Public Class Form3
+﻿Imports System.Drawing.Printing
+Public Class Form3
     Dim listformat As String = "{0,1}{1,15}{2,-1}"
     Dim totalcostgst As Integer
     Dim totalcostnogst As Integer
     Dim ordersaved As Boolean = False
+    Dim printoutstr As String
+    Dim currentordernumber As Integer
+    Dim ordernumer As String
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim kitchenupgradename As String = "TV Poinht"
         Dim kitchenupgradequntity As String
@@ -115,28 +119,17 @@
         lst_display.Items.Add($"Total Cost Including GST {totalcostgst.ToString("C")} ")
 
 
-
+        ordernumer = My.Computer.FileSystem.ReadAllText("ordernumber.txt")
+        currentordernumber = Int(ordernumer)
+        currentordernumber = currentordernumber + 1
+        My.Computer.FileSystem.DeleteFile("ordernumber.txt")
+        My.Computer.FileSystem.WriteAllText("ordernumber.txt", "" & currentordernumber, True)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim printoutlist As New List(Of String)
-        Dim ordernumer As String
+        printstring()
         Dim filename As String = "orderhistory.txt"
-        ordernumer = My.Computer.FileSystem.ReadAllText("ordernumber.txt")
-        Dim currentordernumber As Integer
-        currentordernumber = Int(ordernumer)
-        currentordernumber = currentordernumber + 1
-
-        printoutlist.Add("  ")
-        printoutlist.Add("  ")
-        printoutlist.Add($"Order Number: {currentordernumber}")
-        For Each item In lst_display.Items
-            printoutlist.Add(item)
-        Next
-        Dim printoutstr As String = String.Join(vbCrLf, printoutlist)
         If ordersaved = False Then
-            '' My.Computer.FileSystem.DeleteFile("ordernumber.txt")
-            '' My.Computer.FileSystem.WriteAllText("ordernumber.txt", "" & currentordernumber, True)
             My.Computer.FileSystem.WriteAllText($"{filename}", "" & printoutstr, True)
             ordersaved = True
             MessageBox.Show($"Order Has Saved to {filename}")
@@ -155,23 +148,34 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        PrintPreviewDialog1.Document = PrintDocument1
         PrintPreviewDialog1.ShowDialog()
     End Sub
 
-    Private Sub PrintPreviewDialog1_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog1.Load
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim localfont As New Font("Courier New", 14, FontStyle.Regular)
+        printstring()
+        e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0)
+        e.Graphics.DrawImage(icon.Image, 420, 1)
+
+    End Sub
+
+    Private Sub printstring()
         Dim printoutlist As New List(Of String)
-        Dim ordernumer As String
-        ordernumer = My.Computer.FileSystem.ReadAllText("ordernumber.txt")
-        Dim currentordernumber As Integer
-        currentordernumber = Int(ordernumer)
-        currentordernumber = currentordernumber + 1
+
+
         printoutlist.Add("  ")
         printoutlist.Add("  ")
         printoutlist.Add($"Order Number: {currentordernumber}")
         For Each item In lst_display.Items
             printoutlist.Add(item)
         Next
-        Dim printoutstr As String = String.Join(vbCrLf, printoutlist)
-        MessageBox.Show("Not Implmented yet")
+
+        printoutstr = String.Join(vbCrLf, printoutlist)
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles icon.Click
+
     End Sub
 End Class
