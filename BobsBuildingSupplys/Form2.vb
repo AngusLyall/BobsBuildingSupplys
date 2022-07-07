@@ -34,38 +34,38 @@
         kitchencost(0) = kitchenTVvalue ' this sets the cost array value to the cost of the tv aerial point based on how many the user selected this is used on form 3 in the quote display
         kitchenSATvalue = KSAT * Form4.TV_SAT_POINT ' this set the cost varible value to the amount of User selected sat points times by the value of the Tv sat points 
         kitchencost(1) = kitchenSATvalue 'this sets cost array equal to the value set above and is used to display on the quote.
-        livingTVvalue = LivingRoom(0) * Form4.TV_AERIAL
-        livingSATvalue = LivingRoom(1) * Form4.TV_SAT
-        livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT
-        living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET
-        living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET
-        livingheatpumpvalue = LivingRoom(5) * Form4.HEATPUMP2
-        Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET
-        Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET
-        BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE
-        bedroomtwoTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT
-        bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT
-        bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET
-        bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET
-        bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT
-        bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT_POINT
-        bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT
-        bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET
-        bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET
-        bedroomoneheatpumpvalue = BedRoomOne(5) * Form4.HEATPUMP1
-        totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' Total Kitchen COST
-        totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue ' Total Living Room COST
-        totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue ' Total Bedroom One cost
-        totalvalue(4) = bedroomtwoheatpumpvalue + bedroomtwonetworkvalue + bedroomtwo1gvalue + bedroomtwo2gvalue + bedroomtwoTVvalue + bedroomtwoSATvalue ' Total Bedroom Two Cost
-        totalvalue(5) = Bath1gvalue + Bath2gvalue + BathUpgradevalue ' Total Bath Room Cost
-        totalvalue(0) = totalvalue(1) + totalvalue(2) + totalvalue(3) + totalvalue(4) + totalvalue(5) ' All up Total
-        lbl_kitch_cost.Text = $" Kitchen Cost {totalvalue(1).ToString("C")}"
-        lbl_living_cost.Text = $" Living Room Cost {totalvalue(2).ToString("C")}"
-        lbl_bedroom_two_cost.Text = $" Bed Room Two Cost {totalvalue(4).ToString("C")}"
-        lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}"
-        lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}"
-        lbl_totaldisplay.Text = $" Total Options Cost {totalvalue(0).ToString("C")} (+GST)"
-        Dim bedroomonelist As New List(Of Integer) From {bedroomoneTVvalue, bedroomoneSATvalue, bedroomonenetworkvalue, bedroomone1gvalue, bedroomone2gvalue, bedroomoneheatpumpvalue}
+        livingTVvalue = LivingRoom(0) * Form4.TV_AERIAL ' this sets the LivingTVvalue equal to the price of tv aerial points and the amount of points selected in the living room
+        livingSATvalue = LivingRoom(1) * Form4.TV_SAT ' this sets the value of the LivingSATvalue to be equal to the amount of user selected Sat points times by the price of sat points 
+        livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT ' this sets the price of the living network value to the amount of network points selected in the living room and the price of network points
+        living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET ' Sets the value of living1gvalue to the amount of 1 gang sockets selected times by the price of a One G socket.
+        living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET ' sets the value of living2gvalue to the amount of 2 gang sockets selected times by the price of a two Gang socket.
+        livingheatpumpvalue = LivingRoom(5) * Form4.HEATPUMP2 ' sets the value of the livingheatpumpvalue ot the amount of heat pumps selected this being 1 or 0 then times it by the price of 4.5 KW heat pump
+        Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET ' sets the value of Bath1gvalue equal to the amount of one gang sockets in the bathroom times by the price of a one gang socket
+        Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET ' sets the value of the Bath2gvalue equald to the amount of two gang sockets in the bathroom times by the pice of a two gang socket.
+        BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE ' Sets the value of the bathupgradevalue equal to value in the bathroom(2) array this is either 0 or 1 then times the array value by the price of the bathroom upgrade
+        bedroomtwoTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT '  Sets the value of the bedroomtwoTVvalue the amount of tv points selected in the bedroom two times by the price of a tv aerial point.
+        bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT '  Sets the value of the bedroomtwonetworkvalue the amount of network points selected in the bedroom two times by the price of a network point.
+        bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET ' this sets the value of bedroom1gvalue equal to the amount of 1g sockets selected in the bedroomtwo by the cost of a one gang socket.
+        bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET ' this sets the value of bedroom2gvalue equal to the amount of 2g sockets selected in the bedroomtwo by the cost of a two gang socket.
+        bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT '  Sets the value of the bedroomoneTVvalue the amount of tv points selected in the bedroom one times by the price of a tv aerial point.
+        bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT_POINT ' this sets the value of the bedroomSATvalue varible to the amount of sat points selected times by the cost of sat points.
+        bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT ' this sets the value of bedroomonenetworkvalue equal to the amount of network points selected in bedroom ones times by tha cost of a network point
+        bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET ' this sets the value of bedroom1gvalue equal to the amount of 1 gang sockets times by the cost of a one gang socket
+        bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET ' this sets the value of bedroom2gvalue equal to the amount of 2 gang sockets times by the cost of a two gang socket
+        bedroomoneheatpumpvalue = BedRoomOne(5) * Form4.HEATPUMP1 ' this sets the cost of bedroomoneheatpumpvalue to the amount the value stored in the BedRoomOne(5) array that will be 0 or 1 then times the the cost of a heat pump by that value
+        totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' this adds and saves the  Total Kitchen COST
+        totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue '  this adds and saves the Total Living Room COST
+        totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue 'this adds and saves the Total Bedroom One cost
+        totalvalue(4) = bedroomtwoheatpumpvalue + bedroomtwonetworkvalue + bedroomtwo1gvalue + bedroomtwo2gvalue + bedroomtwoTVvalue + bedroomtwoSATvalue 'this adds and saves the Total Bedroom Two Cost
+        totalvalue(5) = Bath1gvalue + Bath2gvalue + BathUpgradevalue 'this adds and saves the Total Bath Room Cost
+        totalvalue(0) = totalvalue(1) + totalvalue(2) + totalvalue(3) + totalvalue(4) + totalvalue(5) 'this gets all the values added and saved above and saves it into the array.
+        lbl_kitch_cost.Text = $" Kitchen Cost {totalvalue(1).ToString("C")}" ' this gets the value stored in totalvalue(1) then converts it to a string and sets the labels text value to the string to display
+        lbl_living_cost.Text = $" Living Room Cost {totalvalue(2).ToString("C")}" ' this gets the value stored in totalvalue(2) then converts it to a string and sets the labels text value to the string to display
+        lbl_bedroom_two_cost.Text = $" Bed Room Two Cost {totalvalue(4).ToString("C")}" ' this gets the value stored in totalvalue(3) then converts it to a string and sets the labels text value to the string to display
+        lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}" ' this gets the value stored in totalvalue(4) then converts it to a string and sets the labels text value to the string to display
+        lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}" ' this gets the value stored in totalvalue(5) then converts it to a string and sets the labels text value to the string to display
+        lbl_totaldisplay.Text = $" Total Options Cost {totalvalue(0).ToString("C")} (+GST)" ' this gets the value stored in totalvalue(0) then converts it to a string and sets the labels text value to the string to display
+        Dim bedroomonelist As New List(Of Integer) From {bedroomoneTVvalue, bedroomoneSATvalue, bedroomonenetworkvalue, bedroomone1gvalue, bedroomone2gvalue, bedroomoneheatpumpvalue} '
         Dim counter As Integer = -1
         For Each value In bedroomonelist
             counter = counter + 1
@@ -77,66 +77,66 @@
             counter = counter + 1
             BedRoomTwoCost(0) = value
         Next
-        BathRoomCost(0) = Bath1gvalue
-        BathRoomCost(1) = Bath2gvalue
-        BathRoomCost(2) = BathUpgradevalue
-        LivingRoomCost(0) = livingTVvalue
-        LivingRoomCost(1) = livingSATvalue
-        LivingRoomCost(2) = livingnetworkvalue
-        LivingRoomCost(3) = living1gvalue
-        LivingRoomCost(4) = living2gvalue
-        LivingRoomCost(5) = livingheatpumpvalue
-        lbl_kitch_cost.Show()
-        lbl_living_cost.Show()
-        lbl_bedroom_two_cost.Show()
-        lbl_bedroom_one.Show()
-        lbl_bathroom_cost.Show()
-        lbl_totaldisplay.Show()
+        BathRoomCost(0) = Bath1gvalue ' this stores the value done by the math into an array to be used in the next form
+        BathRoomCost(1) = Bath2gvalue ' this stores the value done by the math into an array to be used in the next form
+        BathRoomCost(2) = BathUpgradevalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(0) = livingTVvalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(1) = livingSATvalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(2) = livingnetworkvalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(3) = living1gvalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(4) = living2gvalue ' this stores the value done by the math into an array to be used in the next form
+        LivingRoomCost(5) = livingheatpumpvalue ' this stores the value done by the math into an array to be used in the next form
+        lbl_kitch_cost.Show() ' this shows the string displaying the cost of the upgrades room
+        lbl_living_cost.Show() ' this shows the string displaying the cost of the upgrades room
+        lbl_bedroom_two_cost.Show() ' this shows the string displaying the cost of the upgrades room
+        lbl_bedroom_one.Show() ' this shows the string displaying the cost of the upgrades room
+        lbl_bathroom_cost.Show() ' this shows the string displaying the cost of the upgrades room
+        lbl_totaldisplay.Show() ' this shows the string displaying the cost of the upgrades room
     End Sub
     Private Sub value_store()
         ' This Stores the values into an array so I can access this infomation easily on other forms and save this infomation to text files.
-        Kitchen(0) = KTV
-        Kitchen(1) = KSAT
-        Kitchen(2) = KNET
-        Kitchen(3) = K1G
-        Kitchen(4) = K2G
-        Kitchen(5) = Kupgrade
-        BedRoomOne(0) = BROTV
-        BedRoomOne(1) = BROSAT
-        BedRoomOne(2) = BRONET
-        BedRoomOne(3) = BRO1G
-        BedRoomOne(4) = BRO2G
-        BedRoomOne(5) = BROHeatPump
-        BedRoomTwo(0) = BRTTV
-        BedRoomTwo(1) = BRTSAT
-        BedRoomTwo(2) = BRTNET
-        BedRoomTwo(3) = BRT1G
-        BedRoomTwo(4) = BRT2G
-        BedRoomTwo(5) = BRTHeatPump
-        LivingRoom(0) = LRTV
-        LivingRoom(1) = LRSAT
-        LivingRoom(2) = LRNET
-        LivingRoom(3) = LR1G
-        LivingRoom(4) = LR2G
-        LivingRoom(5) = LRHeatPump
-        BathRoom(0) = BATH1G
-        BathRoom(1) = BATH2G
-        BathRoom(2) = BATHUpgrades
+        Kitchen(0) = KTV ' this stores the user input of kitchen tv points into an array
+        Kitchen(1) = KSAT ' this stores the user input of kitchen Sat points into an array
+        Kitchen(2) = KNET ' this stores the user input of kitchen net points into an array
+        Kitchen(3) = K1G ' this stores the user input of kitchen 1 gang points into an array
+        Kitchen(4) = K2G ' this stores the user input of kitchen 2 gang points into an array
+        Kitchen(5) = Kupgrade ' this stores the user input of the selected kitchen upgrade into an array
+        BedRoomOne(0) = BROTV ' this stores the user input of Bed room one tv points into an array
+        BedRoomOne(1) = BROSAT ' this stores the user input of Bed room one Sat points into an array
+        BedRoomOne(2) = BRONET ' this stores the user input of Bed room one Net points into an array
+        BedRoomOne(3) = BRO1G ' this stores the user input of Bed room one 1 gang points into an array
+        BedRoomOne(4) = BRO2G ' this stores the user input of Bed room one 2 gang points into an array
+        BedRoomOne(5) = BROHeatPump ' this stores the user input of if a heatpump is selected into an array
+        BedRoomTwo(0) = BRTTV ' this stores the user input of Bed room two tv points into an array
+        BedRoomTwo(1) = BRTSAT  ' this stores the user input of Bed room two Sat points into an array
+        BedRoomTwo(2) = BRTNET ' this stores the user input of Bed room two net points into an array
+        BedRoomTwo(3) = BRT1G ' this stores the user input of Bed room two 1 gang points into an array
+        BedRoomTwo(4) = BRT2G ' this stores the user input of Bed room two 2 gang points into an array
+        BedRoomTwo(5) = BRTHeatPump ' this stores the user input of if a heatpump is selected into an array
+        LivingRoom(0) = LRTV ' this stores the user input of Livingroom tv points into an array
+        LivingRoom(1) = LRSAT  ' this stores the user input of Livingroom Sat points into an array
+        LivingRoom(2) = LRNET ' this stores the user input of Livingroom net points into an array
+        LivingRoom(3) = LR1G ' this stores the user input of Livingroom 1 gang points into an array
+        LivingRoom(4) = LR2G ' this stores the user input of Livingroom 2 gang points into an array
+        LivingRoom(5) = LRHeatPump ' this stores the user input of if a heatpump is selected into an array
+        BathRoom(0) = BATH1G ' this stores the user input of bathroom 1 gang points into an array
+        BathRoom(1) = BATH2G ' this stores the user input of bathroom 2 gang points into an array
+        BathRoom(2) = BATHUpgrades ' this stores the user input of if a upgrade is selected in the bath room into an array
     End Sub
     Private Sub startingzero()
-        cbo_kitchenSAT.Text = KSAT
-        cbo_kitchenTV.Text = KTV
-        cbo_LivingTV.Text = LRTV
-        cbo_LivingSAT.Text = LRSAT
-        cbo_bed1SAT.Text = BROSAT
-        cbo_bed1TV.Text = BROTV
-        cbo_bed2SAT.Text = BRTSAT
-        cbo_bed2TV.Text = BRTTV
-        start_zerio = True
+        cbo_kitchenSAT.Text = KSAT ' sets the text equal to 0
+        cbo_kitchenTV.Text = KTV ' sets the text equal to 0
+        cbo_LivingTV.Text = LRTV ' sets the text equal to 0
+        cbo_LivingSAT.Text = LRSAT ' sets the text equal to 0
+        cbo_bed1SAT.Text = BROSAT ' sets the text equal to 0
+        cbo_bed1TV.Text = BROTV ' sets the text equal to 0
+        cbo_bed2SAT.Text = BRTSAT ' sets the text equal to 0
+        cbo_bed2TV.Text = BRTTV ' sets the text equal to 0
+        start_zerio = True ' sets the varible to true so it doesn't run and reset the values to 0 
     End Sub
     Private Sub input_rules()
         ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total. And Rules related to the 1G and 2G limits
-        If start_zerio = False Then startingzero()
+        If start_zerio = False Then startingzero() ' this runs onces and sets the text to 0 for all the points that have not been changed.
         Dim netpointcheck As Integer : Dim swtichpoints As Integer : Dim kitchendefult As Boolean = True : Dim tvpointcheck As Integer : Dim satpointcheck As Integer : Dim socketscheck As Integer
         Dim remainingsocket As Integer = 12 : Dim remainingpoints As Integer = 8 : Dim BROList As Integer : Dim BRTList As Integer : Dim LRList As Integer : Dim KitList As Integer : Dim BROListsocket_2G As Integer
         Dim BROListsocket_1G As Integer : Dim BRTListsocket_2G As Integer : Dim BRTListsocket_1G As Integer : Dim LRListsocket_2G As Integer : Dim LRListsocket_1G As Integer : Dim KitListsocket_2G As Integer
@@ -215,127 +215,127 @@
         ' Bed Room One (1G) Socket Check
         cbo_bed1_1G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then BROListsocket_1G = remainingsocket + BRO1G Else BROListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points  
-        If BROListsocket_1G > 4 Then BROListsocket_1G = 4
-        Do Until BROListsocket_1G = -1
-            cbo_bed1_1G.Items.Add(BROListsocket_1G) ' Change cbo_bed2Net to the Box 
-            BROListsocket_1G = BROListsocket_1G - 1
+        If BROListsocket_1G > 4 Then BROListsocket_1G = 4 ' BROListsocket_1G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BROListsocket_1G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed1_1G.Items.Add(BROListsocket_1G)  ' Adds the amount of avaible points to the combobox
+            BROListsocket_1G = BROListsocket_1G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bed1_1G.Text = BRO1G
 
         ' Bed Room Two
         cbo_bed2Net.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingpoints < 5 Then BRTList = remainingpoints + BRTNET Else BRTList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If BRTList > 4 Then BRTList = 4
-        Do Until BRTList = -1
-            cbo_bed2Net.Items.Add(BRTList)
-            BRTList = BRTList - 1
+        If BRTList > 4 Then BRTList = 4 ' BRTList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BRTList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed2Net.Items.Add(BRTList)  ' Adds the amount of avaible points to the combobox
+            BRTList = BRTList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bed2Net.Text = BRTNET
 
         ' Bed Room 2 (2G) Socket Check
         cbo_bed2_2G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then BRTListsocket_2G = remainingsocket + BRT2G Else BRTListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4
-        Do Until BRTListsocket_2G = -1
-            cbo_bed2_2G.Items.Add(BRTListsocket_2G) ' Change cbo_bed2Net to the Box 
-            BRTListsocket_2G = BRTListsocket_2G - 1
+        If BRTListsocket_2G > 4 Then BRTListsocket_2G = 4 ' BRTListsocket_2G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BRTListsocket_2G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed2_2G.Items.Add(BRTListsocket_2G)  ' Adds the amount of avaible points to the combobox 
+            BRTListsocket_2G = BRTListsocket_2G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bed2_2G.Text = BRT2G
 
         ' Bed Room 2 (1G) Socket Check
         cbo_bed2_1G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then BRTListsocket_1G = remainingsocket + BRT1G Else BRTListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4
-        Do Until BRTListsocket_1G = -1
-            cbo_bed2_1G.Items.Add(BRTListsocket_1G) ' Change cbo_bed2Net to the Box 
-            BRTListsocket_1G = BRTListsocket_1G - 1
+        If BRTListsocket_1G > 4 Then BRTListsocket_1G = 4 ' BRTListsocket_1G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BRTListsocket_1G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bed2_1G.Items.Add(BRTListsocket_1G)  ' Adds the amount of avaible points to the combobox 
+            BRTListsocket_1G = BRTListsocket_1G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bed2_1G.Text = BRT1G
 
         '  Living Room
         cbo_LivingNet.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingpoints < 5 Then LRList = remainingpoints + LRNET Else LRList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If LRList > 4 Then LRList = 4
-        Do Until LRList = -1
-            cbo_LivingNet.Items.Add(LRList)
-            LRList = LRList - 1
+        If LRList > 4 Then LRList = 4 ' LRList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until LRList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_LivingNet.Items.Add(LRList)  ' Adds the amount of avaible points to the combobox
+            LRList = LRList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_LivingNet.Text = LRNET
 
         ' Living Room (2G) Socket Check
         cbo_Living2G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then LRListsocket_2G = remainingsocket + LR2G Else LRListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If LRListsocket_2G > 4 Then LRListsocket_2G = 4
-        Do Until LRListsocket_2G = -1
-            cbo_Living2G.Items.Add(LRListsocket_2G) ' Change cbo_bed2Net to the Box 
-            LRListsocket_2G = LRListsocket_2G - 1
+        If LRListsocket_2G > 4 Then LRListsocket_2G = 4 ' LRListsocket_2G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until LRListsocket_2G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_Living2G.Items.Add(LRListsocket_2G)  ' Adds the amount of avaible points to the combobox
+            LRListsocket_2G = LRListsocket_2G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_Living2G.Text = LR2G
 
         ' Living Room 2 (1G) Socket Check
         cbo_Living1G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then LRListsocket_1G = remainingsocket + LR1G Else LRListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If LRListsocket_1G > 4 Then LRListsocket_1G = 4
-        Do Until LRListsocket_1G = -1
-            cbo_Living1G.Items.Add(LRListsocket_1G) ' Change cbo_bed2Net to the Box 
-            LRListsocket_1G = LRListsocket_1G - 1
+        If LRListsocket_1G > 4 Then LRListsocket_1G = 4 ' LRListsocket_1G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until LRListsocket_1G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_Living1G.Items.Add(LRListsocket_1G)  ' Adds the amount of avaible points to the combobox
+            LRListsocket_1G = LRListsocket_1G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_Living1G.Text = LR1G
 
         ' kitchen
         cbo_kitchenNet.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingpoints < 5 Then KitList = remainingpoints + KNET Else KitList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If KitList > 4 Then KitList = 4
-        Dim zerovalue As Integer
-        If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1
+        If KitList > 4 Then KitList = 4 ' KitList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Dim zerovalue As Integer ' vairble used to see if they can go below zero or must stop at one
+        If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1 ' this stops at 0 or 1 depeneding on if a net point is slected in another room
         Do Until KitList = zerovalue
-            cbo_kitchenNet.Items.Add(KitList)
-            KitList = KitList - 1
+            cbo_kitchenNet.Items.Add(KitList)  ' Adds the amount of avaible points to the combobox
+            KitList = KitList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_kitchenNet.Text = KNET
 
         ' Kitchen 2 (2G) Socket Check
         cbo_kitchen2G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then KitListsocket_2G = remainingsocket + K2G Else KitListsocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If KitListsocket_2G > 4 Then KitListsocket_2G = 4
-        Do Until KitListsocket_2G = -1
-            cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Change cbo_bed2Net to the Box 
-            KitListsocket_2G = KitListsocket_2G - 1
+        If KitListsocket_2G > 4 Then KitListsocket_2G = 4 ' KitListsocket_2G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until KitListsocket_2G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_kitchen2G.Items.Add(KitListsocket_2G) ' Adds the amount of avaible points to the combobox
+            KitListsocket_2G = KitListsocket_2G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_kitchen2G.Text = K2G
 
         ' Kitchen (1G) Socket Check
         cbo_kitchen1G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then KitListsocket_1G = remainingsocket + K1G Else KitListsocket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If KitListsocket_1G > 4 Then KitListsocket_1G = 4
-        Do Until KitListsocket_1G = -1
-            cbo_kitchen1G.Items.Add(KitListsocket_1G) ' Change cbo_bed2Net to the Box 
-            KitListsocket_1G = KitListsocket_1G - 1
+        If KitListsocket_1G > 4 Then KitListsocket_1G = 4 ' KitListsocket_1G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until KitListsocket_1G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_kitchen1G.Items.Add(KitListsocket_1G)  ' Adds the amount of avaible points to the combobox
+            KitListsocket_1G = KitListsocket_1G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_kitchen1G.Text = K1G
 
         ' Bath Room One 2 (2G) Socket Check
         cbo_bath2G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then BathListSocket_2G = remainingsocket + BATH2G Else BathListSocket_2G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If BathListSocket_2G > 4 Then BathListSocket_2G = 4
-        Do Until BathListSocket_2G = -1
-            cbo_bath2G.Items.Add(BathListSocket_2G) ' Change cbo_bed2Net to the Box 
-            BathListSocket_2G = BathListSocket_2G - 1
+        If BathListSocket_2G > 4 Then BathListSocket_2G = 4 ' BathListSocket_2G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BathListSocket_2G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bath2G.Items.Add(BathListSocket_2G)  ' Adds the amount of avaible points to the combobox
+            BathListSocket_2G = BathListSocket_2G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bath2G.Text = BATH2G
 
         ' Bath Room One (1G) Socket Check
         cbo_bath1G.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingsocket < 5 Then BathListScoket_1G = remainingsocket + BATH1G Else BathListScoket_1G = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
-        If BathListScoket_1G > 4 Then BathListScoket_1G = 4
-        Do Until BathListScoket_1G = -1
-            cbo_bath1G.Items.Add(BathListScoket_1G) ' Change cbo_bed2Net to the Box 
-            BathListScoket_1G = BathListScoket_1G - 1
+        If BathListScoket_1G > 4 Then BathListScoket_1G = 4 ' BathListScoket_1G more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
+        Do Until BathListScoket_1G = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+            cbo_bath1G.Items.Add(BathListScoket_1G) ' Adds the amount of avaible points to the combobox
+            BathListScoket_1G = BathListScoket_1G - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
         cbo_bath1G.Text = BATH1G
 
-        value_store()
-        priceing_math()
+        value_store() ' calls the sub value_store to save the current values selected by the user must call before the priceing_math
+        priceing_math() ' this uses the values from value_store to do some math to work out the cost.
     End Sub
     Private Sub chk_KitchenA_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenA.CheckedChanged
         If KitchenA = False Then ' This checks if the box is currently ticked if it is false it is not ticked to it runs the next statment
@@ -354,34 +354,34 @@
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub chk_KitchenB_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenB.CheckedChanged
-        If KitchenB = False Then
-            If KitchenA Or KitchenC = True Then
-                chk_KitchenA.Checked = False
-                chk_KitchenC.Checked = False
-                KitchenA = False
-                KitchenC = False
+        If KitchenB = False Then ' This checks if the box is currently ticked if it is false it is not ticked to it runs the next statment
+            If KitchenA Or KitchenC = True Then ' This looks if Kitchen option A or option C have been selected if it has one of then will be = to true
+                chk_KitchenA.Checked = False ' if option A or C has been selected this unticks there box
+                chk_KitchenC.Checked = False ' same as above
+                KitchenA = False ' This sets the KitchenA varible to false this varible is used to check if they have been selected
+                KitchenC = False ' This sets the KitchenC varible to false this varible is used to check if they have been selected
             End If
-            KitchenB = True
-            Kupgrade = 2
+            KitchenB = True ' This makes Option A set to True so we know it is selected
+            Kupgrade = 2 ' 2 is used to show no option has been selected and the user wants an upgrade 
         Else
-            KitchenB = False
-            Kupgrade = 0
+            KitchenB = False ' This Sets the selected option to false because the user unselected this option
+            Kupgrade = 0 ' 0 is used to show no option has been selected and the user does not want a kitchen Upgrade.
         End If
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
     Private Sub chk_KitchenC_CheckedChanged(sender As Object, e As EventArgs) Handles chk_KitchenC.CheckedChanged
-        If KitchenC = False Then
-            If KitchenA Or KitchenB = True Then
-                chk_KitchenA.Checked = False
-                chk_KitchenB.Checked = False
-                KitchenA = False
-                KitchenB = False
+        If KitchenC = False Then ' This checks if the box is currently ticked if it is false it is not ticked to it runs the next statment
+            If KitchenA Or KitchenB = True Then ' This looks if Kitchen option A or option B have been selected if it has one of then will be = to true
+                chk_KitchenA.Checked = False ' if option B or A has been selected this unticks there box
+                chk_KitchenB.Checked = False ' same as above
+                KitchenA = False ' This sets the KitchenA varible to false this varible is used to check if they have been selected
+                KitchenB = False ' This sets the KitchenB varible to false this varible is used to check if they have been selected
             End If
-            KitchenC = True
-            Kupgrade = 3
+            KitchenC = True ' This makes Option A set to True so we know it is selected
+            Kupgrade = 3 ' 2 is used to show no option has been selected and the user wants an upgrade 
         Else
-            KitchenC = False
-            Kupgrade = 0
+            KitchenB = False ' This Sets the selected option to false because the user unselected this option
+            Kupgrade = 0 ' 0 is used to show no option has been selected and the user does not want a kitchen Upgrade.
         End If
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
@@ -396,28 +396,28 @@
     End Sub
 
     Private Sub chk_HeatPumpBedOne_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedOne.CheckedChanged
-        If BROHeatPump = 0 Then
-            BROHeatPump = 1
+        If BROHeatPump = 0 Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
+            BROHeatPump = 1 ' Sets the Value to One meaning the user would like a heatpump in there bedroom one
         Else
-            BROHeatPump = 0
+            BROHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there  bedroom one
         End If
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpBedTwo_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HeatPumpBedTwo.CheckedChanged
-        If BRTHeatPump = 0 Then
-            BRTHeatPump = 1
+        If BRTHeatPump = 0 Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
+            BRTHeatPump = 1 ' Sets the Value to One meaning the user would like a heatpump in there Bedroom two
         Else
-            BRTHeatPump = 0
+            BRTHeatPump = 0 ' Sets the Value to One meaning the user would not like a heatpump in there Bedroom two
         End If
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
 
     Private Sub chk_HeatPumpBathRoom_CheckedChanged(sender As Object, e As EventArgs) Handles chk_UpgradeBathRoom.CheckedChanged
-        If BATHUpgrades = 0 Then
-            BATHUpgrades = 1
+        If BATHUpgrades = 0 Then ' Checks if the Option is already ticked since this is called each time the checkbox has been changed.
+            BATHUpgrades = 1 ' Sets the Value to One meaning the user would like a heatpump in there  Bath room
         Else
-            BATHUpgrades = 0
+            BATHUpgrades = 0 ' Sets the Value to One meaning the user would not like a heatpump in there Bath room
         End If
         input_rules()  ' this calls for the sub that checks if this is a vaild input and trys to disallow invaild inputs
     End Sub
