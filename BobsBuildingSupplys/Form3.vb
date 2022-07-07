@@ -11,13 +11,10 @@ Public Class Form3
         Dim kitchenupgradename As String = "TV Poinht"
         Dim kitchenupgradequntity As String
         Dim kitchenupgradecost As String
-
         Dim bathroomqunainity As String
         Dim bathroomupgradecost As String
-
         Dim otherroomquninity As String
         Dim otherupgradecost As String
-
         Dim kitchenlist As New List(Of String) From {"Aerial Point    ", "Satellite Point ", "Network Point   ", "1 Gang Socket   ", "2 Gang Socket   ", "Kitchen Upgrade "}
         Dim bathroomlist As New List(Of String) From {"1 Gang Socket   ", "2 Gang Socket   ", "Bathroom Upgrade"}
         Dim otheroomslist As New List(Of String) From {"Aerial Point    ", "Satellite Point ", "Network Point   ", "1 Gang Socket   ", "2 Gang Socket   ", "HeatPump        "}
@@ -127,51 +124,50 @@ Public Class Form3
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        printstring()
-        Dim filename As String = "orderhistory.txt"
-        If ordersaved = False Then
-            My.Computer.FileSystem.WriteAllText($"{filename}", "" & printoutstr, True)
-            ordersaved = True
-            MessageBox.Show($"Order Has Saved to {filename}")
+        printstring() ' saves a string of the selected userinput and the costs.
+        Dim filename As String = "orderhistory.txt" ' sets the file to save too
+        If ordersaved = False Then ' if it hasn't been saved before
+            My.Computer.FileSystem.WriteAllText($"{filename}", "" & printoutstr, True) ' saves it to a document
+            ordersaved = True ' tells the computer its been saved
+            MessageBox.Show($"Order Has Saved to {filename}") ' Displays a message to the user that it is saved and where it is saved
         Else
-            MessageBox.Show("Order Already Saved")
+            MessageBox.Show("Order Already Saved") ' if the order has been saved then it stops them resaveing
         End If
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Application.Exit()
+        Application.Exit() ' closes the application
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        frm_OrderDetails.Show()
-        Me.Hide()
+        frm_OrderDetails.Show() ' shows privious form
+        Me.Hide() ' hides current form
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        PrintPreviewDialog1.Document = PrintDocument1
-        PrintPreviewDialog1.ShowDialog()
+        PrintPreviewDialog1.Document = PrintDocument1 ' sets the document to print
+        PrintPreviewDialog1.ShowDialog() ' shows a print preview 
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        Dim localfont As New Font("Courier New", 14, FontStyle.Regular)
-        printstring()
-        e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0)
-        e.Graphics.DrawImage(icon.Image, 420, 1)
+        Dim localfont As New Font("Courier New", 14, FontStyle.Regular) 'sets the font and the size
+        printstring() ' calls the sub to get the values selected by the user into a string
+        e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0) ' adds the text from the prinoutsr into the a documnet for a printout
+        e.Graphics.DrawImage(icon.Image, 420, 1) ' adds the logo to the print document.
 
     End Sub
 
     Private Sub printstring()
         Dim printoutlist As New List(Of String)
 
-
+        printoutlist.Add("  ") ' adds spaces this is for the order history so they are not all together
         printoutlist.Add("  ")
-        printoutlist.Add("  ")
-        printoutlist.Add($"Order Number: {currentordernumber}")
-        For Each item In lst_display.Items
-            printoutlist.Add(item)
+        printoutlist.Add($"Order Number: {currentordernumber}") ' sets the order number at the top of the page to the current order
+        For Each item In lst_display.Items ' for each item in the list lst_display it adds the item to a new list that will be converted to a string
+            printoutlist.Add(item) 'adds the item from lst_display.items to the printoutlist list
         Next
-
-        printoutstr = String.Join(vbCrLf, printoutlist)
+        ' String.join compains the new line and the value of prinout list converting a list to a string at each new item adds a new line.
+        printoutstr = String.Join(vbCrLf, printoutlist) ' sets the prinoutstr used for the display of the selected options and to print out the quote
 
     End Sub
 

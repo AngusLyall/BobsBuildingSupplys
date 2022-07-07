@@ -3,7 +3,7 @@ Public Class LoginForm1
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim username = UsernameTextBox.Text
         Dim password = PasswordTextBox.Text
-        If (username = "admin" And password = "test") Then ' if the password is correct
+        If (username = "admin" And password = "%Lg3tW(@") Then ' if the password is correct
             Form4.Show() ' open form4
             UsernameTextBox.Text = "" ' set the textbox value to blank
             PasswordTextBox.Text = ""
