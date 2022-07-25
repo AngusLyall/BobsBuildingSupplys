@@ -128,60 +128,54 @@ Public Class CustomerDetails
 
     Private Sub RequiredInfomationCheck()
 
-        requiredinfomation = False ' makes the RequiredInfomation vailble False that means it required no More Infomation
+        requiredinfomation = False ' makes the RequiredInfomation vailble False if some required infomation is missing it gets set to true then stops the user from moving on
         Dim customerdetailslist As New List(Of String) From {"CusFirstName", "CusLastName", "CusPhoneNumber", "CusBillAdress", "CusDeliveryAdress", "CusBusinessName "}
 
-        Try
-            If CusFirstName = "" Then ' Checks if the vairble that stores the userinput contains anything if it does not it shows a red * and makes a varible true to stop the user moving on.
-                lbl_FirstNameRequired.Show() ' Displays a label which is a red * if the infomation is missing
-                requiredinfomation = True 'Makes the Requited infomation = true meaning we require more infomation if a box is empty
-            Else
-                lbl_FirstNameRequired.Hide() ' If the infomation is not equal to blank then it hides the red Red Astix which shows the required infomation.
 
-            End If
+        If CusFirstName = "" Then ' Checks if the vairble that stores the userinput contains anything if it does not it shows a red * and makes a varible true to stop the user moving on.
+            lbl_FirstNameRequired.Show() ' Displays a label which is a red * if the infomation is missing
+            requiredinfomation = True 'Makes the Requited infomation = true meaning we require more infomation if a box is empty
+        Else
+            lbl_FirstNameRequired.Hide() ' If the infomation is not equal to blank then it hides the red Red Astix which shows the required infomation.
 
-            If CusLastName = "" Then
-                lbl_LastNameRequired.Show()
-                requiredinfomation = True
-            Else
-                lbl_LastNameRequired.Hide()
-            End If
+        End If
 
-            If CusPhoneNumber = "" Then
-                lbl_PhoneNumberRequired.Show()
-                requiredinfomation = True
-            Else
-                lbl_PhoneNumberRequired.Hide()
-            End If
+        If CusLastName = "" Then ' if the CustLastName is blank then 
+            lbl_LastNameRequired.Show() ' it shows an red astics
+            requiredinfomation = True ' and sets requred infomation to True so the program knows something is missing
+        Else
+            lbl_LastNameRequired.Hide() ' if the last time it ran it infomation was missing this would be displayed so it rehides it 
+        End If
 
-            If CusBillAdress = "" Then
-                lbl_BillingRequired.Show()
-                requiredinfomation = True
-            Else
-                lbl_BillingRequired.Hide()
-            End If
+        If CusPhoneNumber = "" Then ' if the customer phone number slot is blank then it 
+            lbl_PhoneNumberRequired.Show() ' shows the red *
+            requiredinfomation = True ' and make requiredinmation = True telling the program something is missing
+        Else
+            lbl_PhoneNumberRequired.Hide() ' Hides the red *
+        End If
 
-            If CusDeliveryAdress = "" Then
-                lbl_DeliveryRequired.Show()
-                requiredinfomation = True
-            Else
-                lbl_DeliveryRequired.Hide()
-            End If
+        If CusBillAdress = "" Then ' if the customer bulling adress is blank then 
+            lbl_BillingRequired.Show() ' it shows a red * leting the user know whats missing
+            requiredinfomation = True ' Sets requiredinfomation = true so the program knows requred infomation is missing and not to move on
+        Else
+            lbl_BillingRequired.Hide() ' Hides the red *
+        End If
 
-            If cusTrade = True Then ' Because not all users will be a trade user this option is only required if they request the Trade Discount.
-                If CusBusinessName = "" Then
-                    lbl_BusinessNameRequired.Show()
-                    requiredinfomation = True
-                Else
-                    lbl_BusinessNameRequired.Hide()
-                End If
-            End If
-        Catch
-            requiredinfomation = True
-        End Try
+        If CusDeliveryAdress = "" Then ' this checks if the delivery adress is blank
+            lbl_DeliveryRequired.Show() ' if it is blank then it shows a red *
+            requiredinfomation = True ' this then tells the program infomation is missing and not to move on
+        Else
+            lbl_DeliveryRequired.Hide() ' hides the red *
+        End If
 
 
+        If CusBusinessName = "" And cusTrade = True Then ' if the user selected they are a trade customer this then checks if they provided a business name
+            lbl_BusinessNameRequired.Show() ' if they didn't provide a name it shows a red *
+            requiredinfomation = True ' tells the program not to move on
+        Else
+            lbl_BusinessNameRequired.Hide() ' hides the red *
 
+        End If
 
 
     End Sub
