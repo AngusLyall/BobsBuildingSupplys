@@ -600,14 +600,14 @@
     Private Sub bed1_2G_userinput() Handles cbo_bed1_2G.MouseClick, cbo_bed1_2G.Enter, cbo_bed1_2G.KeyPress, cbo_bed1_2G.KeyUp, cbo_bed1_2G.KeyDown
         userimputcheck = True ' if the mouse is clicked enter is pressed a key is pressed or the up and down arrow is clicked on the combox it will then set userinputcheck to true or else it loops its self
     End Sub
-    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles pic_back.Click
         CustomerDetails.Show() ' if the back arrow is clicked it shows the Prvious form
         Me.Hide() ' hide current form
     End Sub
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_exit.Click
         Application.Exit() ' if the exit icon is clicked this exits the application and closes it.
     End Sub
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btn_next.Click
         value_store() ' when the next button is hit it calls this sub to store the values into an array.
         input_rules() ' this then checks if the stored values are vaild and doesn't allow the user to have an invalid input
         Dim tempnetpointcheck As Integer = KNET + BRONET + BRTNET + LRNET ' this temp vairble is used to check how many network points are selected by adding them all up

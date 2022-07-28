@@ -90,7 +90,7 @@ Public Class Form4
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Dim labels() As TextBox
         Dim loopvalue
         labels = {lbl_priceconfig_0, lbl_priceconfig_1, lbl_priceconfig_2, lbl_priceconfig_3, lbl_priceconfig_4, lbl_priceconfig_5, lbl_priceconfig_6, lbl_priceconfig_7, lbl_priceconfig_8, lbl_priceconfig_9, lbl_priceconfig_10, lbl_priceconfig_11, lbl_priceconfig_12, lbl_priceconfig_13, lbl_priceconfig_14, lbl_priceconfig_15, lbl_priceconfig_16}
@@ -134,11 +134,11 @@ Public Class Form4
         config()
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_exit.Click
         Application.Exit()
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pic_back.Click
         CustomerDetails.Show()
         Me.Hide()
     End Sub

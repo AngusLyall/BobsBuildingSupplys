@@ -124,7 +124,7 @@ Public Class Form3
         My.Computer.FileSystem.WriteAllText("ordernumber.txt", "" & currentordernumber, True) ' saves the current ordernumber to ordernumber.txt
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         printstring() ' saves a string of the selected userinput and the costs.
         Dim filename As String = "orderhistory.txt" ' sets the file to save too
         If ordersaved = False Then ' if it hasn't been saved before
@@ -136,16 +136,16 @@ Public Class Form3
         End If
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_exit.Click
         Application.Exit() ' closes the application
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pic_back.Click
         frm_OrderDetails.Show() ' shows privious form
         Me.Close() ' closes current form
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_print.Click
         PrintPreviewDialog1.Document = PrintDocument1 ' sets the document to print
         PrintPreviewDialog1.ShowDialog() ' shows a print preview 
     End Sub
@@ -154,7 +154,7 @@ Public Class Form3
         Dim localfont As New Font("Courier New", 14, FontStyle.Regular) 'sets the font and the size
         printstring() ' calls the sub to get the values selected by the user into a string
         e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0) ' adds the text from the prinoutsr into the a documnet for a printout
-        e.Graphics.DrawImage(icon.Image, 420, 1) ' adds the logo to the print document.
+        e.Graphics.DrawImage(pic_logo.Image, 420, 1) ' adds the logo to the print document.
 
     End Sub
 
@@ -172,7 +172,7 @@ Public Class Form3
 
     End Sub
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles icon.Click
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
 
     End Sub
 End Class

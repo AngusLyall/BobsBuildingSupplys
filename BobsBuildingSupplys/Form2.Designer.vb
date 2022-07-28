@@ -31,66 +31,66 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchenTV = New System.Windows.Forms.ComboBox()
         Me.cbo_kitchenSAT = New System.Windows.Forms.ComboBox()
         Me.cbo_kitchenNet = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbl_ktvpoint = New System.Windows.Forms.Label()
+        Me.lbl_ksatpoint = New System.Windows.Forms.Label()
+        Me.lbl_k2gsocket = New System.Windows.Forms.Label()
+        Me.lbl_k1gsocket = New System.Windows.Forms.Label()
         Me.cbo_kitchen2G = New System.Windows.Forms.ComboBox()
         Me.cbo_kitchen1G = New System.Windows.Forms.ComboBox()
         Me.chk_HeatPumpBedOne = New System.Windows.Forms.CheckBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lbl_bro2g = New System.Windows.Forms.Label()
+        Me.lbl_bro1gsock = New System.Windows.Forms.Label()
         Me.cbo_bed1_2G = New System.Windows.Forms.ComboBox()
         Me.cbo_bed1_1G = New System.Windows.Forms.ComboBox()
         Me.lbl_Bed1SubHead = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lbl_bronet = New System.Windows.Forms.Label()
+        Me.lbl_brosat = New System.Windows.Forms.Label()
         Me.cbo_bed1Net = New System.Windows.Forms.ComboBox()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lbl_brotv = New System.Windows.Forms.Label()
         Me.cbo_bed1SAT = New System.Windows.Forms.ComboBox()
         Me.cbo_bed1TV = New System.Windows.Forms.ComboBox()
         Me.chk_HeatPumpLiving = New System.Windows.Forms.CheckBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lbl_lr2g = New System.Windows.Forms.Label()
+        Me.lbl_lr1g = New System.Windows.Forms.Label()
         Me.cbo_Living2G = New System.Windows.Forms.ComboBox()
         Me.cbo_Living1G = New System.Windows.Forms.ComboBox()
         Me.lbl_LivingSubHead = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lbl_lrnet = New System.Windows.Forms.Label()
+        Me.lbl_lrsat = New System.Windows.Forms.Label()
         Me.cbo_LivingNet = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lbl_lraerial = New System.Windows.Forms.Label()
         Me.cbo_LivingSAT = New System.Windows.Forms.ComboBox()
         Me.cbo_LivingTV = New System.Windows.Forms.ComboBox()
         Me.chk_HeatPumpBedTwo = New System.Windows.Forms.CheckBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.lbl_brt2g = New System.Windows.Forms.Label()
+        Me.lbl_brt1g = New System.Windows.Forms.Label()
         Me.cbo_bed2_2G = New System.Windows.Forms.ComboBox()
         Me.cbo_bed2_1G = New System.Windows.Forms.ComboBox()
         Me.lbl_Bed2SubHead = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.lbl_brtnetwork = New System.Windows.Forms.Label()
+        Me.lbl_brtsat = New System.Windows.Forms.Label()
         Me.cbo_bed2Net = New System.Windows.Forms.ComboBox()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.lbl_brttv = New System.Windows.Forms.Label()
         Me.cbo_bed2SAT = New System.Windows.Forms.ComboBox()
         Me.cbo_bed2TV = New System.Windows.Forms.ComboBox()
         Me.chk_UpgradeBathRoom = New System.Windows.Forms.CheckBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
+        Me.lbl_bath2g = New System.Windows.Forms.Label()
+        Me.lbl_bath1g = New System.Windows.Forms.Label()
         Me.cbo_bath2G = New System.Windows.Forms.ComboBox()
         Me.cbo_bath1G = New System.Windows.Forms.ComboBox()
         Me.lbl_BathSubHead = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lbl_knetpoint = New System.Windows.Forms.Label()
+        Me.pic_back = New System.Windows.Forms.PictureBox()
+        Me.pic_exit = New System.Windows.Forms.PictureBox()
         Me.lbl_totaldisplay = New System.Windows.Forms.Label()
         Me.lbl_kitch_cost = New System.Windows.Forms.Label()
         Me.lbl_bedroom_one = New System.Windows.Forms.Label()
         Me.lbl_living_cost = New System.Windows.Forms.Label()
         Me.lbl_bedroom_two_cost = New System.Windows.Forms.Label()
         Me.lbl_bathroom_cost = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_next = New System.Windows.Forms.Button()
+        CType(Me.pic_back, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic_exit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_OrderHeader
@@ -176,41 +176,41 @@ Partial Class frm_OrderDetails
         Me.cbo_kitchenNet.Sorted = True
         Me.cbo_kitchenNet.TabIndex = 7
         '
-        'Label3
+        'lbl_ktvpoint
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(160, 101)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 15)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "TV point"
+        Me.lbl_ktvpoint.AutoSize = True
+        Me.lbl_ktvpoint.Location = New System.Drawing.Point(160, 101)
+        Me.lbl_ktvpoint.Name = "lbl_ktvpoint"
+        Me.lbl_ktvpoint.Size = New System.Drawing.Size(51, 15)
+        Me.lbl_ktvpoint.TabIndex = 8
+        Me.lbl_ktvpoint.Text = "TV point"
         '
-        'Label4
+        'lbl_ksatpoint
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(160, 129)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 15)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "SAT point"
+        Me.lbl_ksatpoint.AutoSize = True
+        Me.lbl_ksatpoint.Location = New System.Drawing.Point(160, 129)
+        Me.lbl_ksatpoint.Name = "lbl_ksatpoint"
+        Me.lbl_ksatpoint.Size = New System.Drawing.Size(57, 15)
+        Me.lbl_ksatpoint.TabIndex = 9
+        Me.lbl_ksatpoint.Text = "SAT point"
         '
-        'Label7
+        'lbl_k2gsocket
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(282, 129)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 15)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "2G Sockets"
+        Me.lbl_k2gsocket.AutoSize = True
+        Me.lbl_k2gsocket.Location = New System.Drawing.Point(282, 129)
+        Me.lbl_k2gsocket.Name = "lbl_k2gsocket"
+        Me.lbl_k2gsocket.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_k2gsocket.TabIndex = 15
+        Me.lbl_k2gsocket.Text = "2G Sockets"
         '
-        'Label8
+        'lbl_k1gsocket
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(282, 101)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 15)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "1G Sockets"
+        Me.lbl_k1gsocket.AutoSize = True
+        Me.lbl_k1gsocket.Location = New System.Drawing.Point(282, 101)
+        Me.lbl_k1gsocket.Name = "lbl_k1gsocket"
+        Me.lbl_k1gsocket.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_k1gsocket.TabIndex = 14
+        Me.lbl_k1gsocket.Text = "1G Sockets"
         '
         'cbo_kitchen2G
         '
@@ -244,23 +244,23 @@ Partial Class frm_OrderDetails
         Me.chk_HeatPumpBedOne.Text = "Heat Pump (2.5Kw)"
         Me.chk_HeatPumpBedOne.UseVisualStyleBackColor = True
         '
-        'Label12
+        'lbl_bro2g
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(464, 445)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(64, 15)
-        Me.Label12.TabIndex = 39
-        Me.Label12.Text = "2G Sockets"
+        Me.lbl_bro2g.AutoSize = True
+        Me.lbl_bro2g.Location = New System.Drawing.Point(464, 445)
+        Me.lbl_bro2g.Name = "lbl_bro2g"
+        Me.lbl_bro2g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_bro2g.TabIndex = 39
+        Me.lbl_bro2g.Text = "2G Sockets"
         '
-        'Label15
+        'lbl_bro1gsock
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(464, 417)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(64, 15)
-        Me.Label15.TabIndex = 38
-        Me.Label15.Text = "1G Sockets"
+        Me.lbl_bro1gsock.AutoSize = True
+        Me.lbl_bro1gsock.Location = New System.Drawing.Point(464, 417)
+        Me.lbl_bro1gsock.Name = "lbl_bro1gsock"
+        Me.lbl_bro1gsock.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_bro1gsock.TabIndex = 38
+        Me.lbl_bro1gsock.Text = "1G Sockets"
         '
         'cbo_bed1_2G
         '
@@ -294,23 +294,23 @@ Partial Class frm_OrderDetails
         Me.lbl_Bed1SubHead.TabIndex = 35
         Me.lbl_Bed1SubHead.Text = "Bed Room One"
         '
-        'Label17
+        'lbl_bronet
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(345, 473)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(52, 15)
-        Me.Label17.TabIndex = 34
-        Me.Label17.Text = "Network"
+        Me.lbl_bronet.AutoSize = True
+        Me.lbl_bronet.Location = New System.Drawing.Point(345, 473)
+        Me.lbl_bronet.Name = "lbl_bronet"
+        Me.lbl_bronet.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_bronet.TabIndex = 34
+        Me.lbl_bronet.Text = "Network"
         '
-        'Label18
+        'lbl_brosat
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(345, 444)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(57, 15)
-        Me.Label18.TabIndex = 33
-        Me.Label18.Text = "SAT Point"
+        Me.lbl_brosat.AutoSize = True
+        Me.lbl_brosat.Location = New System.Drawing.Point(345, 444)
+        Me.lbl_brosat.Name = "lbl_brosat"
+        Me.lbl_brosat.Size = New System.Drawing.Size(57, 15)
+        Me.lbl_brosat.TabIndex = 33
+        Me.lbl_brosat.Text = "SAT Point"
         '
         'cbo_bed1Net
         '
@@ -325,14 +325,14 @@ Partial Class frm_OrderDetails
         Me.cbo_bed1Net.Sorted = True
         Me.cbo_bed1Net.TabIndex = 31
         '
-        'Label19
+        'lbl_brotv
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(345, 414)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(51, 15)
-        Me.Label19.TabIndex = 32
-        Me.Label19.Text = "TV Point"
+        Me.lbl_brotv.AutoSize = True
+        Me.lbl_brotv.Location = New System.Drawing.Point(345, 414)
+        Me.lbl_brotv.Name = "lbl_brotv"
+        Me.lbl_brotv.Size = New System.Drawing.Size(51, 15)
+        Me.lbl_brotv.TabIndex = 32
+        Me.lbl_brotv.Text = "TV Point"
         '
         'cbo_bed1SAT
         '
@@ -366,23 +366,23 @@ Partial Class frm_OrderDetails
         Me.chk_HeatPumpLiving.Text = "Heat Pump (4.5Kw)"
         Me.chk_HeatPumpLiving.UseVisualStyleBackColor = True
         '
-        'Label13
+        'lbl_lr2g
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(261, 284)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(64, 15)
-        Me.Label13.TabIndex = 51
-        Me.Label13.Text = "2G Sockets"
+        Me.lbl_lr2g.AutoSize = True
+        Me.lbl_lr2g.Location = New System.Drawing.Point(261, 284)
+        Me.lbl_lr2g.Name = "lbl_lr2g"
+        Me.lbl_lr2g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_lr2g.TabIndex = 51
+        Me.lbl_lr2g.Text = "2G Sockets"
         '
-        'Label14
+        'lbl_lr1g
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(262, 254)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(64, 15)
-        Me.Label14.TabIndex = 50
-        Me.Label14.Text = "1G Sockets"
+        Me.lbl_lr1g.AutoSize = True
+        Me.lbl_lr1g.Location = New System.Drawing.Point(262, 254)
+        Me.lbl_lr1g.Name = "lbl_lr1g"
+        Me.lbl_lr1g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_lr1g.TabIndex = 50
+        Me.lbl_lr1g.Text = "1G Sockets"
         '
         'cbo_Living2G
         '
@@ -417,23 +417,23 @@ Partial Class frm_OrderDetails
         Me.lbl_LivingSubHead.TabIndex = 47
         Me.lbl_LivingSubHead.Text = "Living Room"
         '
-        'Label9
+        'lbl_lrnet
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(68, 312)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 15)
-        Me.Label9.TabIndex = 46
-        Me.Label9.Text = "Network"
+        Me.lbl_lrnet.AutoSize = True
+        Me.lbl_lrnet.Location = New System.Drawing.Point(68, 312)
+        Me.lbl_lrnet.Name = "lbl_lrnet"
+        Me.lbl_lrnet.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_lrnet.TabIndex = 46
+        Me.lbl_lrnet.Text = "Network"
         '
-        'Label10
+        'lbl_lrsat
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(70, 282)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 15)
-        Me.Label10.TabIndex = 45
-        Me.Label10.Text = "Satellite Dish + TV point"
+        Me.lbl_lrsat.AutoSize = True
+        Me.lbl_lrsat.Location = New System.Drawing.Point(70, 282)
+        Me.lbl_lrsat.Name = "lbl_lrsat"
+        Me.lbl_lrsat.Size = New System.Drawing.Size(132, 15)
+        Me.lbl_lrsat.TabIndex = 45
+        Me.lbl_lrsat.Text = "Satellite Dish + TV point"
         '
         'cbo_LivingNet
         '
@@ -446,14 +446,14 @@ Partial Class frm_OrderDetails
         Me.cbo_LivingNet.Sorted = True
         Me.cbo_LivingNet.TabIndex = 43
         '
-        'Label11
+        'lbl_lraerial
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(70, 253)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(123, 15)
-        Me.Label11.TabIndex = 44
-        Me.Label11.Text = "Roof Aerial + TV point"
+        Me.lbl_lraerial.AutoSize = True
+        Me.lbl_lraerial.Location = New System.Drawing.Point(70, 253)
+        Me.lbl_lraerial.Name = "lbl_lraerial"
+        Me.lbl_lraerial.Size = New System.Drawing.Size(123, 15)
+        Me.lbl_lraerial.TabIndex = 44
+        Me.lbl_lraerial.Text = "Roof Aerial + TV point"
         '
         'cbo_LivingSAT
         '
@@ -487,23 +487,23 @@ Partial Class frm_OrderDetails
         Me.chk_HeatPumpBedTwo.Text = "Heat Pump (2.5Kw)"
         Me.chk_HeatPumpBedTwo.UseVisualStyleBackColor = True
         '
-        'Label20
+        'lbl_brt2g
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(189, 437)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(64, 15)
-        Me.Label20.TabIndex = 75
-        Me.Label20.Text = "2G Sockets"
+        Me.lbl_brt2g.AutoSize = True
+        Me.lbl_brt2g.Location = New System.Drawing.Point(189, 437)
+        Me.lbl_brt2g.Name = "lbl_brt2g"
+        Me.lbl_brt2g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_brt2g.TabIndex = 75
+        Me.lbl_brt2g.Text = "2G Sockets"
         '
-        'Label21
+        'lbl_brt1g
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(189, 409)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(64, 15)
-        Me.Label21.TabIndex = 74
-        Me.Label21.Text = "1G Sockets"
+        Me.lbl_brt1g.AutoSize = True
+        Me.lbl_brt1g.Location = New System.Drawing.Point(189, 409)
+        Me.lbl_brt1g.Name = "lbl_brt1g"
+        Me.lbl_brt1g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_brt1g.TabIndex = 74
+        Me.lbl_brt1g.Text = "1G Sockets"
         '
         'cbo_bed2_2G
         '
@@ -537,23 +537,23 @@ Partial Class frm_OrderDetails
         Me.lbl_Bed2SubHead.TabIndex = 71
         Me.lbl_Bed2SubHead.Text = "Bed Room Two"
         '
-        'Label23
+        'lbl_brtnetwork
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(70, 473)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(52, 15)
-        Me.Label23.TabIndex = 70
-        Me.Label23.Text = "Network"
+        Me.lbl_brtnetwork.AutoSize = True
+        Me.lbl_brtnetwork.Location = New System.Drawing.Point(70, 473)
+        Me.lbl_brtnetwork.Name = "lbl_brtnetwork"
+        Me.lbl_brtnetwork.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_brtnetwork.TabIndex = 70
+        Me.lbl_brtnetwork.Text = "Network"
         '
-        'Label24
+        'lbl_brtsat
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(70, 444)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(57, 15)
-        Me.Label24.TabIndex = 69
-        Me.Label24.Text = "SAT point"
+        Me.lbl_brtsat.AutoSize = True
+        Me.lbl_brtsat.Location = New System.Drawing.Point(70, 444)
+        Me.lbl_brtsat.Name = "lbl_brtsat"
+        Me.lbl_brtsat.Size = New System.Drawing.Size(57, 15)
+        Me.lbl_brtsat.TabIndex = 69
+        Me.lbl_brtsat.Text = "SAT point"
         '
         'cbo_bed2Net
         '
@@ -566,14 +566,14 @@ Partial Class frm_OrderDetails
         Me.cbo_bed2Net.Sorted = True
         Me.cbo_bed2Net.TabIndex = 67
         '
-        'Label25
+        'lbl_brttv
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(70, 415)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(51, 15)
-        Me.Label25.TabIndex = 68
-        Me.Label25.Text = "TV point"
+        Me.lbl_brttv.AutoSize = True
+        Me.lbl_brttv.Location = New System.Drawing.Point(70, 415)
+        Me.lbl_brttv.Name = "lbl_brttv"
+        Me.lbl_brttv.Size = New System.Drawing.Size(51, 15)
+        Me.lbl_brttv.TabIndex = 68
+        Me.lbl_brttv.Text = "TV point"
         '
         'cbo_bed2SAT
         '
@@ -607,23 +607,23 @@ Partial Class frm_OrderDetails
         Me.chk_UpgradeBathRoom.Text = "Upgrade"
         Me.chk_UpgradeBathRoom.UseVisualStyleBackColor = True
         '
-        'Label26
+        'lbl_bath2g
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(435, 277)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(64, 15)
-        Me.Label26.TabIndex = 63
-        Me.Label26.Text = "2G Sockets"
+        Me.lbl_bath2g.AutoSize = True
+        Me.lbl_bath2g.Location = New System.Drawing.Point(435, 277)
+        Me.lbl_bath2g.Name = "lbl_bath2g"
+        Me.lbl_bath2g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_bath2g.TabIndex = 63
+        Me.lbl_bath2g.Text = "2G Sockets"
         '
-        'Label27
+        'lbl_bath1g
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(435, 249)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(64, 15)
-        Me.Label27.TabIndex = 62
-        Me.Label27.Text = "1G Sockets"
+        Me.lbl_bath1g.AutoSize = True
+        Me.lbl_bath1g.Location = New System.Drawing.Point(435, 249)
+        Me.lbl_bath1g.Name = "lbl_bath1g"
+        Me.lbl_bath1g.Size = New System.Drawing.Size(64, 15)
+        Me.lbl_bath1g.TabIndex = 62
+        Me.lbl_bath1g.Text = "1G Sockets"
         '
         'cbo_bath2G
         '
@@ -657,34 +657,34 @@ Partial Class frm_OrderDetails
         Me.lbl_BathSubHead.TabIndex = 59
         Me.lbl_BathSubHead.Text = "Bathroom"
         '
-        'Label5
+        'lbl_knetpoint
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(160, 159)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 15)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Network"
+        Me.lbl_knetpoint.AutoSize = True
+        Me.lbl_knetpoint.Location = New System.Drawing.Point(160, 159)
+        Me.lbl_knetpoint.Name = "lbl_knetpoint"
+        Me.lbl_knetpoint.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_knetpoint.TabIndex = 10
+        Me.lbl_knetpoint.Text = "Network"
         '
-        'PictureBox1
+        'pic_back
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(20, 25)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.pic_back.Image = CType(resources.GetObject("pic_back.Image"), System.Drawing.Image)
+        Me.pic_back.Location = New System.Drawing.Point(0, 0)
+        Me.pic_back.Name = "pic_back"
+        Me.pic_back.Size = New System.Drawing.Size(20, 25)
+        Me.pic_back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_back.TabIndex = 0
+        Me.pic_back.TabStop = False
         '
-        'PictureBox2
+        'pic_exit
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(516, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 34)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 89
-        Me.PictureBox2.TabStop = False
+        Me.pic_exit.Image = CType(resources.GetObject("pic_exit.Image"), System.Drawing.Image)
+        Me.pic_exit.Location = New System.Drawing.Point(516, 0)
+        Me.pic_exit.Name = "pic_exit"
+        Me.pic_exit.Size = New System.Drawing.Size(31, 34)
+        Me.pic_exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_exit.TabIndex = 89
+        Me.pic_exit.TabStop = False
         '
         'lbl_totaldisplay
         '
@@ -746,78 +746,78 @@ Partial Class frm_OrderDetails
         Me.lbl_bathroom_cost.Text = "lbl_bath_cost"
         Me.lbl_bathroom_cost.Visible = False
         '
-        'Button1
+        'btn_next
         '
-        Me.Button1.Location = New System.Drawing.Point(494, 493)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(53, 23)
-        Me.Button1.TabIndex = 97
-        Me.Button1.Text = "Next"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_next.Location = New System.Drawing.Point(494, 493)
+        Me.btn_next.Name = "btn_next"
+        Me.btn_next.Size = New System.Drawing.Size(53, 23)
+        Me.btn_next.TabIndex = 97
+        Me.btn_next.Text = "Next"
+        Me.btn_next.UseVisualStyleBackColor = True
         '
         'frm_OrderDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(548, 519)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_next)
         Me.Controls.Add(Me.lbl_bathroom_cost)
         Me.Controls.Add(Me.lbl_bedroom_two_cost)
         Me.Controls.Add(Me.lbl_living_cost)
         Me.Controls.Add(Me.lbl_bedroom_one)
         Me.Controls.Add(Me.lbl_kitch_cost)
         Me.Controls.Add(Me.lbl_totaldisplay)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pic_exit)
+        Me.Controls.Add(Me.pic_back)
         Me.Controls.Add(Me.chk_HeatPumpBedTwo)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.lbl_brt2g)
+        Me.Controls.Add(Me.lbl_brt1g)
         Me.Controls.Add(Me.cbo_bed2_2G)
         Me.Controls.Add(Me.cbo_bed2_1G)
         Me.Controls.Add(Me.lbl_Bed2SubHead)
-        Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.lbl_brtnetwork)
+        Me.Controls.Add(Me.lbl_brtsat)
         Me.Controls.Add(Me.cbo_bed2Net)
-        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.lbl_brttv)
         Me.Controls.Add(Me.cbo_bed2SAT)
         Me.Controls.Add(Me.cbo_bed2TV)
         Me.Controls.Add(Me.chk_UpgradeBathRoom)
-        Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.Label27)
+        Me.Controls.Add(Me.lbl_bath2g)
+        Me.Controls.Add(Me.lbl_bath1g)
         Me.Controls.Add(Me.cbo_bath2G)
         Me.Controls.Add(Me.cbo_bath1G)
         Me.Controls.Add(Me.lbl_BathSubHead)
         Me.Controls.Add(Me.chk_HeatPumpLiving)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.lbl_lr2g)
+        Me.Controls.Add(Me.lbl_lr1g)
         Me.Controls.Add(Me.cbo_Living2G)
         Me.Controls.Add(Me.cbo_Living1G)
         Me.Controls.Add(Me.lbl_LivingSubHead)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lbl_lrnet)
+        Me.Controls.Add(Me.lbl_lrsat)
         Me.Controls.Add(Me.cbo_LivingNet)
-        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lbl_lraerial)
         Me.Controls.Add(Me.cbo_LivingSAT)
         Me.Controls.Add(Me.cbo_LivingTV)
         Me.Controls.Add(Me.chk_HeatPumpBedOne)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.lbl_bro2g)
+        Me.Controls.Add(Me.lbl_bro1gsock)
         Me.Controls.Add(Me.cbo_bed1_2G)
         Me.Controls.Add(Me.cbo_bed1_1G)
         Me.Controls.Add(Me.lbl_Bed1SubHead)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.lbl_bronet)
+        Me.Controls.Add(Me.lbl_brosat)
         Me.Controls.Add(Me.cbo_bed1Net)
-        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.lbl_brotv)
         Me.Controls.Add(Me.cbo_bed1SAT)
         Me.Controls.Add(Me.cbo_bed1TV)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.lbl_k2gsocket)
+        Me.Controls.Add(Me.lbl_k1gsocket)
         Me.Controls.Add(Me.cbo_kitchen2G)
         Me.Controls.Add(Me.cbo_kitchen1G)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lbl_knetpoint)
+        Me.Controls.Add(Me.lbl_ksatpoint)
+        Me.Controls.Add(Me.lbl_ktvpoint)
         Me.Controls.Add(Me.cbo_kitchenNet)
         Me.Controls.Add(Me.cbo_kitchenSAT)
         Me.Controls.Add(Me.cbo_kitchenTV)
@@ -829,8 +829,8 @@ Partial Class frm_OrderDetails
         Me.Name = "frm_OrderDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Order Details"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_back, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_exit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -844,66 +844,66 @@ Partial Class frm_OrderDetails
     Friend WithEvents cbo_kitchenTV As ComboBox
     Friend WithEvents cbo_kitchenSAT As ComboBox
     Friend WithEvents cbo_kitchenNet As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lbl_ktvpoint As Label
+    Friend WithEvents lbl_ksatpoint As Label
+    Friend WithEvents lbl_k2gsocket As Label
+    Friend WithEvents lbl_k1gsocket As Label
     Friend WithEvents cbo_kitchen2G As ComboBox
     Friend WithEvents cbo_kitchen1G As ComboBox
     Friend WithEvents chk_HeatPumpBedOne As CheckBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents lbl_bro2g As Label
+    Friend WithEvents lbl_bro1gsock As Label
     Friend WithEvents cbo_bed1_2G As ComboBox
     Friend WithEvents cbo_bed1_1G As ComboBox
     Friend WithEvents lbl_Bed1SubHead As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents lbl_bronet As Label
+    Friend WithEvents lbl_brosat As Label
     Friend WithEvents cbo_bed1Net As ComboBox
-    Friend WithEvents Label19 As Label
+    Friend WithEvents lbl_brotv As Label
     Friend WithEvents cbo_bed1SAT As ComboBox
     Friend WithEvents cbo_bed1TV As ComboBox
     Friend WithEvents chk_HeatPumpLiving As CheckBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents lbl_lr2g As Label
+    Friend WithEvents lbl_lr1g As Label
     Friend WithEvents cbo_Living2G As ComboBox
     Friend WithEvents cbo_Living1G As ComboBox
     Friend WithEvents lbl_LivingSubHead As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lbl_lrnet As Label
+    Friend WithEvents lbl_lrsat As Label
     Friend WithEvents cbo_LivingNet As ComboBox
-    Friend WithEvents Label11 As Label
+    Friend WithEvents lbl_lraerial As Label
     Friend WithEvents cbo_LivingSAT As ComboBox
     Friend WithEvents cbo_LivingTV As ComboBox
     Friend WithEvents chk_HeatPumpBedTwo As CheckBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label21 As Label
+    Friend WithEvents lbl_brt2g As Label
+    Friend WithEvents lbl_brt1g As Label
     Friend WithEvents cbo_bed2_2G As ComboBox
     Friend WithEvents cbo_bed2_1G As ComboBox
     Friend WithEvents lbl_Bed2SubHead As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label24 As Label
+    Friend WithEvents lbl_brtnetwork As Label
+    Friend WithEvents lbl_brtsat As Label
     Friend WithEvents cbo_bed2Net As ComboBox
-    Friend WithEvents Label25 As Label
+    Friend WithEvents lbl_brttv As Label
     Friend WithEvents cbo_bed2SAT As ComboBox
     Friend WithEvents cbo_bed2TV As ComboBox
     Friend WithEvents chk_UpgradeBathRoom As CheckBox
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label27 As Label
+    Friend WithEvents lbl_bath2g As Label
+    Friend WithEvents lbl_bath1g As Label
     Friend WithEvents cbo_bath2G As ComboBox
     Friend WithEvents cbo_bath1G As ComboBox
     Friend WithEvents lbl_BathSubHead As Label
     Friend WithEvents lbl_living_cost As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lbl_knetpoint As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label28 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents pic_back As PictureBox
+    Friend WithEvents pic_exit As PictureBox
     Friend WithEvents lbl_totaldisplay As Label
     Friend WithEvents lbl_kitch_cost As Label
     Friend WithEvents lbl_bedroom_one As Label
     Friend WithEvents lbl_bedroom_two_cost As Label
     Friend WithEvents lbl_bathroom_cost As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_next As Button
 End Class

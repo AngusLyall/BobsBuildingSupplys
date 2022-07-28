@@ -39,7 +39,7 @@ Partial Class CustomerDetails
         Me.chk_DeliverySameBilling = New System.Windows.Forms.CheckBox()
         Me.chk_TradeCus = New System.Windows.Forms.CheckBox()
         Me.tmr_RequestLimiter = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_next = New System.Windows.Forms.Button()
         Me.lbl_FirstNameRequired = New System.Windows.Forms.Label()
         Me.lbl_LastNameRequired = New System.Windows.Forms.Label()
         Me.lbl_BusinessNameRequired = New System.Windows.Forms.Label()
@@ -47,9 +47,9 @@ Partial Class CustomerDetails
         Me.lbl_BillingRequired = New System.Windows.Forms.Label()
         Me.lbl_DeliveryRequired = New System.Windows.Forms.Label()
         Me.txt_CusPhoneNumber = New System.Windows.Forms.MaskedTextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_settings = New System.Windows.Forms.Button()
+        Me.pic_exit = New System.Windows.Forms.PictureBox()
+        CType(Me.pic_exit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_CusTitle
@@ -186,14 +186,14 @@ Partial Class CustomerDetails
         Me.tmr_RequestLimiter.Enabled = True
         Me.tmr_RequestLimiter.Interval = 1000
         '
-        'Button1
+        'btn_next
         '
-        Me.Button1.Location = New System.Drawing.Point(407, 388)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Next"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_next.Location = New System.Drawing.Point(407, 388)
+        Me.btn_next.Name = "btn_next"
+        Me.btn_next.Size = New System.Drawing.Size(75, 23)
+        Me.btn_next.TabIndex = 16
+        Me.btn_next.Text = "Next"
+        Me.btn_next.UseVisualStyleBackColor = True
         '
         'lbl_FirstNameRequired
         '
@@ -270,32 +270,32 @@ Partial Class CustomerDetails
         Me.txt_CusPhoneNumber.Size = New System.Drawing.Size(283, 23)
         Me.txt_CusPhoneNumber.TabIndex = 23
         '
-        'Button2
+        'btn_settings
         '
-        Me.Button2.Location = New System.Drawing.Point(2, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(62, 24)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "Settings"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_settings.Location = New System.Drawing.Point(2, 3)
+        Me.btn_settings.Name = "btn_settings"
+        Me.btn_settings.Size = New System.Drawing.Size(62, 24)
+        Me.btn_settings.TabIndex = 24
+        Me.btn_settings.Text = "Settings"
+        Me.btn_settings.UseVisualStyleBackColor = True
         '
-        'PictureBox2
+        'pic_exit
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(450, 1)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 34)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 92
-        Me.PictureBox2.TabStop = False
+        Me.pic_exit.Image = CType(resources.GetObject("pic_exit.Image"), System.Drawing.Image)
+        Me.pic_exit.Location = New System.Drawing.Point(450, 1)
+        Me.pic_exit.Name = "pic_exit"
+        Me.pic_exit.Size = New System.Drawing.Size(31, 34)
+        Me.pic_exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_exit.TabIndex = 92
+        Me.pic_exit.TabStop = False
         '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 412)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.pic_exit)
+        Me.Controls.Add(Me.btn_settings)
         Me.Controls.Add(Me.txt_CusPhoneNumber)
         Me.Controls.Add(Me.txt_CusDeliveryAddress)
         Me.Controls.Add(Me.lbl_DeliveryRequired)
@@ -305,7 +305,7 @@ Partial Class CustomerDetails
         Me.Controls.Add(Me.lbl_LastNameRequired)
         Me.Controls.Add(Me.lbl_FirstNameRequired)
         Me.Controls.Add(Me.lbl_CustFirstName)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_next)
         Me.Controls.Add(Me.chk_TradeCus)
         Me.Controls.Add(Me.chk_DeliverySameBilling)
         Me.Controls.Add(Me.txt_CusBillingAdress)
@@ -321,7 +321,7 @@ Partial Class CustomerDetails
         Me.Name = "CustomerDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Business Name"
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_exit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -342,7 +342,7 @@ Partial Class CustomerDetails
     Friend WithEvents chk_DeliverySameBilling As CheckBox
     Friend WithEvents chk_TradeCus As CheckBox
     Friend WithEvents tmr_RequestLimiter As Timer
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_next As Button
     Friend WithEvents lbl_FirstNameRequired As Label
     Friend WithEvents lbl_LastNameRequired As Label
     Friend WithEvents lbl_BusinessNameRequired As Label
@@ -350,6 +350,6 @@ Partial Class CustomerDetails
     Friend WithEvents lbl_BillingRequired As Label
     Friend WithEvents lbl_DeliveryRequired As Label
     Friend WithEvents txt_CusPhoneNumber As MaskedTextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btn_settings As Button
+    Friend WithEvents pic_exit As PictureBox
 End Class

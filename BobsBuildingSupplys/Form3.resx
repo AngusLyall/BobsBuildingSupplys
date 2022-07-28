@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pic_back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAEJ
         qAABCagBl6uqYQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACIkSURBVHhe7d0J
@@ -210,7 +210,7 @@
         BAD6VpYAQN/KEgDoW1kCAH0rSwCgb2UJAPTs84f+PxOFRJ3Emd9PAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pic_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAAUACAYAAAAY5P/3AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAVUpJREFUeF7t3burZul19uuv25Isy/JBwsY2GxlhhBHGGIwDYQROjHGgpOjA0IkS
@@ -612,10 +612,10 @@
   <metadata name="PrintDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 17</value>
   </metadata>
-  <data name="icon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pic_logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASIAAAEgCAYAAAAQdn69AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAATm1JREFUeF7tnQV43MbWhnfX7Dh2HGZmZrhlTG+Zbum2t739y5gyc1NI2yRNKWzH
+        DgAACw4BQL7hQQAATm1JREFUeF7tnQV43MbWhnfX7Dh2HGZmZrhlTG+Zbum2t739y5gyc1NI2yRNKWzH
         FIepbcp4ywwppNymSdpAm6Rhr85/vpFmI29ObDn1bqz1fM/zPpKOtFrBnKOZ0WgmQEQGg8GwRxGNBoPB
         EE9Eo8FgMMQT0WgwGAzxRDQaDAZDPBGNBoPBEE9Eo8FgMMQT0WgwGAzxRDQaDAZDPBGNBoPBEE9Eo8Fg
         MMQT0WgwGAzxRDQaDAZDPBGNBoPBEE9Eo8FgMMQT0WgwGAzxRDQaDAZDPBGNBoPBEE9Eo8FgMMQT0Wgw

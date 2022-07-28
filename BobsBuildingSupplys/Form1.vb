@@ -111,7 +111,7 @@ Public Class CustomerDetails
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_next.Click
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
         If requiredinfomation = True Then ' if requried infomation is set to False it then tells the code to move on if it doesn't it runs the else statment that tells the user to fill the infomation
@@ -185,12 +185,12 @@ Public Class CustomerDetails
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_settings.Click
         LoginForm1.Show() ' if the settings is selected it shows the login box
         Me.Hide() ' hides current form
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_exit.Click
         Application.Exit() ' when the user clicks the box it ends the program
     End Sub
 End Class
