@@ -610,9 +610,9 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btn_next.Click
         value_store() ' when the next button is hit it calls this sub to store the values into an array.
         input_rules() ' this then checks if the stored values are vaild and doesn't allow the user to have an invalid input
-        Dim tempnetpointcheck As Integer = KNET + BRONET + BRTNET + LRNET ' this temp vairble is used to check how many network points are selected by adding them all up
-        If tempnetpointcheck = 1 Then ' if they have one is shows a message box forceing the user to select more they can have 0 or 2 + they cannot have one
-            MessageBox.Show("You need more then one network point!") ' this communicates with the user the error so they can fix it though a message box.
+        Dim tempnetpointcheck As Integer = BRONET + BRTNET + LRNET ' this temp vairble is used to check how many network points are selected by adding them all up
+        If tempnetpointcheck < 1 And KNET > 0 Then ' if they have one is shows a message box forceing the user to select more they can have 0 or 2 + they cannot have one
+            MessageBox.Show("You need a networkpoint in more then one room") ' this communicates with the user the error so they can fix it though a message box.
         Else ' if the condition that tempnetpointcheck = 1 is not met it runs the two lines below
             Form3.Show() ' if they have 0 or 2 + points selected it will show the next form
             Me.Hide() ' after the next form is opened it hides my current form.
