@@ -21,7 +21,8 @@ Public Class Form3
 
 
         Dim temp1 As Integer = -1 ' this is used for loops to get the amount of times it has run though the loop
-
+        lst_display.Items.Add("Call us : 07 1234567 ")
+        lst_display.Items.Add("Email us: Office@bbsRotorua.co.nz.")
         lst_display.Items.Add($"Customer Details") ' adds a heading with "cutomer details"
         lst_display.Items.Add($"First Name {CusFirstName}") ' addds the firstname as a string with the first name the user put in
         lst_display.Items.Add($"Last Name {CusLastName}") ' adds the last name as a string with the lastname the userput in
@@ -115,6 +116,7 @@ Public Class Form3
 
         lst_display.Items.Add($"Total Cost Excluding GST {totalcostnogst.ToString("C")} ") ' this adds the cost without gst to the lst_display list to then be displayed
         lst_display.Items.Add($"Total Cost Including GST {totalcostgst.ToString("C")} ") ' this adds the cost with gst to the lst_display list to then be displayed
+        lst_display.Items.Add("Unit 3, St. John Industrial Estate, Paul Street")
 
 
         ordernumer = My.Computer.FileSystem.ReadAllText("ordernumber.txt") ' this gets the order number from the computer
@@ -151,7 +153,7 @@ Public Class Form3
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        Dim localfont As New Font("Courier New", 14, FontStyle.Regular) 'sets the font and the size
+        Dim localfont As New Font("Courier New", 13, FontStyle.Regular) 'sets the font and the size
         printstring() ' calls the sub to get the values selected by the user into a string
         e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0) ' adds the text from the prinoutsr into the a documnet for a printout
         e.Graphics.DrawImage(pic_logo.Image, 420, 1) ' adds the logo to the print document.
