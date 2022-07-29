@@ -73,7 +73,7 @@ Public Class CustomerDetails
     End Sub
     Private Sub apirequest()
 
-        Dim googleapirequest As WebRequest = WebRequest.Create("https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + apiuserinput.text + "&components=country:nz&key=AIzaSyBSWiOSW4DHovOqKAecA_GoYK-_X2ZXJ8M") ' makes a request the /xml sets the response to xml ?input is what the user puts in &components sets country as nz so we dont get international streets &key is my google development api key
+        Dim googleapirequest As WebRequest = WebRequest.Create("https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + apiuserinput.text + "&components=country:nz&key=" + Form4.APIKEY) ' makes a request the /xml sets the response to xml ?input is what the user puts in &components sets country as nz so we dont get international streets &key is my google development api key
         Dim apiresponse As WebResponse = googleapirequest.GetResponse() ' this sets the result as a vairble that I can then use later stops me typing out alot.
 
         Using ResponseStream As Stream = apiresponse.GetResponseStream()

@@ -1,6 +1,6 @@
 ﻿Imports System.Xml ' used for the xml files that I create and read
 Public Class Form4
-    Dim ConfigPriceArray(16) As String
+    Dim ConfigPriceArray(17) As String
 
     Dim configxmldoc As XmlDocument ' Local Vairbles that will be used later this is for the location of the document and tells visual studio the format of xml
     Dim configresultlist As XmlNodeList
@@ -23,6 +23,7 @@ Public Class Form4
     Public NETWORK_SWITCH As Integer
     Public GST As Decimal
     Public TRADE As Decimal
+    Public APIKEY As String
 
     Public Sub configpriceset()
         Dim configoutput As String
@@ -55,6 +56,7 @@ Public Class Form4
         NETWORK_SWITCH = ConfigPriceArray(14)
         GST = ConfigPriceArray(15)
         TRADE = ConfigPriceArray(16)
+        APIKEY = ConfigPriceArray(17)
 
     End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles lbl_priceconfig_0.TextChanged
