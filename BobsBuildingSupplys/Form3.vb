@@ -1,8 +1,8 @@
 ﻿Imports System.Drawing.Printing
 Public Class Form3
     Dim listformat As String = "{0,1}{1,15}{2,-1}"
-    Dim totalcostgst As Integer
-    Dim totalcostnogst As Integer
+    Dim totalcostgst As Decimal
+    Dim totalcostnogst As Decimal
     Dim ordersaved As Boolean = False
     Dim printoutstr As String
     Dim currentordernumber As Integer
@@ -106,7 +106,7 @@ Public Class Form3
         lst_display.Items.Add("  ") ' this adds a gap between the bathroom and displaying the cost.
         If cusTrade = True Then 'if the customer is a trade customer they get a discont so this adds the discount
             totalcostnogst = (totalvalue(0) + Form4.BASICKIT) * Form4.TRADE ' this times the total cost by the discount
-            totalcostgst = (totalcostnogst * 1.15) * Form4.TRADE ' this times the total cost by the discount
+            totalcostgst = (totalcostnogst * Form4.GST)  ' this times the total cost by the discount
         Else ' if they are not a trade customer
             totalcostnogst = totalvalue(0) + Form4.BASICKIT ' this gets the total cost without gst
             totalcostgst = totalcostnogst * Form4.GST 'this gets the total cost with gst

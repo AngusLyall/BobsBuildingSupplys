@@ -7,20 +7,20 @@ Public Class Form4
     Dim configresult As XmlNode
 
     Public BASICKIT As Decimal
-    Public KITCHENOPTIONA As Integer
-    Public KITCHENOPTIONB As Integer
-    Public KITCHENOPTIONC As Integer
-    Public BATHUPGRADE As Integer
-    Public TV_AERIAL As Integer
-    Public TV_AERIAL_POINT As Integer
-    Public TV_SAT As Integer
-    Public TV_SAT_POINT As Integer
-    Public HEATPUMP1 As Integer
-    Public HEATPUMP2 As Integer
-    Public ONEGSOCKET As Integer
-    Public TWOGSOCKET As Integer
-    Public NETWORK_POINT As Integer
-    Public NETWORK_SWITCH As Integer
+    Public KITCHENOPTIONA As Decimal
+    Public KITCHENOPTIONB As Decimal
+    Public KITCHENOPTIONC As Decimal
+    Public BATHUPGRADE As Decimal
+    Public TV_AERIAL As Decimal
+    Public TV_AERIAL_POINT As Decimal
+    Public TV_SAT As Decimal
+    Public TV_SAT_POINT As Decimal
+    Public HEATPUMP1 As Decimal
+    Public HEATPUMP2 As Decimal
+    Public ONEGSOCKET As Decimal
+    Public TWOGSOCKET As Decimal
+    Public NETWORK_POINT As Decimal
+    Public NETWORK_SWITCH As Decimal
     Public GST As Decimal
     Public TRADE As Decimal
     Public APIKEY As String

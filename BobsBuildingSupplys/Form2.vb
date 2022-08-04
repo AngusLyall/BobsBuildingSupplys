@@ -3,17 +3,17 @@
     Dim BRONET As Integer = 0 : Dim BRO1G As Integer = 0 : Dim BRO2G As Integer = 0 : Dim BROHeatPump As Integer = 0 : Dim BRTTV As Integer = 0 : Dim BRTSAT As Integer = 0 : Dim BRTNET As Integer = 0 : Dim BRT1G As Integer = 0
     Dim BRT2G As Integer = 0 : Dim BRTHeatPump As Integer = 0 : Dim LRTV As Integer = 0 : Dim LRSAT As Integer = 0 : Dim LRNET As Integer = 0 : Dim LR1G As Integer = 0 : Dim LR2G As Integer = 0 : Dim LRHeatPump As Integer = 0
     Dim BATH1G As Integer = 0 : Dim BATH2G As Integer = 0 : Dim BATHUpgrades As Integer = 0 : Dim KitchenA As Boolean = False : Dim KitchenB As Boolean = False : Dim KitchenC As Boolean = False : Dim LRHeat As Boolean = False
-    Dim BROHeat As Boolean = False : Dim BATHOption As Boolean = False : Dim BRTHeat As Boolean = False : Dim Kitchenupgradevalue As Integer : Dim kitchennetworkvalue As Integer = 0 : Dim kitchen1gvalue As Integer : Dim kitchen2gvalue As Integer
-    Dim kitchenTVvalue As Integer : Dim kitchenSATvalue As Integer : Dim networkvalue As Integer : Dim livingTVvalue As Integer = 0 : Dim livingSATvalue As Integer = 0 : Dim livingnetworkvalue As Integer = 0 : Dim living1gvalue As Integer = 0
-    Dim living2gvalue As Integer = 0 : Dim livingheatpumpvalue As Integer : Dim bedroomtwoTVvalue As Integer : Dim bedroomtwoSATvalue As Integer : Dim bedroomtwonetworkvalue As Integer : Dim bedroomtwo1gvalue As Integer
-    Dim bedroomtwo2gvalue As Integer : Dim bedroomtwoheatpumpvalue As Integer : Dim bedroomoneTVvalue As Integer : Dim bedroomoneSATvalue As Integer : Dim bedroomonenetworkvalue As Integer : Dim bedroomone1gvalue As Integer
-    Dim bedroomone2gvalue As Integer : Dim bedroomoneheatpumpvalue As Integer : Dim BathUpgradevalue As Integer : Dim Bath1gvalue As Integer : Dim Bath2gvalue As Integer : Dim netpointcheck As Integer : Dim tvpointdefult As Boolean = True
+    Dim BROHeat As Boolean = False : Dim BATHOption As Boolean = False : Dim BRTHeat As Boolean = False : Dim Kitchenupgradevalue As Decimal : Dim kitchennetworkvalue As Decimal = 0 : Dim kitchen1gvalue As Decimal : Dim kitchen2gvalue As Decimal
+    Dim kitchenTVvalue As Decimal : Dim kitchenSATvalue As Decimal : Dim networkvalue As Decimal : Dim livingTVvalue As Decimal = 0 : Dim livingSATvalue As Decimal = 0 : Dim livingnetworkvalue As Decimal = 0 : Dim living1gvalue As Decimal = 0
+    Dim living2gvalue As Decimal = 0 : Dim livingheatpumpvalue As Decimal : Dim bedroomtwoTVvalue As Decimal : Dim bedroomtwoSATvalue As Decimal : Dim bedroomtwonetworkvalue As Decimal : Dim bedroomtwo1gvalue As Decimal
+    Dim bedroomtwo2gvalue As Decimal : Dim bedroomtwoheatpumpvalue As Decimal : Dim bedroomoneTVvalue As Decimal : Dim bedroomoneSATvalue As Decimal : Dim bedroomonenetworkvalue As Decimal : Dim bedroomone1gvalue As Decimal
+    Dim bedroomone2gvalue As Decimal : Dim bedroomoneheatpumpvalue As Decimal : Dim BathUpgradevalue As Decimal : Dim Bath1gvalue As Decimal : Dim Bath2gvalue As Decimal : Dim netpointcheck As Integer : Dim tvpointdefult As Boolean = True
     Dim satpointdefult As Boolean = True : Dim userimputcheck As Boolean = False : Dim start_zerio As Boolean = False
     Private Sub frm_OrderDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomerDetails.Hide()
     End Sub
     Private Sub priceing_math()
-        If Kitchen(2) > 0 Then kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH ' checks how many kitchen network points are selected if there are more then zero it time the amout of outlets by the price then adds 100 fro the switch
+        kitchennetworkvalue = (Kitchen(2) * Form4.NETWORK_POINT) ' checks how many kitchen network points are selected if there are more then zero it time the amout of outlets by the price then adds 100 fro the switch
         kitchencost(2) = kitchennetworkvalue ' this sets the cost array as the networkworkvalue varible which is the cost of the kitchen network
         kitchen1gvalue = Kitchen(3) * Form4.ONEGSOCKET ' This times the amount of sockets the user has selected by the cost of one socket.
         kitchencost(3) = kitchen1gvalue ' this sets the cost array as the value worked out above.   
@@ -36,7 +36,7 @@
         kitchencost(1) = kitchenSATvalue 'this sets cost array equal to the value set above and is used to display on the quote.
         livingTVvalue = LivingRoom(0) * Form4.TV_AERIAL ' this sets the LivingTVvalue equal to the price of tv aerial points and the amount of points selected in the living room
         livingSATvalue = LivingRoom(1) * Form4.TV_SAT ' this sets the value of the LivingSATvalue to be equal to the amount of user selected Sat points times by the price of sat points 
-        livingnetworkvalue = LivingRoom(2) * Form4.NETWORK_POINT ' this sets the price of the living network value to the amount of network points selected in the living room and the price of network points
+        If LivingRoom(2) > 0 Then livingnetworkvalue = (LivingRoom(2) * Form4.NETWORK_POINT) + Form4.NETWORK_SWITCH  ' this sets the price of the living network value to the amount of network points selected in the living room and the price of network points
         living1gvalue = LivingRoom(3) * Form4.ONEGSOCKET ' Sets the value of living1gvalue to the amount of 1 gang sockets selected times by the price of a One G socket.
         living2gvalue = LivingRoom(4) * Form4.TWOGSOCKET ' sets the value of living2gvalue to the amount of 2 gang sockets selected times by the price of a two Gang socket.
         livingheatpumpvalue = LivingRoom(5) * Form4.HEATPUMP2 ' sets the value of the livingheatpumpvalue ot the amount of heat pumps selected this being 1 or 0 then times it by the price of 4.5 KW heat pump
@@ -137,30 +137,30 @@
     Private Sub input_rules()
         ' This Sub is called when the Network Boxes are changed this forces the network points to never be able to go over the limit of 4 in a room or 8 in total. And Rules related to the 1G and 2G limits
         If start_zerio = False Then startingzero() ' this runs onces and sets the text to 0 for all the points that have not been changed.
-        Dim netpointcheck As Integer : Dim swtichpoints As Integer : Dim kitchendefult As Boolean = True : Dim tvpointcheck As Integer : Dim satpointcheck As Integer : Dim socketscheck As Integer
+        Dim netpointcheck As Integer : Dim swtichpoints As Integer : Dim Livingdefult As Boolean = True : Dim tvpointcheck As Integer : Dim satpointcheck As Integer : Dim socketscheck As Integer
         Dim remainingsocket As Integer = 12 : Dim remainingpoints As Integer = 8 : Dim BROList As Integer : Dim BRTList As Integer : Dim LRList As Integer : Dim KitList As Integer : Dim BROListsocket_2G As Integer
         Dim BROListsocket_1G As Integer : Dim BRTListsocket_2G As Integer : Dim BRTListsocket_1G As Integer : Dim LRListsocket_2G As Integer : Dim LRListsocket_1G As Integer : Dim KitListsocket_2G As Integer
         Dim KitListsocket_1G As Integer : Dim BathListScoket_1G As Integer : Dim BathListSocket_2G As Integer
         socketscheck = K1G + K2G + LR1G + LR2G + BATH1G + BATH2G + BRT1G + BRT2G + BRO1G + BRO2G ' This checks the amount of Sockets in toal we can only have 12 and total 4 per room
-        swtichpoints = BRONET + BRTNET + LRNET ' This is used to check if one point is in the kitchen where the router is there needs to be one point from the router to the switch
+        swtichpoints = BRONET + BRTNET + KNET ' This is used to check if one point is in the kitchen where the router is there needs to be one point from the router to the switch
         netpointcheck = KNET + BRONET + BRTNET + LRNET ' This Adds the SUM of all the current network points
         remainingpoints = 8 - netpointcheck ' this removes all the current points from 8 this then displays the remaining points we have acess to.
         remainingsocket = 12 - socketscheck
         tvpointcheck = KTV + BROTV + BRTTV
         satpointcheck = KSAT + BROSAT + BRTSAT
         If swtichpoints = 0 Then
-            If kitchendefult = False Then
-                cbo_kitchenNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
-                kitchendefult = True ' this is used as a check to confirm its state
+            If Livingdefult = False Then
+                cbo_LivingNet.Items.Add("0") ' this adds 0 to the list after it is cleared.
+                Livingdefult = True ' this is used as a check to confirm its state
             End If
         End If
 
         If swtichpoints > 0 Then ' this checks if anyother point has a value grater then one this means a point has been selected in another form this then adds 1 to the Kitchen
-            If KNET = 0 Then
-                KNET = 1 ' sets KNET varible to one so the system knows that the kitchen network should ahve one point.
-                cbo_kitchenNet.Text = 1 ' this adds the one to the kitchen
-                cbo_kitchenNet.Items.Remove("0") ' this removes the 0 option while more then one switch point is selected stopping the user from picking zero.
-                kitchendefult = False ' this is to confirm its state
+            If LRNET = 0 Then
+                LRNET = 1 ' sets KNET varible to one so the system knows that the kitchen network should ahve one point.
+                cbo_LivingNet.Text = 1 ' this adds the one to the kitchen
+                cbo_LivingNet.Items.Remove("0") ' this removes the 0 option while more then one switch point is selected stopping the user from picking zero.
+                Livingdefult = False ' this is to confirm its state
             End If
         End If
 
@@ -256,7 +256,9 @@
         cbo_LivingNet.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingpoints < 5 Then LRList = remainingpoints + LRNET Else LRList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If LRList > 4 Then LRList = 4 ' LRList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
-        Do Until LRList = -1 ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
+        Dim zerovalue ' used to check if it goes to 0 or 1 depending on points selected
+        If Livingdefult = False Then zerovalue = 0 Else zerovalue = -1 ' this stops at 0 or 1 depeneding on if a net point is slected in another room
+        Do Until LRList = zerovalue ' this loops adding the itme to the list untill the value is at -1 so it stops at 0
             cbo_LivingNet.Items.Add(LRList)  ' Adds the amount of avaible points to the combobox
             LRList = LRList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
@@ -286,9 +288,7 @@
         cbo_kitchenNet.Items.Clear() ' This removes all the items from the combo box so starts empty
         If remainingpoints < 5 Then KitList = remainingpoints + KNET Else KitList = 4 ' checks if there are more then 5 points remaing if there are then sets the value to 4 else it sets it to the remaining points + the current selected points 
         If KitList > 4 Then KitList = 4 ' KitList more be more then 4. so if it does this makes it = 4 this stops the user for access more points 
-        Dim zerovalue As Integer ' vairble used to see if they can go below zero or must stop at one
-        If kitchendefult = False Then zerovalue = 0 Else zerovalue = -1 ' this stops at 0 or 1 depeneding on if a net point is slected in another room
-        Do Until KitList = zerovalue
+        Do Until KitList = -1
             cbo_kitchenNet.Items.Add(KitList)  ' Adds the amount of avaible points to the combobox
             KitList = KitList - 1 ' this removes one from the loop each time because the list is counting down or the loop would just keep adding the same number
         Loop
@@ -610,8 +610,8 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btn_next.Click
         value_store() ' when the next button is hit it calls this sub to store the values into an array.
         input_rules() ' this then checks if the stored values are vaild and doesn't allow the user to have an invalid input
-        Dim tempnetpointcheck As Integer = BRONET + BRTNET + LRNET ' this temp vairble is used to check how many network points are selected by adding them all up
-        If tempnetpointcheck < 1 And KNET > 0 Then ' if they have one is shows a message box forceing the user to select more they can have 0 or 2 + they cannot have one
+        Dim tempnetpointcheck As Integer = BRONET + BRTNET + KNET ' this temp vairble is used to check how many network points are selected by adding them all up
+        If tempnetpointcheck < 1 And LRNET > 0 Then ' if they have one is shows a message box forceing the user to select more they can have 0 or 2 + they cannot have one
             MessageBox.Show("You need a networkpoint in more then one room") ' this communicates with the user the error so they can fix it though a message box.
         Else ' if the condition that tempnetpointcheck = 1 is not met it runs the two lines below
             Form3.Show() ' if they have 0 or 2 + points selected it will show the next form

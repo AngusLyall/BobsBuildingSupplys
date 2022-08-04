@@ -114,7 +114,7 @@ Public Class CustomerDetails
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_next.Click
 
         RequiredInfomationCheck() ' checks if there are any empty boxes
-        If requiredinfomation = True Then ' if requried infomation is set to False it then tells the code to move on if it doesn't it runs the else statment that tells the user to fill the infomation
+        If requiredinfomation = False Then ' if requried infomation is set to False it then tells the code to move on if it doesn't it runs the else statment that tells the user to fill the infomation
             frm_OrderDetails.Show()
             Me.Hide()
         Else
