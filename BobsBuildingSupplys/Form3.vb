@@ -107,15 +107,24 @@ Public Class Form3
         If cusTrade = True Then 'if the customer is a trade customer they get a discont so this adds the discount
             totalcostnogst = (totalvalue(0) + Form4.BASICKIT) * Form4.TRADE ' this times the total cost by the discount
             totalcostgst = (totalcostnogst * Form4.GST)  ' this times the total cost by the discount
+            Dim discount = totalcostgst - totalcostnogst
         Else ' if they are not a trade customer
             totalcostnogst = totalvalue(0) + Form4.BASICKIT ' this gets the total cost without gst
             totalcostgst = totalcostnogst * Form4.GST 'this gets the total cost with gst
         End If
 
 
-
+        lst_display.Items.Add($"Base Price {Form4.BASICKIT.ToString("C")} ") ' this adds the cost without gst to the lst_display list to then be
+        lst_display.Items.Add($"Option Total {totalvalue(0).ToString("C")} ") ' this adds the cost without gst to the lst_display list to then be displayed
+        If cusTrade = True Then
+            Dim discount = (totalvalue(0) + Form4.BASICKIT) - totalcostnogst
+            Dim discountdisplay = (1 - Form4.TRADE) * 100
+            lst_display.Items.Add($"Trade Discount of {discountdisplay}% : {discount.ToString("C")} ") ' this adds the cost with gst to the lst_display list to then be displayed
+        End If
+        Dim gstdisplay = totalcostgst - totalcostnogst
         lst_display.Items.Add($"Total Cost Excluding GST {totalcostnogst.ToString("C")} ") ' this adds the cost without gst to the lst_display list to then be displayed
-        lst_display.Items.Add($"Total Cost Including GST {totalcostgst.ToString("C")} ") ' this adds the cost with gst to the lst_display list to then be displayed
+        lst_display.Items.Add($"GST {gstdisplay.ToString("C")} ") ' this adds the cost with gst to the lst_display list to then be displayed
+        lst_display.Items.Add($"To Pay {totalcostgst.ToString("C")} ") ' this adds the cost with gst to the lst_display list to then be displayed
         lst_display.Items.Add("Unit 3, St. John Industrial Estate, Paul Street")
 
 
@@ -153,7 +162,7 @@ Public Class Form3
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        Dim localfont As New Font("Courier New", 13, FontStyle.Regular) 'sets the font and the size
+        Dim localfont As New Font("Courier New", 11, FontStyle.Regular) 'sets the font and the size
         printstring() ' calls the sub to get the values selected by the user into a string
         e.Graphics.DrawString(printoutstr, localfont, Brushes.Black, 15, 0) ' adds the text from the prinoutsr into the a documnet for a printout
         e.Graphics.DrawImage(pic_logo.Image, 420, 1) ' adds the logo to the print document.

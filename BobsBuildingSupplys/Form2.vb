@@ -43,16 +43,23 @@
         Bath1gvalue = BathRoom(0) * Form4.ONEGSOCKET ' sets the value of Bath1gvalue equal to the amount of one gang sockets in the bathroom times by the price of a one gang socket
         Bath2gvalue = BathRoom(1) * Form4.TWOGSOCKET ' sets the value of the Bath2gvalue equald to the amount of two gang sockets in the bathroom times by the pice of a two gang socket.
         BathUpgradevalue = BathRoom(2) * Form4.BATHUPGRADE ' Sets the value of the bathupgradevalue equal to value in the bathroom(2) array this is either 0 or 1 then times the array value by the price of the bathroom upgrade
-        bedroomtwoTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT '  Sets the value of the bedroomtwoTVvalue the amount of tv points selected in the bedroom two times by the price of a tv aerial point.
+
+
+        bedroomtwoTVvalue = BedRoomTwo(0) * Form4.TV_AERIAL_POINT '  Sets the value of the bedroomtwoTVvalue the amount of tv points selected in the bedroom two times by the price of a tv aerial point.
+        bedroomtwoSATvalue = BedRoomTwo(1) * Form4.TV_SAT_POINT
         bedroomtwonetworkvalue = BedRoomTwo(2) * Form4.NETWORK_POINT '  Sets the value of the bedroomtwonetworkvalue the amount of network points selected in the bedroom two times by the price of a network point.
         bedroomtwo1gvalue = BedRoomTwo(3) * Form4.ONEGSOCKET ' this sets the value of bedroom1gvalue equal to the amount of 1g sockets selected in the bedroomtwo by the cost of a one gang socket.
         bedroomtwo2gvalue = BedRoomTwo(4) * Form4.TWOGSOCKET ' this sets the value of bedroom2gvalue equal to the amount of 2g sockets selected in the bedroomtwo by the cost of a two gang socket.
+        bedroomtwoheatpumpvalue = BedRoomTwo(5) * Form4.HEATPUMP1
+
+
         bedroomoneTVvalue = BedRoomOne(0) * Form4.TV_AERIAL_POINT '  Sets the value of the bedroomoneTVvalue the amount of tv points selected in the bedroom one times by the price of a tv aerial point.
         bedroomoneSATvalue = BedRoomOne(1) * Form4.TV_SAT_POINT ' this sets the value of the bedroomSATvalue varible to the amount of sat points selected times by the cost of sat points.
         bedroomonenetworkvalue = BedRoomOne(2) * Form4.NETWORK_POINT ' this sets the value of bedroomonenetworkvalue equal to the amount of network points selected in bedroom ones times by tha cost of a network point
         bedroomone1gvalue = BedRoomOne(3) * Form4.ONEGSOCKET ' this sets the value of bedroom1gvalue equal to the amount of 1 gang sockets times by the cost of a one gang socket
         bedroomone2gvalue = BedRoomOne(4) * Form4.TWOGSOCKET ' this sets the value of bedroom2gvalue equal to the amount of 2 gang sockets times by the cost of a two gang socket
         bedroomoneheatpumpvalue = BedRoomOne(5) * Form4.HEATPUMP1 ' this sets the cost of bedroomoneheatpumpvalue to the amount the value stored in the BedRoomOne(5) array that will be 0 or 1 then times the the cost of a heat pump by that value
+
         totalvalue(1) = kitchennetworkvalue + kitchen1gvalue + kitchen2gvalue + Kitchenupgradevalue + kitchenTVvalue + kitchenSATvalue ' this adds and saves the  Total Kitchen COST
         totalvalue(2) = livingheatpumpvalue + livingnetworkvalue + living2gvalue + living1gvalue + livingTVvalue + livingSATvalue '  this adds and saves the Total Living Room COST
         totalvalue(3) = bedroomoneheatpumpvalue + bedroomonenetworkvalue + bedroomone1gvalue + bedroomone2gvalue + bedroomoneTVvalue + bedroomoneSATvalue 'this adds and saves the Total Bedroom One cost
@@ -65,18 +72,18 @@
         lbl_bedroom_one.Text = $" Bed Room One Cost {totalvalue(3).ToString("C")}" ' this gets the value stored in totalvalue(4) then converts it to a string and sets the labels text value to the string to display
         lbl_bathroom_cost.Text = $" Bath Room Cost {totalvalue(5).ToString("C")}" ' this gets the value stored in totalvalue(5) then converts it to a string and sets the labels text value to the string to display
         lbl_totaldisplay.Text = $" Total Options Cost {totalvalue(0).ToString("C")} (+GST)" ' this gets the value stored in totalvalue(0) then converts it to a string and sets the labels text value to the string to display
-        Dim bedroomonelist As New List(Of Integer) From {bedroomoneTVvalue, bedroomoneSATvalue, bedroomonenetworkvalue, bedroomone1gvalue, bedroomone2gvalue, bedroomoneheatpumpvalue} '
-        Dim counter As Integer = -1
-        For Each value In bedroomonelist
-            counter = counter + 1
-            BedRoomOneCost(0) = value
-        Next
-        Dim bedroomtwolist As New List(Of Integer) From {bedroomtwoTVvalue, bedroomtwoSATvalue, bedroomtwonetworkvalue, bedroomtwo1gvalue, bedroomtwo2gvalue, bedroomtwoheatpumpvalue}
-        counter = -1
-        For Each value As String In bedroomtwolist
-            counter = counter + 1
-            BedRoomTwoCost(0) = value
-        Next
+        BedRoomTwoCost(0) = bedroomtwoTVvalue
+        BedRoomTwoCost(1) = bedroomtwoSATvalue
+        BedRoomTwoCost(2) = bedroomtwonetworkvalue
+        BedRoomTwoCost(3) = bedroomtwo1gvalue
+        BedRoomTwoCost(4) = bedroomtwo2gvalue
+        BedRoomTwoCost(5) = bedroomtwoheatpumpvalue
+        BedRoomOneCost(0) = bedroomoneTVvalue
+        BedRoomOneCost(1) = bedroomoneSATvalue
+        BedRoomOneCost(2) = bedroomonenetworkvalue
+        BedRoomOneCost(3) = bedroomone1gvalue
+        BedRoomOneCost(4) = bedroomone2gvalue
+        BedRoomOneCost(5) = bedroomoneheatpumpvalue
         BathRoomCost(0) = Bath1gvalue ' this stores the value done by the math into an array to be used in the next form
         BathRoomCost(1) = Bath2gvalue ' this stores the value done by the math into an array to be used in the next form
         BathRoomCost(2) = BathUpgradevalue ' this stores the value done by the math into an array to be used in the next form

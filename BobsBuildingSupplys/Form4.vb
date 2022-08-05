@@ -141,7 +141,6 @@ Public Class Form4
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pic_back.Click
-        CustomerDetails.Show()
-        Me.Hide()
+        Application.Restart()
     End Sub
 End Class
