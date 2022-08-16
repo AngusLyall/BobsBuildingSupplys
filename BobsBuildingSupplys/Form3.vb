@@ -186,4 +186,8 @@ Public Class Form3
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
 
     End Sub
+
+    Private Sub btn_newquote_Click(sender As Object, e As EventArgs) Handles btn_newquote.Click
+        Application.Restart()
+    End Sub
 End Class

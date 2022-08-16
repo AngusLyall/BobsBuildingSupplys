@@ -166,9 +166,9 @@ Partial Class CustomerDetails
         Me.chk_DeliverySameBilling.AutoSize = True
         Me.chk_DeliverySameBilling.Location = New System.Drawing.Point(12, 356)
         Me.chk_DeliverySameBilling.Name = "chk_DeliverySameBilling"
-        Me.chk_DeliverySameBilling.Size = New System.Drawing.Size(188, 19)
+        Me.chk_DeliverySameBilling.Size = New System.Drawing.Size(195, 19)
         Me.chk_DeliverySameBilling.TabIndex = 14
-        Me.chk_DeliverySameBilling.Text = "Delivery Adress Same as Billing"
+        Me.chk_DeliverySameBilling.Text = "Delivery Address Same as Billing"
         Me.chk_DeliverySameBilling.UseVisualStyleBackColor = True
         '
         'chk_TradeCus

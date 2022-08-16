@@ -32,6 +32,7 @@ Partial Class Form3
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.btn_newquote = New System.Windows.Forms.Button()
         CType(Me.pic_back, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_exit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,11 +114,21 @@ Partial Class Form3
         Me.pic_logo.TabStop = False
         Me.pic_logo.Visible = False
         '
+        'btn_newquote
+        '
+        Me.btn_newquote.Location = New System.Drawing.Point(203, 367)
+        Me.btn_newquote.Name = "btn_newquote"
+        Me.btn_newquote.Size = New System.Drawing.Size(75, 23)
+        Me.btn_newquote.TabIndex = 93
+        Me.btn_newquote.Text = "New Quote"
+        Me.btn_newquote.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(489, 420)
+        Me.Controls.Add(Me.btn_newquote)
         Me.Controls.Add(Me.btn_print)
         Me.Controls.Add(Me.pic_exit)
         Me.Controls.Add(Me.pic_back)
@@ -142,4 +153,5 @@ Partial Class Form3
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents pic_logo As PictureBox
+    Friend WithEvents btn_newquote As Button
 End Class
